@@ -96,7 +96,7 @@
                             <label class="control-label">Descuento:</label>
                         </div>
                         <div class="col-sm-3">
-                            <asp:TextBox runat="server" class="form-control" ReadOnly="true" ID="txtDescuento" />
+                            <asp:TextBox runat="server" class="form-control" ReadOnly="true" ID="txtTotalDescuento" />
                         </div>
                         <div class="col-sm-6">
                             &nbsp
@@ -105,7 +105,7 @@
                             <label class="control-label">Impuesto:</label>
                         </div>
                         <div class="col-sm-3">
-                            <asp:TextBox runat="server" class="form-control" ReadOnly="true" ID="txtImpuesto" />
+                            <asp:TextBox runat="server" class="form-control" ReadOnly="true" ID="txtTotalImpuesto" />
                         </div>
                         <div class="col-sm-6">
                             &nbsp
@@ -128,7 +128,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="ModalAgendar" role="dialog" aria-labelledby="ModalAgendarLabel" aria-hidden="true">
+    <div class="modal fade" id="ModalProductos" role="dialog" aria-labelledby="ModalProductosLabel" aria-hidden="true">
         <div class="modal-dialog">
             <asp:UpdatePanel ID="upModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
                 <ContentTemplate>
@@ -164,11 +164,11 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
-                                        <div class="col-sm-8">
+                                        <div class="col-sm-6">
                                             <asp:Label runat="server" Text="Cantidad:" />
                                         </div>
-                                        <div class="col-sm-4">
-                                            <asp:TextBox CssClass="form-control" TextMode="Number" runat="server" ID="txtCantidad" />
+                                        <div class="col-sm-6">
+                                            <asp:TextBox CssClass="form-control" OnTextChanged="txtCantidad_TextChanged" Text="0" TextMode="Number" runat="server" ID="txtCantidad" />
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
@@ -176,50 +176,63 @@
                                             <asp:Label runat="server" Text="Precio:" />
                                         </div>
                                         <div class="col-sm-6">
-                                            <asp:TextBox CssClass="form-control" TextMode="Number" runat="server" ID="txtPrecio" />
+                                            <asp:TextBox CssClass="form-control" TextMode="Number" Text="0" OnTextChanged="txtPrecio_TextChanged" runat="server" ID="txtPrecio" />
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="col-sm-6">
-                                            <asp:Label runat="server" Text="Especialista:" />
+                                            <asp:Label runat="server" Text="Porcentaje de Impuesto:" />
                                         </div>
                                         <div class="col-sm-6">
-                                            <asp:DropDownList runat="server" CssClass="form-control" ID="ddlEspecialistaCita" />
+                                            <asp:TextBox CssClass="form-control" TextMode="Number" OnTextChanged="txtImpuesto_TextChanged" Text="0" runat="server" ID="txtImpuesto" />
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="col-sm-6">
-                                            <asp:Label runat="server" Text="Fecha:" />
+                                            <asp:Label runat="server" Text="Porcentaje de Descuento:" />
                                         </div>
                                         <div class="col-sm-6">
-                                            <asp:Calendar runat="server" ID="calAgendarCita" class="form-control" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="100%" OnSelectionChanged="calAgendarCita_SelectionChanged" OnVisibleMonthChanged="calAgendarCita_VisibleMonthChanged">
-                                                <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
-                                                <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
-                                                <OtherMonthDayStyle ForeColor="#999999" />
-                                                <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-                                                <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
-                                                <TodayDayStyle BackColor="#CCCCCC" />
-                                            </asp:Calendar>
+                                            <asp:TextBox CssClass="form-control" TextMode="Number" OnTextChanged="txtDescuento_TextChanged" Text="0" runat="server" ID="txtDescuento" />
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <asp:Label runat="server" Text="HoraInicio:" />
-                                        <asp:TextBox runat="server" CssClass="form-control" ID="txtHoraInicio" TextMode="Time" />
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-6">
+                                            <asp:Label runat="server" Text="Subtotal:" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <asp:TextBox CssClass="form-control" TextMode="Number" ReadOnly="true" runat="server" ID="txtSubtotalLinea" />
+                                        </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <asp:Label runat="server" Text="HoraFinal:" />
-                                        <asp:TextBox runat="server" CssClass="form-control" ID="txtHoraFinal" TextMode="Time" />
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-6">
+                                            <asp:Label runat="server" Text="TotalDescuento:" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <asp:TextBox CssClass="form-control" TextMode="Number" ReadOnly="true" runat="server" ID="txtTotalDescuentoLinea" />
+                                        </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <asp:Label runat="server" Text="Estado:" />
-                                        <asp:DropDownList runat="server" CssClass="form-control" ID="ddlEstadoCita" />
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-6">
+                                            <asp:Label runat="server" Text="TotalImpuesto:" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <asp:TextBox CssClass="form-control" TextMode="Number" ReadOnly="true" runat="server" ID="txtTotalImpuestoLinea" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-6">
+                                            <asp:Label runat="server" Text="TotalLinea:" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <asp:TextBox CssClass="form-control" TextMode="Number" ReadOnly="true" runat="server" ID="txtTotalLinea" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <div class="col-sm-6">
-                                <asp:Button runat="server" ID="btnGuardarCita" Text="Guardar" OnClick="btnGuardarCita_Click" class="btn btn-success" data-dismiss="modal" aria-hidden="true" />
+                                <asp:Button runat="server" ID="btnGuardarProducto" Text="Guardar" OnClick="btnGuardarProducto_Click" class="btn btn-success" data-dismiss="modal" aria-hidden="true" />
                             </div>
                             <div class="col-sm-6">
                                 <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Cancelar</button>

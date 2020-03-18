@@ -105,22 +105,22 @@ namespace HappyPet4._0.Ventas
         protected global::System.Web.UI.WebControls.TextBox txtSubtotal;
 
         /// <summary>
-        /// Control txtDescuento.
+        /// Control txtTotalDescuento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescuento;
+        protected global::System.Web.UI.WebControls.TextBox txtTotalDescuento;
 
         /// <summary>
-        /// Control txtImpuesto.
+        /// Control txtTotalImpuesto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtImpuesto;
+        protected global::System.Web.UI.WebControls.TextBox txtTotalImpuesto;
 
         /// <summary>
         /// Control txtTotal.
@@ -195,58 +195,67 @@ namespace HappyPet4._0.Ventas
         protected global::System.Web.UI.WebControls.TextBox txtPrecio;
 
         /// <summary>
-        /// Control ddlEspecialistaCita.
+        /// Control txtImpuesto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEspecialistaCita;
+        protected global::System.Web.UI.WebControls.TextBox txtImpuesto;
 
         /// <summary>
-        /// Control calAgendarCita.
+        /// Control txtDescuento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calAgendarCita;
+        protected global::System.Web.UI.WebControls.TextBox txtDescuento;
 
         /// <summary>
-        /// Control txtHoraInicio.
+        /// Control txtSubtotalLinea.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHoraInicio;
+        protected global::System.Web.UI.WebControls.TextBox txtSubtotalLinea;
 
         /// <summary>
-        /// Control txtHoraFinal.
+        /// Control txtTotalDescuentoLinea.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHoraFinal;
+        protected global::System.Web.UI.WebControls.TextBox txtTotalDescuentoLinea;
 
         /// <summary>
-        /// Control ddlEstadoCita.
+        /// Control txtTotalImpuestoLinea.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEstadoCita;
+        protected global::System.Web.UI.WebControls.TextBox txtTotalImpuestoLinea;
 
         /// <summary>
-        /// Control btnGuardarCita.
+        /// Control txtTotalLinea.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarCita;
+        protected global::System.Web.UI.WebControls.TextBox txtTotalLinea;
+
+        /// <summary>
+        /// Control btnGuardarProducto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardarProducto;
 
         /// <summary>
         /// Control UpdatePanelEliminar.
