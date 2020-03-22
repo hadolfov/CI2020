@@ -78,9 +78,9 @@
                                 <i class="fa fa-dashboard"></i><span>Nomina</span> <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="../../index.html"><i class="fa fa-circle-o"></i>Planilla </a></li>
-                                <li><a href="../../index.html"><i class="fa fa-circle-o"></i>Permisos y Vacaciones </a></li>
-                                <li><a href="../../index.html"><i class="fa fa-circle-o"></i>Marcas</a></li>
+                                <li><a href="../../Nomina/frmPlanilla.aspx"><i class="fa fa-circle-o"></i>Planilla </a></li>
+                                <li><a href="../../Nomina/frmPermisosyVac.aspx"><i class="fa fa-circle-o"></i>Permisos y Vacaciones </a></li>
+                                <li><a href="../../Nomina/frmMarcas.aspx"><i class="fa fa-circle-o"></i>Marcas</a></li>
                             </ul>
                         </li>
                         <li class="treeview">

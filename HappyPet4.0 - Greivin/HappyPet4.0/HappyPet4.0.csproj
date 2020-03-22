@@ -1521,6 +1521,9 @@
     <Content Include="node_modules\zlib-browserify\index.js" />
     <Content Include="node_modules\zlib-browserify\test\zlib.test.js" />
     <Content Include="node_modules\zlib-browserify\zlib.js" />
+    <Content Include="Nomina\frmMarcas.aspx" />
+    <Content Include="Nomina\frmPermisosyVac.aspx" />
+    <Content Include="Nomina\frmPlanilla.aspx" />
     <Content Include="pages\charts\chartjs.html" />
     <Content Include="pages\charts\flot.html" />
     <Content Include="pages\charts\inline.html" />
@@ -2052,6 +2055,27 @@
     </Compile>
     <Compile Include="LogIn.aspx.designer.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina\frmMarcas.aspx.cs">
+      <DependentUpon>frmMarcas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nomina\frmMarcas.aspx.designer.cs">
+      <DependentUpon>frmMarcas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina\frmPermisosyVac.aspx.cs">
+      <DependentUpon>frmPermisosyVac.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nomina\frmPermisosyVac.aspx.designer.cs">
+      <DependentUpon>frmPermisosyVac.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina\frmPlanilla.aspx.cs">
+      <DependentUpon>frmPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nomina\frmPlanilla.aspx.designer.cs">
+      <DependentUpon>frmPlanilla.aspx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
