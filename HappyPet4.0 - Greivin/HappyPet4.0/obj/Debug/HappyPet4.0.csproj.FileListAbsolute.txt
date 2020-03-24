@@ -212,6 +212,7 @@ C:\Users\greiv\Documents\UAM\Analisis de Sistemas\HappyPet4.0 - Greivin\HappyPet
 C:\Users\greiv\Documents\UAM\Analisis de Sistemas\HappyPet4.0 - Greivin\HappyPet4.0\obj\Debug\HappyPet4.0.csproj.CopyComplete
 C:\Users\greiv\Documents\UAM\Analisis de Sistemas\HappyPet4.0 - Greivin\HappyPet4.0\obj\Debug\HappyPet4.0.dll
 C:\Users\greiv\Documents\UAM\Analisis de Sistemas\HappyPet4.0 - Greivin\HappyPet4.0\obj\Debug\HappyPet4.0.pdb
+C:\Users\greiv\Documents\UAM\Analisis de Sistemas\CI2020\HappyPet4.0 - Greivin\HappyPet4.0\obj\Debug\HappyPet4.0.csprojAssemblyReference.cache
 C:\Users\greiv\Documents\UAM\Analisis de Sistemas\CI2020\HappyPet4.0 - Greivin\HappyPet4.0\bin\HappyPet4.0.dll.config
 C:\Users\greiv\Documents\UAM\Analisis de Sistemas\CI2020\HappyPet4.0 - Greivin\HappyPet4.0\bin\HappyPet4.0.dll
 C:\Users\greiv\Documents\UAM\Analisis de Sistemas\CI2020\HappyPet4.0 - Greivin\HappyPet4.0\bin\HappyPet4.0.pdb
@@ -261,7 +262,7 @@ C:\Users\greiv\Documents\UAM\Analisis de Sistemas\CI2020\HappyPet4.0 - Greivin\H
 C:\Users\greiv\Documents\UAM\Analisis de Sistemas\CI2020\HappyPet4.0 - Greivin\HappyPet4.0\bin\roslyn\vbc.rsp
 C:\Users\greiv\Documents\UAM\Analisis de Sistemas\CI2020\HappyPet4.0 - Greivin\HappyPet4.0\bin\roslyn\VBCSCompiler.exe
 C:\Users\greiv\Documents\UAM\Analisis de Sistemas\CI2020\HappyPet4.0 - Greivin\HappyPet4.0\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\greiv\Documents\UAM\Analisis de Sistemas\CI2020\HappyPet4.0 - Greivin\HappyPet4.0\obj\Debug\HappyPet4.0.csprojAssemblyReference.cache
 C:\Users\greiv\Documents\UAM\Analisis de Sistemas\CI2020\HappyPet4.0 - Greivin\HappyPet4.0\obj\Debug\HappyPet4.0.csproj.CopyComplete
 C:\Users\greiv\Documents\UAM\Analisis de Sistemas\CI2020\HappyPet4.0 - Greivin\HappyPet4.0\obj\Debug\HappyPet4.0.dll
 C:\Users\greiv\Documents\UAM\Analisis de Sistemas\CI2020\HappyPet4.0 - Greivin\HappyPet4.0\obj\Debug\HappyPet4.0.pdb
+C:\Users\greiv\Documents\UAM\Analisis de Sistemas\CI2020\HappyPet4.0 - Greivin\HappyPet4.0\obj\Debug\HappyPet4.0.csproj.CoreCompileInputs.cache

@@ -173,6 +173,9 @@
     <Content Include="Imagenes\buscar.png" />
     <Content Include="Imagenes\calendario.png" />
     <Content Include="Imagenes\share.png" />
+    <Content Include="Inventario\Movimientos de Inventario.aspx" />
+    <Content Include="Inventario\Productos.aspx" />
+    <Content Include="Inventario\Proveedores.aspx" />
     <Content Include="LogIn.aspx" />
     <Content Include="node_modules\abbrev\abbrev.js" />
     <Content Include="node_modules\align-text\index.js" />
@@ -2036,8 +2039,6 @@
     <Content Include="plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.js" />
-    <Content Include="Productos.aspx" />
-    <Content Include="Proveedores.aspx" />
     <Content Include="Ventas\frm_AtenderCita.aspx" />
     <Content Include="Ventas\frm_Citas.aspx" />
     <Content Include="Ventas\frm_Cliente.aspx" />
@@ -2049,6 +2050,27 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Inventario\Movimientos de Inventario.aspx.cs">
+      <DependentUpon>Movimientos de Inventario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventario\Movimientos de Inventario.aspx.designer.cs">
+      <DependentUpon>Movimientos de Inventario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Productos.aspx.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventario\Productos.aspx.designer.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Proveedores.aspx.cs">
+      <DependentUpon>Proveedores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventario\Proveedores.aspx.designer.cs">
+      <DependentUpon>Proveedores.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2081,20 +2103,6 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Productos.aspx.cs">
-      <DependentUpon>Productos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Productos.aspx.designer.cs">
-      <DependentUpon>Productos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Proveedores.aspx.cs">
-      <DependentUpon>Proveedores.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Proveedores.aspx.designer.cs">
-      <DependentUpon>Proveedores.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
