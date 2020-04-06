@@ -16,15 +16,4 @@ namespace DL.SCH_MANTENIMIENTO
 		public int IdSucursal { get => _idSucursal; set => _idSucursal = value; }
 		public int Estado { get => _estado; set => _estado = value; }
 	}
-	/*
-     [IdCaja] [int] IDENTITY(1,1) NOT NULL,
-	[desCaja] [nvarchar](100) NULL,
-	[IdSucursal] [int] NULL,
-	[IdUsuarioSeguridad] [int] NULL,
-	[UsuarioCreacion] [int] NULL,
-	[FechaCreacion] [datetime] NULL,
-	[UsuarioModificacion] [int] NULL,
-	[FechaModificacion] [datetime] NULL,
-	[IdEstado] [int] NULL,
-     */
 }

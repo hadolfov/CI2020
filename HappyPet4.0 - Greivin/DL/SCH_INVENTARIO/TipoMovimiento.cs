@@ -14,9 +14,5 @@ namespace DL.SCH_INVENTARIO
         public string NombreTipo { get => _nombreTipo; set => _nombreTipo = value; }
         public int Estado { get => _estado; set => _estado = value; }
     }
-    /*
-     * [IdTipo] [int] IDENTITY(1,1) NOT NULL,
-	[NombreTipo] [nvarchar](100) NULL,
-	[IdEstado] [int] NULL,
-     */
+
 }
