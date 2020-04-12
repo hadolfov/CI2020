@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BD\cls_BD_BLL.cs" />
+    <Compile Include="MANTENIMIENTO\Usuarios.cs" />
     <Compile Include="MANTENIMIENTO\UsuarioSeguridad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

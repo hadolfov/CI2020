@@ -67,7 +67,7 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left info">
-                            <p>Jose David Vargas</p>
+                            <asp:Label ID="lblUsuario" runat="server"/>
                         </div>
                     </div>
                     <!-- sidebar menu: : style can be found in sidebar.less -->

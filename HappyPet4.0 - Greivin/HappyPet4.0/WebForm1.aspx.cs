@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using BLL.MANTENIMIENTO;
+using DL.SCH_SEGURIDAD;
 
 namespace HappyPet4._0
 {
@@ -11,7 +8,7 @@ namespace HappyPet4._0
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            UsuariosSeguridad usuariosSeguridad = (UsuariosSeguridad)Session["UsuarioSeguridad"];
         }
     }
 }

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <meta http-equiv="content-type" content="text/Mml; charset-utf-8" />
     <title>HappyPet LogIN</title>
 
@@ -21,7 +21,6 @@
 
     <!-- Nuestro css-->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/LogIn.css" />
-    "
 
 </head>
 
@@ -53,7 +52,7 @@
                     </div>
 
                     <div class="form-grup col-12">
-                        <asp:Button ID="btnIngresar" runat="server" Class="fa-fast-backward fa-sign-in" Text="Ingresar" OnClick="Button1_Click" CssClass="form-control btn btn-primary" />
+                        <asp:Button ID="btnIngresar" runat="server" Class="fa-fast-backward fa-sign-in" Text="Ingresar" OnClick="btnIngresar_Click" CssClass="form-control btn btn-primary" />
                     </div>
 
                 </form>

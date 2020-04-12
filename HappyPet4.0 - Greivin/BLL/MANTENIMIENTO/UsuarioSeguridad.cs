@@ -3,11 +3,11 @@ using BLL.BD;
 using DAL.BD;
 using DL.SCH_SEGURIDAD;
 
-namespace BL.MANTENIMIENTO
+namespace BLL.MANTENIMIENTO
 {
-    public class UsuarioSeguridad
+    public class BLUsuarioSeguridad
     {
-        public int insertar(DL.SCH_SEGURIDAD.UsuariosSeguridad usuario, ref string MsjError)
+        public int insertar(UsuariosSeguridad usuario, ref string MsjError)
         {
             int resultado = -1;
             cls_BD_BLL obj_BD_BLL = new cls_BD_BLL();
@@ -34,11 +34,12 @@ namespace BL.MANTENIMIENTO
             return resultado;
         }
 
-        public DL.SCH_SEGURIDAD.UsuariosSeguridad consultar(UsuariosSeguridad usuario, ref string MsjError)
+        public UsuariosSeguridad consultar(UsuariosSeguridad usuario, ref string MsjError)
         {
             UsuariosSeguridad resultado = null;
             cls_BD_BLL obj_BD_BLL = new cls_BD_BLL();
             cls_BD_DAL obj_BD_DAL = new cls_BD_DAL();
+            int idUsuariosSeguridad = usuario.IdUsuarioSeguridad;
 
             obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
 
@@ -57,12 +58,13 @@ namespace BL.MANTENIMIENTO
                 resultado.NombreUsuario = obj_BD_DAL.DS.Tables[0].Rows[0][1].ToString();
                 resultado.Contrasenna = obj_BD_DAL.DS.Tables[0].Rows[0][2].ToString();
                 resultado.Estado = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[0][3].ToString());
+                resultado.IdUsuarioSeguridad = idUsuariosSeguridad;
                 MsjError = string.Empty;
             }
             return resultado;
         }
 
-        public int consultar_Usuario_Contrasenna(DL.SCH_SEGURIDAD.UsuariosSeguridad usuario, ref string MsjError)
+        public int consultar_Usuario_Contrasenna(UsuariosSeguridad usuario, ref string MsjError)
         {
             int resultado = -1;
             cls_BD_BLL obj_BD_BLL = new cls_BD_BLL();
