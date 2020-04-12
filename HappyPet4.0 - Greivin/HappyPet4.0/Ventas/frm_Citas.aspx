@@ -7,7 +7,7 @@
                 <h3 class="page-header"><i class="fa fa-calendar"></i>Citas</h3>
             </div>
             <div class="col-lg-12">
-                <div class="col-lg-4">
+                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="col-sm-4 control-label">Especialidad: </label>
                         <div class="col-sm-6">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                 <div class="col-lg-4">
                     <div class="form-group">
                         <label class="col-sm-4 control-label">Especialista: </label>
                         <div class="col-sm-6">
@@ -58,6 +58,7 @@
                         </div>
                     </div>
                 </div>
+              
                 <div class="col-lg-12">&nbsp</div>
                 <div class="col-lg-12">&nbsp</div>
                 <div class="col-lg-12">

@@ -70,6 +70,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Empresas1.1.aspx" />
+    <Content Include="Inventario\Articulos1.1.aspx" />
     <Content Include="bin\HappyPet4.0.dll" />
     <Content Include="bin\HappyPet4.0.pdb" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
@@ -150,6 +152,7 @@
     <Content Include="dist\img\credit\visa.png" />
     <Content Include="dist\img\default-50x50.gif" />
     <Content Include="dist\img\FondoHappyPet.jpg" />
+    <Content Include="dist\img\HappyPet1.1.jpg" />
     <Content Include="dist\img\icons.png" />
     <Content Include="dist\img\photo1.png" />
     <Content Include="dist\img\photo2.png" />
@@ -2039,6 +2042,9 @@
     <Content Include="plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Inventario\Proveedores1.1.aspx" />
+    <Content Include="Nomina\TipoMarca1.1.aspx" />
+    <Content Include="Nomina\TipoPermiso1.1.aspx" />
     <Content Include="Ventas\frm_AtenderCita.aspx" />
     <Content Include="Ventas\frm_Citas.aspx" />
     <Content Include="Ventas\frm_Cliente.aspx" />
@@ -2050,6 +2056,20 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Empresas1.1.aspx.cs">
+      <DependentUpon>Empresas1.1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empresas1.1.aspx.designer.cs">
+      <DependentUpon>Empresas1.1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Articulos1.1.aspx.cs">
+      <DependentUpon>Articulos1.1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventario\Articulos1.1.aspx.designer.cs">
+      <DependentUpon>Articulos1.1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inventario\Movimientos de Inventario.aspx.cs">
       <DependentUpon>Movimientos de Inventario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2108,12 +2128,33 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Inventario\Proveedores1.1.aspx.cs">
+      <DependentUpon>Proveedores1.1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventario\Proveedores1.1.aspx.designer.cs">
+      <DependentUpon>Proveedores1.1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina\TipoMarca1.1.aspx.cs">
+      <DependentUpon>TipoMarca1.1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nomina\TipoMarca1.1.aspx.designer.cs">
+      <DependentUpon>TipoMarca1.1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina\TipoPermiso1.1.aspx.cs">
+      <DependentUpon>TipoPermiso1.1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nomina\TipoPermiso1.1.aspx.designer.cs">
+      <DependentUpon>TipoPermiso1.1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ventas\frm_AtenderCita.aspx.cs">
       <DependentUpon>frm_AtenderCita.aspx</DependentUpon>
@@ -3306,6 +3347,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="NewFolder1\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="pages\forms\" />
   </ItemGroup>
