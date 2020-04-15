@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BLL.BD;
 using DAL.BD;
 using DL.SCH_NOMINA;
+//Prueba de modificacion de dato de Maluco
 
 namespace BLL.MANTENIMIENTO
 {
