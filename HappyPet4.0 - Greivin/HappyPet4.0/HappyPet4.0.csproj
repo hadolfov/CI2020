@@ -70,7 +70,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Empresas1.1.aspx" />
+    <Content Include="Seguridad\frm_Permisos_Seguridad.aspx" />
+    <Content Include="Seguridad\frm_Recuperar_Contraseña.aspx" />
+    <Content Include="Seguridad\frm_Tipos_Perfil.aspx" />
+    <Content Include="Seguridad\frm_Usuarios.aspx" />
+    <Content Include="Ventas\Empresas1.1.aspx" />
     <Content Include="Inventario\Articulos1.1.aspx" />
     <Content Include="bin\HappyPet4.0.dll" />
     <Content Include="bin\HappyPet4.0.pdb" />
@@ -2056,11 +2060,39 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Empresas1.1.aspx.cs">
+    <Compile Include="Seguridad\frm_Permisos_Seguridad.aspx.cs">
+      <DependentUpon>frm_Permisos_Seguridad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seguridad\frm_Permisos_Seguridad.aspx.designer.cs">
+      <DependentUpon>frm_Permisos_Seguridad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\frm_Recuperar_Contraseña.aspx.cs">
+      <DependentUpon>frm_Recuperar_Contraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seguridad\frm_Recuperar_Contraseña.aspx.designer.cs">
+      <DependentUpon>frm_Recuperar_Contraseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\frm_Tipos_Perfil.aspx.cs">
+      <DependentUpon>frm_Tipos_Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seguridad\frm_Tipos_Perfil.aspx.designer.cs">
+      <DependentUpon>frm_Tipos_Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\frm_Usuarios.aspx.cs">
+      <DependentUpon>frm_Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seguridad\frm_Usuarios.aspx.designer.cs">
+      <DependentUpon>frm_Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Empresas1.1.aspx.cs">
       <DependentUpon>Empresas1.1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Empresas1.1.aspx.designer.cs">
+    <Compile Include="Ventas\Empresas1.1.aspx.designer.cs">
       <DependentUpon>Empresas1.1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inventario\Articulos1.1.aspx.cs">
@@ -3347,7 +3379,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="pages\forms\" />
   </ItemGroup>
