@@ -245,7 +245,7 @@ namespace BLL.BD
         {
             try
             {
-                obj_BD_DAL.sql_CNX = new SqlConnection(ConfigurationManager.ConnectionStrings["CNX_SQL_AUT"].ToString());
+                obj_BD_DAL.sql_CNX = new SqlConnection(ConfigurationManager.ConnectionStrings["CNX_SQL_AUT_LOCAL"].ToString());
 
                 if (obj_BD_DAL.sql_CNX.State == ConnectionState.Closed)
                 {

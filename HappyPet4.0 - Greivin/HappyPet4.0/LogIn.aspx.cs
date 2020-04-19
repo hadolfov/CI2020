@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BLL.MANTENIMIENTO;
+using DL.SCH_SEGURIDAD;
 
 namespace HappyPet4._0
 {
@@ -14,11 +16,23 @@ namespace HappyPet4._0
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "admin" && txtContraseña.Text == "admin")
+            string error = "";
+            BLUsuarioSeguridad usuarioSeguridadBL = new BLUsuarioSeguridad();
+
+            UsuariosSeguridad usuariosSeguridad = new UsuariosSeguridad();
+            usuariosSeguridad.NombreUsuario = txtUsuario.Text;
+            usuariosSeguridad.Contrasenna = txtContraseña.Text;
+            usuariosSeguridad.IdUsuarioSeguridad = usuarioSeguridadBL.consultar_Usuario_Contrasenna(usuariosSeguridad,ref error);
+            if (usuariosSeguridad.IdUsuarioSeguridad > 0)
             {
+                Session["UsuarioSeguridad"] = usuarioSeguridadBL.consultar(usuariosSeguridad, ref error);
                 Response.Redirect("WebForm1.aspx");
+            }
+            else
+            {
+                txtError.Text = error;
             }
         }
     }

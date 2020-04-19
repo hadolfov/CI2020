@@ -67,7 +67,7 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left info">
-                            <p>Jose David Vargas</p>
+                            <asp:Label ID="lblUsuario" runat="server"/>
                         </div>
                     </div>
                     <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -81,6 +81,8 @@
                                 <li><a href="../../Nomina/frmPlanilla.aspx"><i class="fa fa-circle-o"></i>Planilla </a></li>
                                 <li><a href="../../Nomina/frmPermisosyVac.aspx"><i class="fa fa-circle-o"></i>Permisos y Vacaciones </a></li>
                                 <li><a href="../../Nomina/frmMarcas.aspx"><i class="fa fa-circle-o"></i>Marcas</a></li>
+                                <li><a href="../../Nomina/TipoMarca1.1.aspx"><i class="fa fa-circle-o"></i>Tipos de Marcas</a></li>
+                                <li><a href="../../Nomina/TipoPermiso1.1.aspx"><i class="fa fa-circle-o"></i>Tipos de Permisos</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -89,9 +91,9 @@
 
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="../../Inventario/Proveedores.aspx"><i class="fa fa-circle-o"></i>Proveedores</a></li>
+                                <li><a href="../../Inventario/Proveedores1.1.aspx"><i class="fa fa-circle-o"></i>Proveedores</a></li>
                                 <li><a href="../../Inventario/Movimientos%20de%20Inventario.aspx"><i class="fa fa-circle-o"></i>Movimientos de Inventario.aspx</a></li>
-                                <li><a href="../../Inventario/Productos.aspx"><i class="fa fa-circle-o"></i>Productos</a></li>
+                                <li><a href="../../Inventario/Articulos1.1.aspx"><i class="fa fa-circle-o"></i>Artículos</a></li>
                             </ul>
                         </li>
 
@@ -105,7 +107,7 @@
                                 <li><a href="../../Ventas/frm_Citas.aspx"><i class="fa fa-circle-o"></i>Citas</a></li>
                                 <li><a href="../../Ventas/frm_VentaProducto.aspx"><i class="fa fa-circle-o"></i>Venta de Productos</a></li>
                                 <li><a href="../../Ventas/frm_VentaProducto.aspx"><i class="fa fa-circle-o"></i>Registro Cliente</a></li>
-
+                                <li><a href="../../Ventas/Empresas1.1.aspx"><i class="fa fa-circle-o"></i>Empresa</a></li>
                             </ul>
                         </li>
                         <li class="treeview">

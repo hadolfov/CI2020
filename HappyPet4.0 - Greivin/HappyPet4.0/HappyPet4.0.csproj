@@ -70,6 +70,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Seguridad\frm_Permisos_Seguridad.aspx" />
+    <Content Include="Seguridad\frm_Recuperar_Contraseña.aspx" />
+    <Content Include="Seguridad\frm_Tipos_Perfil.aspx" />
+    <Content Include="Seguridad\frm_Usuarios.aspx" />
+    <Content Include="Ventas\Empresas1.1.aspx" />
+    <Content Include="Inventario\Articulos1.1.aspx" />
     <Content Include="bin\HappyPet4.0.dll" />
     <Content Include="bin\HappyPet4.0.pdb" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
@@ -150,6 +156,7 @@
     <Content Include="dist\img\credit\visa.png" />
     <Content Include="dist\img\default-50x50.gif" />
     <Content Include="dist\img\FondoHappyPet.jpg" />
+    <Content Include="dist\img\HappyPet1.1.jpg" />
     <Content Include="dist\img\icons.png" />
     <Content Include="dist\img\photo1.png" />
     <Content Include="dist\img\photo2.png" />
@@ -2039,6 +2046,9 @@
     <Content Include="plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Inventario\Proveedores1.1.aspx" />
+    <Content Include="Nomina\TipoMarca1.1.aspx" />
+    <Content Include="Nomina\TipoPermiso1.1.aspx" />
     <Content Include="Ventas\frm_AtenderCita.aspx" />
     <Content Include="Ventas\frm_Citas.aspx" />
     <Content Include="Ventas\frm_Cliente.aspx" />
@@ -2050,6 +2060,48 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Seguridad\frm_Permisos_Seguridad.aspx.cs">
+      <DependentUpon>frm_Permisos_Seguridad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seguridad\frm_Permisos_Seguridad.aspx.designer.cs">
+      <DependentUpon>frm_Permisos_Seguridad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\frm_Recuperar_Contraseña.aspx.cs">
+      <DependentUpon>frm_Recuperar_Contraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seguridad\frm_Recuperar_Contraseña.aspx.designer.cs">
+      <DependentUpon>frm_Recuperar_Contraseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\frm_Tipos_Perfil.aspx.cs">
+      <DependentUpon>frm_Tipos_Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seguridad\frm_Tipos_Perfil.aspx.designer.cs">
+      <DependentUpon>frm_Tipos_Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\frm_Usuarios.aspx.cs">
+      <DependentUpon>frm_Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seguridad\frm_Usuarios.aspx.designer.cs">
+      <DependentUpon>frm_Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Empresas1.1.aspx.cs">
+      <DependentUpon>Empresas1.1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ventas\Empresas1.1.aspx.designer.cs">
+      <DependentUpon>Empresas1.1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Articulos1.1.aspx.cs">
+      <DependentUpon>Articulos1.1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventario\Articulos1.1.aspx.designer.cs">
+      <DependentUpon>Articulos1.1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inventario\Movimientos de Inventario.aspx.cs">
       <DependentUpon>Movimientos de Inventario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2103,12 +2155,38 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Proveedores1.1.aspx.cs">
+      <DependentUpon>Proveedores1.1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventario\Proveedores1.1.aspx.designer.cs">
+      <DependentUpon>Proveedores1.1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina\TipoMarca1.1.aspx.cs">
+      <DependentUpon>TipoMarca1.1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nomina\TipoMarca1.1.aspx.designer.cs">
+      <DependentUpon>TipoMarca1.1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina\TipoPermiso1.1.aspx.cs">
+      <DependentUpon>TipoPermiso1.1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nomina\TipoPermiso1.1.aspx.designer.cs">
+      <DependentUpon>TipoPermiso1.1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ventas\frm_AtenderCita.aspx.cs">
       <DependentUpon>frm_AtenderCita.aspx</DependentUpon>
@@ -3289,6 +3367,10 @@
     <Content Include="plugins\ckeditor\skins\moono\readme.md" />
     <Content Include="plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="plugins\input-mask\phone-codes\phone-codes.json" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3305,6 +3387,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{f77c3579-9fda-4c06-b042-8c1b93c36145}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{eec364cc-2735-4829-95e4-b4212b95a2c8}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

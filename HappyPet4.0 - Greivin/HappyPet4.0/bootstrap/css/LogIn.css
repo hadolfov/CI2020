@@ -1,11 +1,9 @@
 ﻿body {
-    
-    background-image: url(../../dist/img/FondoHappyPet.jpg) ;
-    background-attachment:fixed !important;
-    background-repeat:no-repeat;
-    background-position:center center;
-    background-size:cover;
-
+    background-image: url('../../dist/img/HappyPet1.1.jpg') !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
 .main-section {
