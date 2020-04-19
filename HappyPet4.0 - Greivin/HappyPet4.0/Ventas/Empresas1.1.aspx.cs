@@ -25,24 +25,21 @@ namespace HappyPet4._0
         {
             DataTable dt = new DataTable();
             DataColumn dc0 = new DataColumn("Id Empresa");
-            DataColumn dc1 = new DataColumn("Tipo Cedula");
-            DataColumn dc2 = new DataColumn("Cedula");
-            DataColumn dc3 = new DataColumn("Nombre");
-            DataColumn dc4 = new DataColumn("Estado");
+            DataColumn dc1 = new DataColumn("Cedula Juridica");
+            DataColumn dc2 = new DataColumn("Descripcon de la Empresa");
+            DataColumn dc3 = new DataColumn("Estado");
 
 
             dt.Columns.Add(dc0);
             dt.Columns.Add(dc1);
             dt.Columns.Add(dc2);
             dt.Columns.Add(dc3);
-            dt.Columns.Add(dc4);
 
 
             DataRow dr = dt.NewRow();
             dr["Id Empresa"] = "1";
-            dr["Tipo Cedula"] = "Fisica";
-            dr["Cedula"] = "xxxxxxxxxx";
-            dr["Nombre"] = "xxxx";
+            dr["Cedula Juridica"] = "xxxxxxxxxx";
+            dr["Descripcon de la Empresa"] = "xxxx";
             dr["Estado"] = "Activo";
             dt.Rows.Add(dr);
 

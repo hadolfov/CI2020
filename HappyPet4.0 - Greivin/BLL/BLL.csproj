@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BD\cls_BD_BLL.cs" />
     <Compile Include="MANTENIMIENTO\Especialidades.cs" />
+    <Compile Include="MANTENIMIENTO\PermisosSeguridad.cs" />
     <Compile Include="MANTENIMIENTO\Sucursales.cs" />
     <Compile Include="MANTENIMIENTO\TipoPerfil.cs" />
     <Compile Include="MANTENIMIENTO\Usuarios.cs" />
