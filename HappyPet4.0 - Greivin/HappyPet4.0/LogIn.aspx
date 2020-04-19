@@ -40,14 +40,14 @@
                     <div class="form-group col-12">
                         <asp:Label ID="lblUsuario" runat="server" Text="Usuario" CssClass="control-label"></asp:Label>
                         <div class="col-12">
-                            <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtUsuario" placeholder="Usuario" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
 
                     <div class="form-group col-12">
                         <asp:Label ID="lblContraseña" runat="server" Text="Contraseña" CssClass="control-label"></asp:Label>
                         <div class="col-12">
-                            <asp:TextBox TextMode="Password" ID="txtContraseña" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox TextMode="Password" placeholder="Contraseña" ID="txtContraseña" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
 

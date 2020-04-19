@@ -45,7 +45,7 @@
         <div class="wrapper">
 
             <header class="main-header">
-                <a class="logo"><b>Veterinaria</b>HappyPet</a>
+                <a class="logo"><b>Veterinaria </b>HappyPet</a>
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -73,6 +73,11 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="header">MENÚ</li>
+                        <li class="treeview">
+                            <a href="../../WebForm1.aspx">
+                                <i class="fa fa-home"></i><span>Inicio</span>
+                            </a>
+                        </li>
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-dashboard"></i><span>Nomina</span> <i class="fa fa-angle-left pull-right"></i>
@@ -112,28 +117,21 @@
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-edit"></i><span>Mantenimiento</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="Ventas/frm_Especie.aspx"><i class="fa fa-circle-o"></i>Mantenimineto Especie & Raza</a></li>
-                                <li><a href="../forms/general.html"><i class="fa fa-circle-o"></i>Insertar</a></li>
-                                <li><a href="../forms/advanced.html"><i class="fa fa-circle-o"></i>Listar</a></li>
-                                <!--<li><a href="../forms/editors.html"><i class="fa fa-circle-o"></i> Consultar</a></li> -->
-                                <li><a href="../forms/editors.html"><i class="fa fa-circle-o"></i>Eliminar</a></li>
-                            </ul>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
                                 <i class="fa fa-table"></i><span>Seguridad</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="#"><i class="fa fa-circle-o"></i>Simple tables</a></li>
-                                <li><a href="#"><i class="fa fa-circle-o"></i>Data tables</a></li>
+                                <li><a href="../../Seguridad/frm_Permisos_Seguridad.aspx"><i class="fa fa-circle-o"></i>Permisos Seguridad</a></li>
+                                <li><a href="../../Seguridad/frm_Recuperar_Contraseña.aspx"><i class="fa fa-circle-o"></i>Recuperar Contraseña</a></li>
+                                <li><a href="../../Seguridad/frm_Usuarios.aspx"><i class="fa fa-circle-o"></i>Usuarios Seguridad</a></li>
+                                <li><a href="../../Seguridad/frm_Tipos_Perfil.aspx"><i class="fa fa-circle-o"></i>Tipos de Perfil</a></li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="treeview">
+                            <a href="../../LogIn.aspx">
+                                <i class="fa fa-sign-out"></i><span>Cerrar Sessión</span>
+                            </a>
+                        </li>
                     </ul>
 
                 </section>

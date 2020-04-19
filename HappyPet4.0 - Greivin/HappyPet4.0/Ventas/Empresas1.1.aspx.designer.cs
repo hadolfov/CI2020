@@ -67,6 +67,15 @@ namespace HappyPet4._0 {
         protected global::System.Web.UI.WebControls.Label lblModalTitle;
         
         /// <summary>
+        /// Control TextBox3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        
+        /// <summary>
         /// Control CheckBox1.
         /// </summary>
         /// <remarks>
@@ -85,13 +94,13 @@ namespace HappyPet4._0 {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control txtCodigo.
+        /// Control ddlTipoIdientificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigo;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoIdientificacion;
         
         /// <summary>
         /// Control TextBox1.

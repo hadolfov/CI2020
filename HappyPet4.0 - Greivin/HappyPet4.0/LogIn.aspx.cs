@@ -13,7 +13,10 @@ namespace HappyPet4._0
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["UsuarioSeguridad"] = null;
+            Session["PermisosSeguridad"] = null;
+            Session["PermisoPagina"] = null;
+            txtUsuario.Focus();
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
@@ -28,6 +31,7 @@ namespace HappyPet4._0
             if (usuariosSeguridad.IdUsuarioSeguridad > 0)
             {
                 Session["UsuarioSeguridad"] = usuarioSeguridadBL.consultar(usuariosSeguridad, ref error);
+                Session["PermisosSeguridad"] = null;
                 Response.Redirect("WebForm1.aspx");
             }
             else
