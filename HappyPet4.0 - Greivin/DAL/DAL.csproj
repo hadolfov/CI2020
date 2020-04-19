@@ -65,8 +65,10 @@
     <Compile Include="SCH_NOMINA\TiposMarca.cs" />
     <Compile Include="SCH_NOMINA\TiposPermiso.cs" />
     <Compile Include="SCH_NOMINA\Usuarios.cs" />
+    <Compile Include="SCH_SEGURIDAD\Constantes.cs" />
     <Compile Include="SCH_SEGURIDAD\Modulos.cs" />
     <Compile Include="SCH_SEGURIDAD\PermisosSeguridad.cs" />
+    <Compile Include="SCH_SEGURIDAD\Permisos_X_Usuarios.cs" />
     <Compile Include="SCH_SEGURIDAD\SubModulos.cs" />
     <Compile Include="SCH_SEGURIDAD\TiposPerfil.cs" />
     <Compile Include="SCH_SEGURIDAD\UsuariosSeguridad.cs" />
