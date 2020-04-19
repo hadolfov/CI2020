@@ -163,7 +163,7 @@ namespace BLL.BD
         {
             try
             {
-                obj_BD_DAL.sConexion = ConfigurationManager.ConnectionStrings["CNX_SQL_AUT"].ToString();
+                obj_BD_DAL.sConexion = ConfigurationManager.ConnectionStrings["CNX_SQL_AUT_LOCAL"].ToString();
                 obj_BD_DAL.sql_CNX = new SqlConnection(obj_BD_DAL.sConexion);
 
                 obj_BD_DAL.sMsjError = string.Empty;
