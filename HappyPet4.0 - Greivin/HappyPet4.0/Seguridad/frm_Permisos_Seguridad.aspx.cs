@@ -66,10 +66,8 @@ namespace HappyPet4._0.Seguridad
 
             if (error == "")
             {
-                txtTipoPerfil.Text = tipo.TipoPerfil;
-                ddlEspecialidades.SelectedValue = tipo.IdEspecialidad.ToString();
-                ddlSucursales.SelectedValue = tipo.IdSucursal.ToString();
-                chkEstado.Checked = tipo.Estado == 1;
+                lblTipoPerfil.Text = tipo.TipoPerfil;
+                
 
                 lblModalTitle.Text = "Editar Tipo de Perfil";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalTipoPerfil", "$('#ModalTipoPerfil').modal();", true);
@@ -119,15 +117,15 @@ namespace HappyPet4._0.Seguridad
         private void GuardarTipoPerfil()
         {
             string error = "";
-            if (ValidarCampos())
+            if (true)
             {
                 BLTipoPerfil BLtipoPerfil = new BLTipoPerfil();
                 TiposPerfil tiposPerfil = new TiposPerfil();
 
-                tiposPerfil.Estado = chkEstado.Checked ? 1 : 2;
-                tiposPerfil.TipoPerfil = txtTipoPerfil.Text;
-                tiposPerfil.IdSucursal = Convert.ToInt32(ddlSucursales.SelectedValue);
-                tiposPerfil.IdEspecialidad = Convert.ToInt32(ddlEspecialidades.SelectedValue);
+                //tiposPerfil.Estado = chkEstado.Checked ? 1 : 2;
+                //tiposPerfil.TipoPerfil = txtTipoPerfil.Text;
+                //tiposPerfil.IdSucursal = Convert.ToInt32(ddlSucursales.SelectedValue);
+                //tiposPerfil.IdEspecialidad = Convert.ToInt32(ddlEspecialidades.SelectedValue);
 
                 if (txtIdTipoPerfil.Text == "")
                 {

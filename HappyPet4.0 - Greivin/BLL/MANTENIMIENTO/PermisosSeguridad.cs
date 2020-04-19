@@ -36,7 +36,7 @@ namespace BLL.MANTENIMIENTO
                     tipoPerfil.Especialidad = obj_BD_DAL.DS.Tables[0].Rows[i][3].ToString();
                     tipoPerfil.Estado = obj_BD_DAL.DS.Tables[0].Rows[i][4].ToString();
 
-                    resultado.Add(tipoPerfil);
+                    //resultado.Add(tipoPerfil);
                 }
 
 
