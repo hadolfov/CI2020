@@ -2056,7 +2056,9 @@
     <Content Include="Ventas\frm_Mascota.aspx" />
     <Content Include="Ventas\frm_Raza.aspx" />
     <Content Include="Ventas\frm_VentaProducto.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
