@@ -18,7 +18,7 @@ namespace HappyPet4._0
             UsuariosSeguridad usuarioSeg = (UsuariosSeguridad)Session["UsuarioSeguridad"];
             BLUsuarios BLUsuarios = new BLUsuarios();
             Usuarios usuarios = BLUsuarios.consultar_IdUsuario(usuarioSeg.IdUsuarioSeguridad, ref error);
-            if (error != "")
+            if (error == "")
             {
                 lblUsuario.Text = usuarios.Nombre + " " + usuarios.PrimerApellido + " " + usuarios.SegundoApellido;
             }
