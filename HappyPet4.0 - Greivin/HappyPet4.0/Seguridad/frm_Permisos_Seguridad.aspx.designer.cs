@@ -105,40 +105,40 @@ namespace HappyPet4._0.Seguridad
         protected global::System.Web.UI.WebControls.CheckBox chkEliminarArticulos;
 
         /// <summary>
-        /// Control chkVerMovimientos.
+        /// Control chkVerMotivos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkVerMovimientos;
+        protected global::System.Web.UI.WebControls.CheckBox chkVerMotivos;
 
         /// <summary>
-        /// Control chkInsertarMovimientos.
+        /// Control chkInsertarMotivos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkInsertarMovimientos;
+        protected global::System.Web.UI.WebControls.CheckBox chkInsertarMotivos;
 
         /// <summary>
-        /// Control chkModificarMovimientos.
+        /// Control chkModificarMotivos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkModificarMovimientos;
+        protected global::System.Web.UI.WebControls.CheckBox chkModificarMotivos;
 
         /// <summary>
-        /// Control chkEliminarMovimientos.
+        /// Control chkEliminarMotivos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkEliminarMovimientos;
+        protected global::System.Web.UI.WebControls.CheckBox chkEliminarMotivos;
 
         /// <summary>
         /// Control chkVerProveedores.

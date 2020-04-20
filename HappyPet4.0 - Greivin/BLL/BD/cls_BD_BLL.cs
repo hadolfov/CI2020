@@ -80,6 +80,9 @@ namespace BLL.BD
                                     case "2":
                                         sqlType = SqlDbType.Int;
                                         break;
+                                    case "3":
+                                        sqlType = SqlDbType.Bit;
+                                        break;
                                     default:
                                         break;
                                 }
@@ -204,6 +207,9 @@ namespace BLL.BD
                                     case "2":
                                         sqlType = SqlDbType.Int;
                                         break;
+                                    case "3":
+                                        sqlType = SqlDbType.Bit;
+                                        break;
                                     default:
                                         break;
                                 }
@@ -269,6 +275,9 @@ namespace BLL.BD
                                 break;
                             case "2":
                                 DBType = SqlDbType.Int;
+                                break;
+                            case "3":
+                                DBType = SqlDbType.Bit;
                                 break;
                             default:
                                 break;

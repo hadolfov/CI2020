@@ -70,265 +70,265 @@
                                 </div>
                                 <div class="col-sm-12" >&nbsp</div>
                                 <label class="col-sm-12 control-label">Inventario </label>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Artículos </label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerArticulos" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarArticulos" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarArticulos" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarArticulos" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Motivos de Movimientos </label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
-                                    <asp:CheckBox runat="server" ID="chkVerMovimientos" />
+                                    <label>Ver</label>
+                                    <asp:CheckBox runat="server" ID="chkVerMotivos" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
-                                    <asp:CheckBox runat="server" ID="chkInsertarMovimientos" />
+                                    <label>Insertar</label>
+                                    <asp:CheckBox runat="server" ID="chkInsertarMotivos" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
-                                    <asp:CheckBox runat="server" ID="chkModificarMovimientos" />
+                                    <label>Modificar</label>
+                                    <asp:CheckBox runat="server" ID="chkModificarMotivos" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
-                                    <asp:CheckBox runat="server" ID="chkEliminarMovimientos" />
+                                    <label>Eliminar</label>
+                                    <asp:CheckBox runat="server" ID="chkEliminarMotivos" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Proveedores</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerProveedores" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarProveedores" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarProveedores" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarProveedores" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Tipos Movimientos</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerTiposMovimientos" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarTiposMovimientos" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarTiposMovimientos" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarTiposMovimientos" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Ingreso y Listados</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerIngreso" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarIngreso" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarIngreso" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarIngreso" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Descontinuar Productos</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerDescontinuar" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarDescontinuar" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarDescontinuar" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarDescontinuar" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Transferencias de Inventario</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerTransferencias" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarTransferencias" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarTransferencias" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarTransferencias" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <div class="col-sm-12" >&nbsp</div>
                                 <label class="col-sm-12 control-label">Nómina </label>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Planilla </label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerPlanilla" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarPlanilla" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarPlanilla" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarPlanilla" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Marcas </label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerMarcas" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarMarcas" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarMarcas" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarMarcas" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Permisos</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerPermisos" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarPermisos" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarPermisos" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarPermisos" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Tipos Marcas</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerTipoMarcas" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarTipoMarcas" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarTipoMarcas" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarTipoMarcas" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Tipos Permisos</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerTipoPermisos" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarTipoPermisos" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarTipoPermisos" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarTipoPermisos" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Tipos Identificación</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerTipoIdentificacion" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarTipoIdentificacion" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarTipoIdentificacion" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarTipoIdentificacion" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <div class="col-sm-12" >&nbsp</div>
                                 <label class="col-sm-12 control-label">Seguridad </label>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Tipo Perfil </label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerTipoPerfil" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarTipoPerfil" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarTipoPerfil" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarTipoPerfil" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Permisos Seguridad</label>
                                 <div class="col-sm-3" >
                                     <label class="control-label">Asignar</label>
@@ -343,153 +343,155 @@
                                 <div class="col-sm-3" >
                                     &nbsp
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Usuario Seguridad</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerUsuarioSeguridad" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarUsuarioSeguridad" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarUsuarioSeguridad" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarUsuarioSeguridad" />
                                 </div>
-                                 <div class="col-sm-12" >&nbsp</div>
+                                 <div class="col-sm-12" ><hr /></div>
                                 <div class="col-sm-12" >&nbsp</div>
                                 <label class="col-sm-12 control-label">Ventas </label>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Empresas </label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerEmpresas" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarEmpresas" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarEmpresas" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarEmpresas" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Sucursales y Cajas</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerSucursales" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarSucursales" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarSucursales" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarSucursales" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Especialidades</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerEspecialidades" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarEspecialidades" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarEspecialidades" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarEspecialidades" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Citas</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerCitas" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarCitas" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarCitas" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarCitas" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Ventas</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerVentas" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarVentas" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarVentas" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarVentas" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Cliente y MAscotas</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerCliente" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarCliente" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarCliente" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarCliente" />
                                 </div>
-                                <div class="col-sm-12" >&nbsp</div>
+                                <div class="col-sm-12" ><hr /></div>
                                 <label class="col-sm-12 control-label">Especie y Razas</label>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Ver</label>
+                                    <label>Ver</label>
                                     <asp:CheckBox runat="server" ID="chkVerEspecie" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Insertar</label>
+                                    <label>Insertar</label>
                                     <asp:CheckBox runat="server" ID="chkInsertarEspecie" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Modificar</label>
+                                    <label>Modificar</label>
                                     <asp:CheckBox runat="server" ID="chkModificarEspecie" />
                                 </div>
                                 <div class="col-sm-3" >
-                                    <label class="control-label">Eliminar</label>
+                                    <label>Eliminar</label>
                                     <asp:CheckBox runat="server" ID="chkEliminarEspecie" />
                                 </div>
+                                <div class="col-sm-12" ><hr /></div>
+                                <div class="col-sm-12" >&nbsp</div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <asp:Button ID="btnCancelar"  data-dismiss="modal" class="btn btn-danger" runat="server" Text="Cancelar" />
