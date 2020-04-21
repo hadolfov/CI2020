@@ -95,7 +95,7 @@
                                          <label class="col-sm-2 control-label">Nombre: </label>
                                          
                                          <div class="col-sm-10">
-                                             <asp:TextBox ID="txtTipoPerfil" placeholder="Nombre de la Sucursal" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
+                                             <asp:TextBox ID="txtTipoPerfil" placeholder="Nombre Tipo Perfl" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
                                          </div>
                                      </div>
                                  </div>

@@ -83,6 +83,12 @@ namespace BLL.BD
                                     case "3":
                                         sqlType = SqlDbType.Bit;
                                         break;
+                                    case "4":
+                                        sqlType = SqlDbType.DateTime;
+                                        break;
+                                    case "5":
+                                        sqlType = SqlDbType.Decimal;
+                                        break;
                                     default:
                                         break;
                                 }
@@ -210,6 +216,12 @@ namespace BLL.BD
                                     case "3":
                                         sqlType = SqlDbType.Bit;
                                         break;
+                                    case "4":
+                                        sqlType = SqlDbType.DateTime;
+                                        break;
+                                    case "5":
+                                        sqlType = SqlDbType.Decimal;
+                                        break;
                                     default:
                                         break;
                                 }
@@ -278,6 +290,12 @@ namespace BLL.BD
                                 break;
                             case "3":
                                 DBType = SqlDbType.Bit;
+                                break;
+                            case "4":
+                                DBType = SqlDbType.DateTime;
+                                break;
+                            case "5":
+                                DBType = SqlDbType.Decimal;
                                 break;
                             default:
                                 break;
