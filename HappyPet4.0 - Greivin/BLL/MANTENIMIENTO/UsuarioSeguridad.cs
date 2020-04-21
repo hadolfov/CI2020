@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using BLL.BD;
 using DAL.BD;
 using DL.SCH_SEGURIDAD;
@@ -59,6 +60,41 @@ namespace BLL.MANTENIMIENTO
                 resultado.Contrasenna = obj_BD_DAL.DS.Tables[0].Rows[0][2].ToString();
                 resultado.Estado = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[0][3].ToString());
                 resultado.IdUsuarioSeguridad = idUsuariosSeguridad;
+                MsjError = string.Empty;
+            }
+            return resultado;
+        }
+
+        public List<viewUsuario> consultar_usuarios(ref string MsjError)
+        {
+            List<viewUsuario> resultado = new List<viewUsuario>();
+            cls_BD_BLL obj_BD_BLL = new cls_BD_BLL();
+            cls_BD_DAL obj_BD_DAL = new cls_BD_DAL();
+
+            obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
+            obj_BD_DAL.sNombreTabla = "tbl_Usuarios";
+            obj_BD_DAL.sSentencia = "SCH_SEGURIDAD.SP_CONSULTAR_USUARIOS";
+            obj_BD_BLL.Ejec_DataAdapter(ref obj_BD_DAL);
+            if (obj_BD_DAL.sMsjError != string.Empty)
+            {
+                MsjError = obj_BD_DAL.sMsjError;
+            }
+            else
+            {
+                for (int i = 0; i <= obj_BD_DAL.DS.Tables[0].Rows.Count - 1; i++)
+                {
+                    viewUsuario usuario = new viewUsuario();
+                    usuario.IdUsuarioSeguridad = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][0]);
+                    usuario.Identificacion = obj_BD_DAL.DS.Tables[0].Rows[i][1].ToString();
+                    usuario.Nombrecompleto = obj_BD_DAL.DS.Tables[0].Rows[i][2].ToString();
+                    usuario.NombreSucursal = obj_BD_DAL.DS.Tables[0].Rows[i][3].ToString();
+                    usuario.TipoPerfil = obj_BD_DAL.DS.Tables[0].Rows[i][4].ToString();
+                    usuario.Estado = obj_BD_DAL.DS.Tables[0].Rows[i][5].ToString();
+
+                    resultado.Add(usuario);
+                }
+
+
                 MsjError = string.Empty;
             }
             return resultado;

@@ -24,7 +24,7 @@ namespace DAL.SCH_SEGURIDAD
             TiposMovimientos = 4,
             IngresoListado = 5,
             DescontinuarProductos = 6,
-            ControlInventario = 7
+            Transferencias = 7
         }
 
         public enum SubModulosNomina
