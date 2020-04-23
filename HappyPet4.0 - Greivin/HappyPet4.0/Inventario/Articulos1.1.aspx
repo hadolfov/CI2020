@@ -83,10 +83,10 @@
                                 
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <asp:CheckBox ID="CheckBox1" runat="server" />
+                                        <asp:CheckBox ID="chkb_Activo" runat="server" />
                                         <asp:Label ID="Label1" runat="server" Text="Activo"></asp:Label>
                                         &nbsp &nbsp &nbsp &nbsp 
-                                         <asp:CheckBox ID="CheckBox2" runat="server" />
+                                         <asp:CheckBox ID="chkb_Servicio" runat="server" />
                                         <asp:Label ID="Label2" runat="server" Text="Servicio"></asp:Label>
                                         <!--<input type="text" maxlength="50" class="form-control"/>  -->
                                     </div>
@@ -110,7 +110,7 @@
                                          <label class="col-sm-2 control-label">Descripcion: </label>
                                          
                                          <div class="col-sm-10">
-                                             <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
+                                             <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
                                              <!-- <input type="text" maxlength="50" class="form-control"/> -->
                                          </div>
                                      </div>
@@ -189,6 +189,28 @@
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Eliminar</button>
+                            <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Salir</button>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
+    <div class="modal fade" id="ModalConfirmar" role="dialog" aria-labelledby="ModalConfirmarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <asp:UpdatePanel ID="UpdatePanelConfirmar" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">
+                                <asp:Label ID="lblConfirmarTitle" runat="server" Text=""></asp:Label></h4>
+                        </div>
+                        <div class="modal-body">
+                            <asp:Label ID="lblConfirmarbody" runat="server" Text=""></asp:Label>
+                        </div>
+                        <div class="modal-footer">
+                            <asp:Button ID="btnGuardarConfirmacion" OnClick="btnGuardarConfirmacion_Click" class="btn btn-success" runat="server" Text="Guardar" />
                             <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Salir</button>
                         </div>
                     </div>
