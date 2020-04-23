@@ -75,6 +75,7 @@
     <Content Include="Seguridad\frm_Recuperar_Contraseña.aspx" />
     <Content Include="Seguridad\frm_Tipos_Perfil.aspx" />
     <Content Include="Seguridad\frm_Usuarios.aspx" />
+    <Content Include="Mantenimiento\TipoIdentificacion.aspx" />
     <Content Include="Ventas\Empresas1.1.aspx" />
     <Content Include="Inventario\Articulos1.1.aspx" />
     <Content Include="bin\HappyPet4.0.dll" />
@@ -2090,6 +2091,13 @@
     </Compile>
     <Compile Include="Seguridad\frm_Usuarios.aspx.designer.cs">
       <DependentUpon>frm_Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\TipoIdentificacion.aspx.cs">
+      <DependentUpon>TipoIdentificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\TipoIdentificacion.aspx.designer.cs">
+      <DependentUpon>TipoIdentificacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ventas\Empresas1.1.aspx.cs">
       <DependentUpon>Empresas1.1.aspx</DependentUpon>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.SCH_SEGURIDAD
+namespace DAL.SCH_NOMINA
 {
     public class Constantes
     {

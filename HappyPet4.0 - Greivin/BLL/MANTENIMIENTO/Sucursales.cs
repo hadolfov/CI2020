@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DL.SCH_MANTENIMIENTO;
+using DL.SCH_NOMINA;
 using BLL.BD;
 using DAL.BD;
 

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BLL.BD;
 using DAL.BD;
-using DAL.SCH_SEGURIDAD;
+using DAL.SCH_NOMINA;
 using DL.SCH_NOMINA;
 //Prueba de modificacion de dato de Maluco
 

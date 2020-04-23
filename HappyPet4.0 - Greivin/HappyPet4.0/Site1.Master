@@ -104,9 +104,8 @@
 
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-laptop"></i>
-                                <span>Ventas</span>
-                                <i class="fa fa-angle-left pull-right"></i>
+                                <i class="fa fa-laptop"></i><span>Ventas</span><i class="fa fa-angle-left pull-right"></i>
+                                
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="../../Ventas/frm_Citas.aspx"><i class="fa fa-circle-o"></i>Citas</a></li>
@@ -127,6 +126,17 @@
                                 <li><a href="../../Seguridad/frm_Tipos_Perfil.aspx"><i class="fa fa-circle-o"></i>Tipos de Perfil</a></li>
                             </ul>
                         </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-laptop"></i><span>Mantenimiento</span><i class="fa fa-angle-left pull-right"></i>
+                                
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="Mantenimiento/TipoIdentificacion.aspx"><i class="fa fa-circle-o"></i>Tipo de Identificacion</a></li>
+                            </ul>
+                        </li>
+                       
                         <li class="treeview">
                             <a href="../../LogIn.aspx">
                                 <i class="fa fa-sign-out"></i><span>Cerrar Sessión</span>
