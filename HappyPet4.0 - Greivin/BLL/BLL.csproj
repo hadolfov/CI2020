@@ -47,6 +47,7 @@
     <Compile Include="MANTENIMIENTO\Articulos.cs" />
     <Compile Include="MANTENIMIENTO\Especialidades.cs" />
     <Compile Include="MANTENIMIENTO\PermisosSeguridad.cs" />
+    <Compile Include="MANTENIMIENTO\Proveedores.cs" />
     <Compile Include="MANTENIMIENTO\Sucursales.cs" />
     <Compile Include="MANTENIMIENTO\TipoPerfil.cs" />
     <Compile Include="MANTENIMIENTO\Usuarios.cs" />

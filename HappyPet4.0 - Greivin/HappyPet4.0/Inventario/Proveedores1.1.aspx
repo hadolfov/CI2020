@@ -25,16 +25,16 @@
                                 <div class="col-sm-3">
                                     <asp:Button runat="server" ID="btnEliminar" Text="Eliminar Proveedor" CssClass="btn btn-danger" OnClick="btnEliminar_Click" />
                                 </div>
-                                <div class="col-sm-3">
+                                <%--<div class="col-sm-3">
                                     <asp:Button runat="server" ID="btnAtenderCita" Text="Atender cita" CssClass="btn btn-info" OnClick="btnAtenderCita_Click" />
-                                </div>
+                                </div>--%>
                                 <div class="col-sm-12">
                                     &nbsp
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-12">
-                            <asp:GridView runat="server" style="align-content:center" CssClass="box" Width="100%" ID="gvCitas" OnRowCommand="gvCitas_RowCommand" CellPadding="4" ForeColor="#333333" GridLines="None" AllowSorting="True">
+                            <asp:GridView runat="server" style="align-content:center" CssClass="box" Width="100%" ID="gvProveedor" OnRowCommand="gvProveedor_RowCommand" CellPadding="4" ForeColor="#333333" GridLines="None" AllowSorting="True">
                                 <AlternatingRowStyle BackColor="White" BorderColor="#999999" BorderStyle="Solid" />
                                 <Columns>
                                     <asp:ButtonField ButtonType="Image" HeaderText="Acción" CommandName="Seleccionar" ImageUrl="~/Imagenes/share.png" />
@@ -73,8 +73,9 @@
                                     <div class="row ">
 
                                         <div class="col-lg-5">
-                                            <label id="lblIdProveedor" class="control-label">Identificación: </label>
-                                            <%--<asp:Label ID="lblIdProveedor" runat="server" Text="Id Proveedor: "></asp:Label>--%>
+                                            <label id="lblIdentificacion" class="control-label">Identificación: </label>
+                                            <asp:TextBox ID="txtIndentificacion" runat="server"></asp:TextBox>
+                                            <asp:Label ID="lblIdProveedor" runat="server" Text="Id Proveedor: "></asp:Label>
                                             <asp:TextBox ID="txtIdProveedor" runat="server"></asp:TextBox>
                                         </div>
 
@@ -90,7 +91,7 @@
 
                                         <div class="col-lg-2 text-md-right">
                                             <label id="lblActivo" class="control-label">Activo: </label>
-                                            <asp:CheckBox ID="CheckBox1" runat="server" />
+                                            <asp:CheckBox ID="chkActivo" runat="server" />
                                         </div>
 
                                     </div>
@@ -136,7 +137,7 @@
                                     
                                     <div class="modal-footer">
                             <div class="col-sm-6">
-                                <asp:Button runat="server" ID="btnGuardarCita" Text="Guardar" OnClick="btnGuardarCita_Click" class="btn btn-success" data-dismiss="modal" aria-hidden="true" />
+                                <asp:Button runat="server" ID="btnGuardar" Text="Guardar" OnClick="btnGuardar_Click" class="btn btn-success" data-dismiss="modal" aria-hidden="true" />
                             </div>
                             <div class="col-sm-6">
                                 <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Cancelar</button>
@@ -175,5 +176,28 @@
             </asp:UpdatePanel>
         </div>
     </div>
+    <div class="modal fade" id="ModalConfirmar" role="dialog" aria-labelledby="ModalConfirmarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <asp:UpdatePanel ID="UpdatePanelConfirmar" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">
+                                <asp:Label ID="lblConfirmarTitle" runat="server" Text=""></asp:Label></h4>
+                        </div>
+                        <div class="modal-body">
+                            <asp:Label ID="lblConfirmarbody" runat="server" Text=""></asp:Label>
+                        </div>
+                        <div class="modal-footer">
+                            <asp:Button ID="btnGuardarConfirmacion" OnClick="btnGuardarConfirmacion_Click" class="btn btn-success" runat="server" Text="Guardar" />
+                            <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Salir</button>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
+
 
 </asp:Content>
