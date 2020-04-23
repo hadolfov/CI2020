@@ -386,3 +386,5 @@ C:\Users\Adrian Araya Aguilar\Desktop\Veterinaria 2\HappyPet4.0 - Greivin\HappyP
 C:\Users\Adrian Araya Aguilar\Desktop\Veterinaria 2\HappyPet4.0 - Greivin\HappyPet4.0\obj\Debug\HappyPet4.0.csproj.CopyComplete
 C:\Users\Adrian Araya Aguilar\Desktop\Veterinaria 2\HappyPet4.0 - Greivin\HappyPet4.0\obj\Debug\HappyPet4.0.dll
 C:\Users\Adrian Araya Aguilar\Desktop\Veterinaria 2\HappyPet4.0 - Greivin\HappyPet4.0\obj\Debug\HappyPet4.0.pdb
+C:\Users\e.chavarria\CI2020\HappyPet4.0 - Greivin\HappyPet4.0\obj\Debug\HappyPet4.0.csprojAssemblyReference.cache
+C:\Users\e.chavarria\CI2020\HappyPet4.0 - Greivin\HappyPet4.0\obj\Debug\HappyPet4.0.csproj.CoreCompileInputs.cache
