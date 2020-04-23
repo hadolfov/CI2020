@@ -74,8 +74,8 @@ namespace HappyPet4._0.Inventario
             private void CargarGrid()
             {
                 string error = "";
-                BLArticulos art = new BLArticulos();
-                gvMotivos.DataSource = art.consultar_articulos(ref error);
+                blMotivos mot = new blMotivos();
+                gvMotivos.DataSource = mot.consultar_Motivos(ref error);
                 gvMotivos.DataBind();
             }
             private void CargarPermisos()
@@ -99,7 +99,7 @@ namespace HappyPet4._0.Inventario
                     }
                 }
             }
-            protected void gvCitas_RowCommand(object sender, GridViewCommandEventArgs e)
+            protected void gvMotivos_RowCommand(object sender, GridViewCommandEventArgs e)
             {
                 if (e.CommandName == "Seleccionar" && IsPostBack)
                 {
