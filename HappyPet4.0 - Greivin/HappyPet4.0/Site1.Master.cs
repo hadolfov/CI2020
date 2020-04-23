@@ -40,7 +40,7 @@ namespace HappyPet4._0
                     Response.Redirect("LogIn.aspx");
                 }
             }
-            catch(Exception ex)
+            catch
             {
                 Response.Redirect("LogIn.aspx");
             }

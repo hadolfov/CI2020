@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using DAL.SCH_NOMINA;
 using BLL.MANTENIMIENTO;
 using DL.SCH_SEGURIDAD;
+using DL.SCH_NOMINA;
 
 namespace HappyPet4._0.Seguridad
 {
@@ -81,39 +82,93 @@ namespace HappyPet4._0.Seguridad
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            txtIdUsuario.Text = "";
-            ddlSucursales.SelectedValue = "0";
-            chkEstado.Checked = true;
+            LimpiarCampos();
 
             lblModalTitle.Text = "Agregar Usuario";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalUsuario", "$('#ModalUsuario').modal();", true);
             upModal.Update();
         }
 
-        protected void btnEditar_Click(object sender, EventArgs e)
+        private void LimpiarCampos()
         {
-            EditarTipoPerfil();
+            txtConfirmarContrasenna.Text = "";
+            txtContrasenna.Text = "";
+            txtEmail.Text = "";
+            txtIdentificacion.Text = "";
+            txtIdUsuario.Text = "";
+            txtNombre.Text = "";
+            txtNombreUsuario.Text = "";
+            txtPrimerApellido.Text = "";
+            txtSegundoApellido.Text = "";
+            txtTelefono1.Text = "";
+            txtTelefono2.Text = "";
+            ddlSucursales.SelectedValue = "0";
+            ddlTipoPerfil.SelectedValue = "0";
+            chkEstado.Checked = true;
         }
 
-        private void EditarTipoPerfil()
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            EditarUsuario();
+        }
+
+        private void EditarUsuario()
         {
             string error = "";
-            BLTipoPerfil bLTipoPerfil = new BLTipoPerfil();
-            TiposPerfil tipo = bLTipoPerfil.consultar_TipoPerfil_Id(Convert.ToInt32(txtIdUsuario.Text), ref error);
 
+            BLUsuarioSeguridad bLUsuariosS = new BLUsuarioSeguridad();
+            BLUsuarios bLUsuariosN = new BLUsuarios();
+            UsuariosSeguridad usuariosSeguridad = bLUsuariosS.consultar(Convert.ToInt32(txtIdUsuario.Text), ref error);
             if (error == "")
             {
-                ddlSucursales.SelectedValue = tipo.IdSucursal.ToString();
-                chkEstado.Checked = tipo.Estado == 1;
+                Usuarios usuarios = bLUsuariosN.consultar_IdUsuario(Convert.ToInt32(txtIdUsuario.Text), ref error);
+                if (error == "")
+                {
+                    txtContrasenna.Text = usuariosSeguridad.Contrasenna;
+                    txtContrasenna.Visible = false;
+                    txtConfirmarContrasenna.Text = usuariosSeguridad.Contrasenna;
+                    txtConfirmarContrasenna.Visible = false;
+                    txtEmail.Text = usuarios.Email;
+                    txtIdentificacion.Text = usuarios.Identificacion;
+                    txtNombre.Text = usuarios.Nombre;
+                    txtNombreUsuario.Text = usuariosSeguridad.NombreUsuario;
+                    txtPrimerApellido.Text = usuarios.PrimerApellido;
+                    txtSegundoApellido.Text = usuarios.SegundoApellido;
+                    txtTelefono1.Text = usuarios.Telefono1;
+                    txtTelefono2.Text = usuarios.Telefono2;
+                    ddlSucursales.SelectedValue = usuarios.IdSucursal.ToString();
+                    CargarTiposPerfil(usuarios.IdSucursal);
+                    ddlTipoPerfil.SelectedValue = usuariosSeguridad.IdTipoPerfil.ToString();
 
-                lblModalTitle.Text = "Editar Tipo de Perfil";
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalTipoPerfil", "$('#ModalTipoPerfil').modal();", true);
-                upModal.Update();
+                    lblModalTitle.Text = "Editar Tipo de Perfil";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalUsuario", "$('#ModalUsuario').modal();", true);
+                    upModal.Update();
+                }
+                else
+                {
+                    MostrarMensaje(error);
+                }
             }
             else
             {
                 MostrarMensaje(error);
             }
+        }
+
+        private void CargarTiposPerfil(int idSucursal)
+        {
+            string error = "";
+            ListItem i;
+
+            BLTipoPerfil tipo = new BLTipoPerfil();
+            ddlTipoPerfil .DataTextField = "TipoPerfil";
+            ddlTipoPerfil.DataValueField = "IdTipoPerfil";
+            ddlTipoPerfil.DataSource = tipo.consultar_TipoPerfil_Activos_Sucursal(idSucursal, ref error);
+            ddlTipoPerfil.DataBind();
+
+            i = new ListItem("Seleccione un Tipo Perfil", "0");
+            ddlTipoPerfil.Items.Insert(0, i);
+
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -134,7 +189,7 @@ namespace HappyPet4._0.Seguridad
                     gvUsuarios.SelectedIndex = -1;
                     btnEditar.Visible = false;
                     btnEliminar.Visible = false;
-                    txtIdUsuario.Text = "";
+                    LimpiarCampos();
                 }
                 else
                 {
@@ -167,32 +222,62 @@ namespace HappyPet4._0.Seguridad
             string error = "";
             if (ValidarCampos())
             {
-                BLTipoPerfil BLtipoPerfil = new BLTipoPerfil();
-                TiposPerfil tiposPerfil = new TiposPerfil();
-
-                tiposPerfil.Estado = chkEstado.Checked ? 1 : 2;
-                tiposPerfil.IdSucursal = Convert.ToInt32(ddlSucursales.SelectedValue);
-
-                if (txtIdUsuario.Text == "")
+                if (txtContrasenna.Text == txtConfirmarContrasenna.Text)
                 {
-                    BLtipoPerfil.Insertar_TipoPerfil(tiposPerfil, ref error);
+                    BLUsuarioSeguridad bLUsuariosS = new BLUsuarioSeguridad();
+                    BLUsuarios bLUsuariosN = new BLUsuarios();
+                    UsuariosSeguridad usuariosSeguridad = new UsuariosSeguridad();
+                    Usuarios usuarios = new Usuarios();
+
+                    usuariosSeguridad.Estado = chkEstado.Checked ? 1 : 2;
+                    
+
+                    usuariosSeguridad.IdTipoPerfil = Convert.ToInt32(ddlTipoPerfil.SelectedValue);
+                    usuariosSeguridad.NombreUsuario = txtNombreUsuario.Text;
+                    usuariosSeguridad.Contrasenna = txtContrasenna.Text;
+
+                    usuarios.Estado = chkEstado.Checked ? 1 : 2;
+                    usuarios.Email = txtEmail.Text;
+                    usuarios.Identificacion = txtIdentificacion.Text;
+                    usuarios.IdSucursal = Convert.ToInt32(ddlSucursales.SelectedValue);
+                    usuarios.Nombre = txtNombre.Text;
+                    usuarios.PrimerApellido = txtPrimerApellido.Text;
+                    usuarios.SegundoApellido = txtSegundoApellido.Text;
+                    usuarios.Telefono1 = txtTelefono1.Text;
+                    usuarios.Telefono2 = txtTelefono2.Text;
+
+                    if (txtIdUsuario.Text == "")
+                    {
+                        usuarios.IdUsuario = bLUsuariosS.insertar(usuariosSeguridad, ref error);
+                        if (error == "")
+                        {
+                            bLUsuariosN.insertar(usuarios, ref error);
+                        }
+                    }
+                    else
+                    {
+                        usuariosSeguridad.IdUsuarioSeguridad = Convert.ToInt32(txtIdUsuario.Text);
+                        bLUsuariosS.modificar(usuariosSeguridad, ref error);
+                        if (error == "")
+                        {
+                            bLUsuariosN.modificar(usuarios, ref error);
+                        }
+                    }
+
+                    if (error == "")
+                    {
+                        Response.Redirect("frm_Usuarios.aspx");
+
+                    }
+                    else
+                    {
+                        MostrarMensaje(error);
+                    }
                 }
                 else
                 {
-                    tiposPerfil.IdTipoPerfil = Convert.ToInt32(txtIdUsuario.Text);
-                    BLtipoPerfil.Modificar_TipoPerfil(tiposPerfil, ref error);
+                    MostrarMensaje("La contraseña no coincide con la confirmación");
                 }
-
-                if (error == "")
-                {
-                    Response.Redirect("frm_Usuarios.aspx");
-
-                }
-                else
-                {
-                    MostrarMensaje(error);
-                }
-
             }
             else
             {
@@ -203,7 +288,16 @@ namespace HappyPet4._0.Seguridad
         private bool ValidarCampos()
         {
             bool valido = true;
-            if (!String.IsNullOrEmpty(txtIdUsuario.Text)
+            if (!String.IsNullOrEmpty(txtConfirmarContrasenna.Text)
+                && !String.IsNullOrEmpty(txtContrasenna.Text)
+                && !String.IsNullOrEmpty(txtEmail.Text)
+                && !String.IsNullOrEmpty(txtIdentificacion.Text)
+                && !String.IsNullOrEmpty(txtNombre.Text)
+                && !String.IsNullOrEmpty(txtNombreUsuario.Text)
+                && !String.IsNullOrEmpty(txtPrimerApellido.Text)
+                && !String.IsNullOrEmpty(txtSegundoApellido.Text)
+                && !String.IsNullOrEmpty(txtTelefono1.Text)
+                && !String.IsNullOrEmpty(txtTelefono2.Text)
                 && Convert.ToInt32(ddlSucursales.SelectedValue) > 0
                 && Convert.ToInt32(ddlTipoPerfil.SelectedValue) > 0)
             {
@@ -224,22 +318,25 @@ namespace HappyPet4._0.Seguridad
         private void EliminarTipoPerfil()
         {
             string error = "";
-            BLTipoPerfil bLTipoPerfil = new BLTipoPerfil();
-            TiposPerfil tipo = bLTipoPerfil.consultar_TipoPerfil_Id(Convert.ToInt32(txtIdUsuario.Text), ref error);
+
+            BLUsuarioSeguridad bLUsuariosS = new BLUsuarioSeguridad();
+            BLUsuarios bLUsuariosN = new BLUsuarios();
+            UsuariosSeguridad usuariosSeguridad = bLUsuariosS.consultar(Convert.ToInt32(txtIdUsuario.Text), ref error);
             if (error == "")
             {
-                tipo.Estado = 3;
-                bLTipoPerfil.Modificar_TipoPerfil(tipo, ref error);
+                Usuarios usuarios = bLUsuariosN.consultar_IdUsuario(Convert.ToInt32(txtIdUsuario.Text), ref error);
                 if (error == "")
                 {
-                    Response.Redirect("frm_Usuarios.aspx");
-                }
-                else
-                {
-                    MostrarMensaje(error);
+                    usuariosSeguridad.Estado = 3;
+                    bLUsuariosS.modificar(usuariosSeguridad, ref error);
+                    if (error == "")
+                    {
+                        usuarios.Estado = 3;
+                        bLUsuariosN.modificar(usuarios, ref error);
+                    }
                 }
             }
-            else
+            if (error != "")
             {
                 MostrarMensaje(error);
             }
@@ -255,6 +352,12 @@ namespace HappyPet4._0.Seguridad
         protected void btnGuardarConfirmacion_Click(object sender, EventArgs e)
         {
             GuardarTipoPerfil();
+        }
+
+        protected void ddlSucursales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarTiposPerfil(Convert.ToInt32(ddlSucursales.SelectedValue));
+            upModal.Update();
         }
     }
 }

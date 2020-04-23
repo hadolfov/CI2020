@@ -102,5 +102,68 @@ namespace BLL.MANTENIMIENTO
             }
             return resultado;
         }
+
+        public void insertar(Usuarios usuario, ref string error)
+        {
+            cls_BD_BLL obj_BD_BLL = new cls_BD_BLL();
+            cls_BD_DAL obj_BD_DAL = new cls_BD_DAL();
+
+            obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
+
+            obj_BD_DAL.dt_Parametros.Rows.Add("@Id_Usuario", 2, usuario.IdUsuario);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@Identificacion", 1, usuario.Identificacion);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@Nombre", 1, usuario.Nombre);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@PrimerApellido", 1, usuario.PrimerApellido);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@SegundoApellido", 1, usuario.SegundoApellido);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@email", 1, usuario.Email);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@Telefono1", 1, usuario.Telefono1);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@Telefono2", 1, usuario.Telefono2);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@IdSucursal", 2, usuario.IdSucursal);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@IdEstado", 2, usuario.Estado);
+ 
+            obj_BD_DAL.sNombreTabla = "tbl_Usuarios";
+            obj_BD_DAL.sSentencia = "SCH_NOMINA.sp_InsertarUsuario";
+            obj_BD_BLL.Ejec_NonQuery(ref obj_BD_DAL);
+            if (obj_BD_DAL.sMsjError != string.Empty)
+            {
+                error = obj_BD_DAL.sMsjError;
+            }
+            else
+            {
+                error = string.Empty;
+            }
+
+        }
+
+        public void modificar(Usuarios usuario, ref string error)
+        {
+            cls_BD_BLL obj_BD_BLL = new cls_BD_BLL();
+            cls_BD_DAL obj_BD_DAL = new cls_BD_DAL();
+
+            obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
+
+            obj_BD_DAL.dt_Parametros.Rows.Add("@Id_Usuario", 2, usuario.IdUsuario);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@Identificacion", 1, usuario.Identificacion);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@Nombre", 1, usuario.Nombre);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@PrimerApellido", 1, usuario.PrimerApellido);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@SegundoApellido", 1, usuario.SegundoApellido);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@email", 1, usuario.Email);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@Telefono1", 1, usuario.Telefono1);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@Telefono2", 1, usuario.Telefono2);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@IdSucursal", 2, usuario.IdSucursal);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@IdEstado", 2, usuario.Estado);
+
+            obj_BD_DAL.sNombreTabla = "tbl_Usuarios";
+            obj_BD_DAL.sSentencia = "SCH_NOMINA.sp_ModificarUsuario";
+            obj_BD_BLL.Ejec_NonQuery(ref obj_BD_DAL);
+            if (obj_BD_DAL.sMsjError != string.Empty)
+            {
+                error = obj_BD_DAL.sMsjError;
+            }
+            else
+            {
+                error = string.Empty;
+            }
+        }
     }
 }

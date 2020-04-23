@@ -124,5 +124,39 @@ namespace BLL.MANTENIMIENTO
             }
             return resultado;
         }
+
+        public List<TiposPerfil> consultar_TipoPerfil_Activos_Sucursal(int idSucursal, ref string error)
+        {
+            List<TiposPerfil> resultado = new List<TiposPerfil>();
+            cls_BD_BLL obj_BD_BLL = new cls_BD_BLL();
+            cls_BD_DAL obj_BD_DAL = new cls_BD_DAL();
+
+            obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@IDSUCURSAL", 2, idSucursal);
+            obj_BD_DAL.sNombreTabla = "tbl_Sucursales";
+            obj_BD_DAL.sSentencia = "SCH_MANTENIMIENTO.sp_ConsultarTipoPerfil_Activos_Sucursal";
+            obj_BD_BLL.Ejec_DataAdapter(ref obj_BD_DAL);
+            if (obj_BD_DAL.sMsjError != string.Empty)
+            {
+                error = obj_BD_DAL.sMsjError;
+            }
+            else
+            {
+                for (int i = 0; i <= obj_BD_DAL.DS.Tables[0].Rows.Count - 1; i++)
+                {
+                    TiposPerfil tipos = new TiposPerfil();
+                    tipos.IdTipoPerfil  = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][0]);
+                    tipos.TipoPerfil  = obj_BD_DAL.DS.Tables[0].Rows[i][1].ToString();
+                    tipos.IdSucursal = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][2]);
+                    tipos.IdEspecialidad = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][3]);
+                    tipos.Estado = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][4]);
+                    resultado.Add(tipos);
+                }
+
+
+                error = string.Empty;
+            }
+            return resultado;
+        }
     }
 }

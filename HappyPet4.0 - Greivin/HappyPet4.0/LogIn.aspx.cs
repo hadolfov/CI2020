@@ -30,7 +30,7 @@ namespace HappyPet4._0
             usuariosSeguridad.IdUsuarioSeguridad = usuarioSeguridadBL.consultar_Usuario_Contrasenna(usuariosSeguridad,ref error);
             if (usuariosSeguridad.IdUsuarioSeguridad > 0)
             {
-                Session["UsuarioSeguridad"] = usuarioSeguridadBL.consultar(usuariosSeguridad, ref error);
+                Session["UsuarioSeguridad"] = usuarioSeguridadBL.consultar(usuariosSeguridad.IdUsuarioSeguridad, ref error);
                 Session["PermisosSeguridad"] = null;
                 Response.Redirect("WebForm1.aspx");
             }

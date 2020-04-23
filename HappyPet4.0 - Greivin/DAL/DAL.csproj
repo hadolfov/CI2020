@@ -45,6 +45,7 @@
     <Compile Include="BD\cls_BD_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SCH_INVENTARIO\Articulo.cs" />
+    <Compile Include="SCH_INVENTARIO\Motivo.cs" />
     <Compile Include="SCH_INVENTARIO\MotivoMovimiento.cs" />
     <Compile Include="SCH_INVENTARIO\MovimientoDetalle.cs" />
     <Compile Include="SCH_INVENTARIO\MovimientoInventario.cs" />

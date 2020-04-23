@@ -99,6 +99,7 @@
                                 <li><a href="../../Inventario/Proveedores1.1.aspx"><i class="fa fa-circle-o"></i>Proveedores</a></li>
                                 <li><a href="../../Inventario/Movimientos%20de%20Inventario.aspx"><i class="fa fa-circle-o"></i>Movimientos de Inventario.aspx</a></li>
                                 <li><a href="../../Inventario/Articulos1.1.aspx"><i class="fa fa-circle-o"></i>Artículos</a></li>
+                                <li><a href="../../Inventario/Motivos.aspx"><i class="fa fa-circle-o"></i>Motivos</a></li>
                             </ul>
                         </li>
 

@@ -113,7 +113,7 @@
                                          <label class="col-sm-2 control-label">Segundo Apellido: </label>
                                          
                                          <div class="col-sm-10">
-                                             <asp:TextBox ID="TextBox1" placeholder="Segundo Apellido" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
+                                             <asp:TextBox ID="txtSegundoApellido" placeholder="Segundo Apellido" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
                                          </div>
                                      </div>
                                  </div>
@@ -132,7 +132,7 @@
                                          <label class="col-sm-2 control-label">Sucursal: </label>
                                          
                                          <div class="col-sm-10">
-                                             <asp:DropDownList ID="ddlSucursales" runat="server" CssClass="form-control" ></asp:DropDownList>
+                                             <asp:DropDownList ID="ddlSucursales" OnSelectedIndexChanged="ddlSucursales_SelectedIndexChanged" runat="server" CssClass="form-control" ></asp:DropDownList>
                                              <!-- <input type="text" maxlength="50" class="form-control"/> -->
                                          </div>
                                      </div>
