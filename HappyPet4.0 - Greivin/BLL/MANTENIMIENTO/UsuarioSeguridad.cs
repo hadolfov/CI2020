@@ -17,7 +17,7 @@ namespace BLL.MANTENIMIENTO
             obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
 
             obj_BD_DAL.dt_Parametros.Rows.Add("@@NOMBREUSUARIO", 1, usuario.NombreUsuario);
-            obj_BD_DAL.dt_Parametros.Rows.Add("@@CONTRASENNA", 1, usuario.Contrasenna);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@CONTRASENNA", 1, obj_BD_BLL.encriptar(usuario.Contrasenna));
             obj_BD_DAL.dt_Parametros.Rows.Add("@@IDTIPOPERFIL", 2, usuario.IdTipoPerfil );
             obj_BD_DAL.dt_Parametros.Rows.Add("@@ID_ESTADO", 2, usuario.Estado);
             obj_BD_DAL.sNombreTabla = "tbl_UsuariosSeguridad";

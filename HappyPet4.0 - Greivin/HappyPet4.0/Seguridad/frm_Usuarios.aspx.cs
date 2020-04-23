@@ -64,14 +64,14 @@ namespace HappyPet4._0.Seguridad
             Modulo modulo = permisosUsuario.Modulos.First(x => x.IdModulo == (int)Constantes.Modulos.Seguridad);
             if (modulo == null)
             {
-                Response.Redirect("LogIn.aspx");
+                Response.Redirect("WebForm1.aspx");
             }
             else
             {
                 SubModulo subModulo = modulo.SubModulos.First(x => x.IdSubModulo == (int)Constantes.SubModulosSeguridad.UsuariosSeguridad);
                 if (subModulo == null)
                 {
-                    Response.Redirect("LogIn.aspx");
+                    Response.Redirect("WebForm1.aspx");
                 }
                 else
                 {
@@ -105,6 +105,10 @@ namespace HappyPet4._0.Seguridad
             ddlSucursales.SelectedValue = "0";
             ddlTipoPerfil.SelectedValue = "0";
             chkEstado.Checked = true;
+            txtContrasenna.Visible = true;
+            lblContrasenna.Visible = true;
+            txtConfirmarContrasenna.Visible = true;
+            lblConfirmarContrasenna.Visible = true;
         }
 
         protected void btnEditar_Click(object sender, EventArgs e)
@@ -126,8 +130,11 @@ namespace HappyPet4._0.Seguridad
                 {
                     txtContrasenna.Text = usuariosSeguridad.Contrasenna;
                     txtContrasenna.Visible = false;
+                    lblContrasenna.Visible = false;
+                    chkEstado.Checked = usuarios.Estado == 1;
                     txtConfirmarContrasenna.Text = usuariosSeguridad.Contrasenna;
                     txtConfirmarContrasenna.Visible = false;
+                    lblConfirmarContrasenna.Visible = false;
                     txtEmail.Text = usuarios.Email;
                     txtIdentificacion.Text = usuarios.Identificacion;
                     txtNombre.Text = usuarios.Nombre;
@@ -230,8 +237,6 @@ namespace HappyPet4._0.Seguridad
                     Usuarios usuarios = new Usuarios();
 
                     usuariosSeguridad.Estado = chkEstado.Checked ? 1 : 2;
-                    
-
                     usuariosSeguridad.IdTipoPerfil = Convert.ToInt32(ddlTipoPerfil.SelectedValue);
                     usuariosSeguridad.NombreUsuario = txtNombreUsuario.Text;
                     usuariosSeguridad.Contrasenna = txtContrasenna.Text;

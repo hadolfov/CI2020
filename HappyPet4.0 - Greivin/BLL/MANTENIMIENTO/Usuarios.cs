@@ -66,38 +66,42 @@ namespace BLL.MANTENIMIENTO
             else
             {
                 resultado = new Permisos_X_Usuarios();
-                resultado.IdUsuario = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[0][0]);
-                resultado.IdTipoPerfil = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[0][1]);
-                resultado.Modulos = new List<Modulo>();
-                Modulo modulo = new Modulo();
-                modulo.IdModulo = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[0][2]);
-                modulo.NombreModulo = obj_BD_DAL.DS.Tables[0].Rows[0][3].ToString();
-                modulo.SubModulos = new List<SubModulo>();
-                SubModulo subModulo;
-
-                for (int i = 0; i < obj_BD_DAL.DS.Tables[0].Rows.Count - 1; i++)
+                if (obj_BD_DAL.DS.Tables[0].Rows.Count > 0)
                 {
-                    if (Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][2]) != modulo.IdModulo)
+                    resultado.IdUsuario = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[0][0]);
+                    resultado.IdTipoPerfil = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[0][1]);
+                    resultado.Modulos = new List<Modulo>();
+                    Modulo modulo = new Modulo();
+                    modulo.IdModulo = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[0][2]);
+                    modulo.NombreModulo = obj_BD_DAL.DS.Tables[0].Rows[0][3].ToString();
+                    modulo.SubModulos = new List<SubModulo>();
+                    SubModulo subModulo;
+
+                    for (int i = 0; i < obj_BD_DAL.DS.Tables[0].Rows.Count - 1; i++)
                     {
-                        resultado.Modulos.Add(modulo);
+                        if (Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][2]) != modulo.IdModulo)
+                        {
+                            resultado.Modulos.Add(modulo);
 
-                        modulo = new Modulo();
-                        modulo.IdModulo = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][2]);
-                        modulo.NombreModulo = obj_BD_DAL.DS.Tables[0].Rows[i][3].ToString();
-                        modulo.SubModulos = new List<SubModulo>();
+                            modulo = new Modulo();
+                            modulo.IdModulo = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][2]);
+                            modulo.NombreModulo = obj_BD_DAL.DS.Tables[0].Rows[i][3].ToString();
+                            modulo.SubModulos = new List<SubModulo>();
+                        }
+
+                        subModulo = new SubModulo();
+                        subModulo.IdSubModulo = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][4]);
+                        subModulo.NombreSubModulo = obj_BD_DAL.DS.Tables[0].Rows[i][5].ToString();
+                        subModulo.Permiso = new Permiso();
+                        subModulo.Permiso.Insertar = Convert.ToBoolean(obj_BD_DAL.DS.Tables[0].Rows[i][6]);
+                        subModulo.Permiso.Modificar = Convert.ToBoolean(obj_BD_DAL.DS.Tables[0].Rows[i][7]);
+                        subModulo.Permiso.Eliminar = Convert.ToBoolean(obj_BD_DAL.DS.Tables[0].Rows[i][8]);
+
+                        modulo.SubModulos.Add(subModulo);
                     }
-
-                    subModulo = new SubModulo();
-                    subModulo.IdSubModulo = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][4]);
-                    subModulo.NombreSubModulo = obj_BD_DAL.DS.Tables[0].Rows[i][5].ToString();
-                    subModulo.Permiso = new Permiso();
-                    subModulo.Permiso.Insertar = Convert.ToBoolean(obj_BD_DAL.DS.Tables[0].Rows[i][6]);
-                    subModulo.Permiso.Modificar = Convert.ToBoolean(obj_BD_DAL.DS.Tables[0].Rows[i][7]);
-                    subModulo.Permiso.Eliminar = Convert.ToBoolean(obj_BD_DAL.DS.Tables[0].Rows[i][8]);
-
-                    modulo.SubModulos.Add(subModulo);
+                    resultado.Modulos.Add(modulo);
                 }
-                resultado.Modulos.Add(modulo);
+
                 MsjError = string.Empty;
             }
             return resultado;
