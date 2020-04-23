@@ -19,7 +19,7 @@ namespace BLL.MANTENIMIENTO
             obj_BD_DAL.dt_Parametros.Rows.Add("@@NOMBREUSUARIO", 1, usuario.NombreUsuario);
             obj_BD_DAL.dt_Parametros.Rows.Add("@@CONTRASENNA", 1, usuario.Contrasenna);
             obj_BD_DAL.dt_Parametros.Rows.Add("@@IDTIPOPERFIL", 2, usuario.IdTipoPerfil );
-            obj_BD_DAL.dt_Parametros.Rows.Add("@@ID_ESTADO", 2, 1);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@ID_ESTADO", 2, usuario.Estado);
             obj_BD_DAL.sNombreTabla = "tbl_UsuariosSeguridad";
             obj_BD_DAL.sSentencia = "SCH_SEGURIDAD.SP_Inserta_USUARIOSSEGURIDAD";
             obj_BD_BLL.Ejec_Scalar(ref obj_BD_DAL);
@@ -35,16 +35,15 @@ namespace BLL.MANTENIMIENTO
             return resultado;
         }
 
-        public UsuariosSeguridad consultar(UsuariosSeguridad usuario, ref string MsjError)
+        public UsuariosSeguridad consultar(int idUsuarioSeguridad, ref string MsjError)
         {
             UsuariosSeguridad resultado = null;
             cls_BD_BLL obj_BD_BLL = new cls_BD_BLL();
             cls_BD_DAL obj_BD_DAL = new cls_BD_DAL();
-            int idUsuariosSeguridad = usuario.IdUsuarioSeguridad;
 
             obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
 
-            obj_BD_DAL.dt_Parametros.Rows.Add("@@IDUSUARIOSEGURIDAD", 2, usuario.IdUsuarioSeguridad );
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@IDUSUARIOSEGURIDAD", 2, idUsuarioSeguridad);
             obj_BD_DAL.sNombreTabla = "tbl_UsuariosSeguridad";
             obj_BD_DAL.sSentencia = "SCH_SEGURIDAD.SP_SELECT_USUARIOSSEGURIDAD";
             obj_BD_BLL.Ejec_DataAdapter(ref obj_BD_DAL);
@@ -57,9 +56,9 @@ namespace BLL.MANTENIMIENTO
                 resultado = new UsuariosSeguridad();
                 resultado.IdTipoPerfil = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[0][0]);
                 resultado.NombreUsuario = obj_BD_DAL.DS.Tables[0].Rows[0][1].ToString();
-                resultado.Contrasenna = obj_BD_DAL.DS.Tables[0].Rows[0][2].ToString();
+                resultado.Contrasenna = obj_BD_BLL.desencriptar(obj_BD_DAL.DS.Tables[0].Rows[0][2].ToString());
                 resultado.Estado = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[0][3].ToString());
-                resultado.IdUsuarioSeguridad = idUsuariosSeguridad;
+                resultado.IdUsuarioSeguridad = idUsuarioSeguridad;
                 MsjError = string.Empty;
             }
             return resultado;
@@ -123,6 +122,31 @@ namespace BLL.MANTENIMIENTO
                 MsjError = string.Empty;
             }
             return resultado;
+        }
+
+        public void modificar(UsuariosSeguridad usuario, ref string error)
+        {
+            cls_BD_BLL obj_BD_BLL = new cls_BD_BLL();
+            cls_BD_DAL obj_BD_DAL = new cls_BD_DAL();
+
+            obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
+
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@NOMBREUSUARIO", 1, usuario.NombreUsuario);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@CONTRASENNA", 1, usuario.Contrasenna);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@IDTIPOPERFIL", 2, usuario.IdTipoPerfil);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@IDUSUARIOSEGURIDAD", 2, usuario.IdUsuarioSeguridad);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@ID_ESTADO", 2, usuario.Estado);
+            obj_BD_DAL.sNombreTabla = "tbl_UsuariosSeguridad";
+            obj_BD_DAL.sSentencia = "SCH_SEGURIDAD.SP_MODIFICA_USUARIOSSEGURIDAD";
+            obj_BD_BLL.Ejec_NonQuery(ref obj_BD_DAL);
+            if (obj_BD_DAL.sMsjError != string.Empty)
+            {
+                error = obj_BD_DAL.sMsjError;
+            }
+            else
+            {
+                error = string.Empty;
+            }
         }
     }
 }

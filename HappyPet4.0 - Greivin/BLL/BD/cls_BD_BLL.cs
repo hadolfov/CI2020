@@ -38,7 +38,7 @@ namespace BLL.BD
             }
         }
 
-        private string desencriptar(string appconexion)
+        public string desencriptar(string appconexion)
         {
             byte[] desenc = Convert.FromBase64String(appconexion);
 
