@@ -5,9 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-using DAL.SCH_SEGURIDAD;
+
 using BLL.MANTENIMIENTO;
 using DL.SCH_INVENTARIO;
+using DAL.SCH_NOMINA;
 
 
 namespace HappyPet4._0

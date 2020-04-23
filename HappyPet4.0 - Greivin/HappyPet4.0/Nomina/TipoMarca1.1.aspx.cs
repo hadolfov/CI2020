@@ -191,12 +191,12 @@ namespace HappyPet4._0
             {
                 BLTipoMarca BLtipoMarca = new BLTipoMarca();
                 TiposMarca tiposMarca = new TiposMarca();
-
+                tiposMarca.IdTipoMarca = Convert.ToInt32(txtCodigo.Text);
                 tiposMarca.Estado = chkEstado.Checked ? 1 : 2;
                 tiposMarca.TipoMarca = txtProducto.Text;
                 
 
-                if (txtCodigo.Text == "")
+                if (txtCodigo.Text != "")
                 {
                     BLtipoMarca.Insertar_TipoMarca(tiposMarca, ref error);
                 }

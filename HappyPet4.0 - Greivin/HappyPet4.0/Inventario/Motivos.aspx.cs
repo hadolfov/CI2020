@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using DAL.SCH_SEGURIDAD;
 using BLL.MANTENIMIENTO;
 using DL.SCH_INVENTARIO;
 using DAL.SCH_INVENTARIO;
+using DAL.SCH_NOMINA;
 
 
 namespace HappyPet4._0.Inventario
@@ -140,14 +140,14 @@ namespace HappyPet4._0.Inventario
                 txtDescripcion.Text = "";
                 
                 lblModalTitle.Text = "Motivos";
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMotivos", "$('#ModalArticulos').modal();", true);
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMotivos", "$('#ModalMotivos').modal();", true);
                 upModal.Update();
             }
 
             protected void btnEditar_Click(object sender, EventArgs e)
             {
                 lblModalTitle.Text = "Editar Motivos";
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMotivos", "$('#ModalArticulos').modal();", true);
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMotivos", "$('#ModalMotivos').modal();", true);
                 upModal.Update();
             }
 

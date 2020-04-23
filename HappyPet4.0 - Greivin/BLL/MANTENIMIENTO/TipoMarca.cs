@@ -20,7 +20,7 @@ namespace BLL.MANTENIMIENTO
             obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
             
             obj_BD_DAL.sNombreTabla = "tbl_TiposMarca";
-            obj_BD_DAL.sSentencia = "SCH_NOMINA.sp_ConsultarTipoMarca";
+            obj_BD_DAL.sSentencia = "SCH_NOMINA.sp_ListarTipoMarca";
             obj_BD_BLL.Ejec_DataAdapter(ref obj_BD_DAL);
             if (obj_BD_DAL.sMsjError != string.Empty)
             {
@@ -52,7 +52,7 @@ namespace BLL.MANTENIMIENTO
 
             obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
 
-           
+            obj_BD_DAL.dt_Parametros.Rows.Add("@IdTipoMarca", 2, tiposMarca.IdTipoMarca);
             obj_BD_DAL.dt_Parametros.Rows.Add("@TipoMarca", 1, tiposMarca.TipoMarca);
             obj_BD_DAL.dt_Parametros.Rows.Add("@IdEstado", 2, tiposMarca.Estado);
             obj_BD_DAL.sNombreTabla = "tbl_TiposMarca";

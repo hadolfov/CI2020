@@ -71,7 +71,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagenes\cerrar-sesion.png" />
+    <Content Include="index.html" />
+    <Content Include="index2.html" />
     <Content Include="Inventario\Motivos.aspx" />
+    <Content Include="LogIn1.1.aspx" />
     <Content Include="Seguridad\frm_Permisos_Seguridad.aspx" />
     <Content Include="Seguridad\frm_Recuperar_Contraseña.aspx" />
     <Content Include="Seguridad\frm_Tipos_Perfil.aspx" />
@@ -2072,6 +2075,13 @@
     <Compile Include="Inventario\Motivos.aspx.designer.cs">
       <DependentUpon>Motivos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LogIn1.1.aspx.cs">
+      <DependentUpon>LogIn1.1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogIn1.1.aspx.designer.cs">
+      <DependentUpon>LogIn1.1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\frm_Permisos_Seguridad.aspx.cs">
       <DependentUpon>frm_Permisos_Seguridad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3374,6 +3384,7 @@
     <Content Include="node_modules\zlib-browserify\package.json" />
     <Content Include="node_modules\zlib-browserify\readme.md" />
     <Content Include="bin\HappyPet4.0.dll.config" />
+    <Content Include="package-lock.json" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="plugins\ckeditor\CHANGES.md" />

@@ -84,7 +84,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Id Marca: </label>
                                         <div class="col-sm-10">
-                                            <asp:TextBox ID="txtCodigo" runat="server" CssClass="form-control" MaxLength="50" ReadOnly="True"></asp:TextBox>
+                                            <asp:TextBox ID="txtCodigo" runat="server" CssClass="form-control" MaxLength="50" ReadOnly="False"></asp:TextBox>
                                             <!--<input type="text" maxlength="50" class="form-control"/>  -->
                                         </div>
                                     </div>
