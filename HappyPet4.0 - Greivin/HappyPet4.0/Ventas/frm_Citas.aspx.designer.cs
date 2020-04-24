@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace HappyPet4._0.Ventas
-{
-
-
-    public partial class frm_Citas
-    {
-
+namespace HappyPet4._0.Ventas {
+    
+    
+    public partial class frm_Citas {
+        
         /// <summary>
         /// Control ddlEspecialidad.
         /// </summary>
@@ -22,7 +20,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEspecialidad;
-
+        
         /// <summary>
         /// Control ddlEspecialista.
         /// </summary>
@@ -31,7 +29,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEspecialista;
-
+        
         /// <summary>
         /// Control txtFecha.
         /// </summary>
@@ -40,7 +38,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFecha;
-
+        
         /// <summary>
         /// Control btnCalendar.
         /// </summary>
@@ -49,7 +47,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton btnCalendar;
-
+        
         /// <summary>
         /// Control calFechaCitas.
         /// </summary>
@@ -58,7 +56,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar calFechaCitas;
-
+        
         /// <summary>
         /// Control btnAgregarCita.
         /// </summary>
@@ -67,7 +65,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregarCita;
-
+        
         /// <summary>
         /// Control btnEditarCita.
         /// </summary>
@@ -76,7 +74,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEditarCita;
-
+        
         /// <summary>
         /// Control btnEliminarCita.
         /// </summary>
@@ -85,7 +83,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEliminarCita;
-
+        
         /// <summary>
         /// Control btnAtenderCita.
         /// </summary>
@@ -94,7 +92,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAtenderCita;
-
+        
         /// <summary>
         /// Control gvCitas.
         /// </summary>
@@ -103,7 +101,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvCitas;
-
+        
         /// <summary>
         /// Control upModal.
         /// </summary>
@@ -112,7 +110,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upModal;
-
+        
         /// <summary>
         /// Control lblModalTitle.
         /// </summary>
@@ -121,7 +119,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblModalTitle;
-
+        
         /// <summary>
         /// Control txtIdentificacionCliente.
         /// </summary>
@@ -130,7 +128,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtIdentificacionCliente;
-
+        
         /// <summary>
         /// Control btnBuscarCliente.
         /// </summary>
@@ -139,7 +137,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton btnBuscarCliente;
-
+        
         /// <summary>
         /// Control btnClienteNuevo.
         /// </summary>
@@ -148,7 +146,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton btnClienteNuevo;
-
+        
         /// <summary>
         /// Control txtNombreCliente.
         /// </summary>
@@ -157,7 +155,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombreCliente;
-
+        
         /// <summary>
         /// Control ddlMascotaCita.
         /// </summary>
@@ -166,7 +164,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlMascotaCita;
-
+        
         /// <summary>
         /// Control btnMascotaNueva.
         /// </summary>
@@ -175,7 +173,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton btnMascotaNueva;
-
+        
         /// <summary>
         /// Control ddlEspecialidadCita.
         /// </summary>
@@ -184,7 +182,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEspecialidadCita;
-
+        
         /// <summary>
         /// Control ddlEspecialistaCita.
         /// </summary>
@@ -193,7 +191,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEspecialistaCita;
-
+        
         /// <summary>
         /// Control calAgendarCita.
         /// </summary>
@@ -202,7 +200,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar calAgendarCita;
-
+        
         /// <summary>
         /// Control txtHoraInicio.
         /// </summary>
@@ -211,7 +209,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHoraInicio;
-
+        
         /// <summary>
         /// Control txtHoraFinal.
         /// </summary>
@@ -220,7 +218,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHoraFinal;
-
+        
         /// <summary>
         /// Control ddlEstadoCita.
         /// </summary>
@@ -229,7 +227,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEstadoCita;
-
+        
         /// <summary>
         /// Control btnGuardarCita.
         /// </summary>
@@ -238,7 +236,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardarCita;
-
+        
         /// <summary>
         /// Control UpdatePanelEliminar.
         /// </summary>
@@ -247,7 +245,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanelEliminar;
-
+        
         /// <summary>
         /// Control lblEliminarTitle.
         /// </summary>
@@ -256,7 +254,7 @@ namespace HappyPet4._0.Ventas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEliminarTitle;
-
+        
         /// <summary>
         /// Control lblEliminarbody.
         /// </summary>

@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace HappyPet4._0 {
-    
-    
-    public partial class LogIn {
-        
+namespace HappyPet4._0
+{
+
+
+    public partial class LogIn
+    {
+
         /// <summary>
         /// Control lblUsuario.
         /// </summary>
@@ -20,7 +22,7 @@ namespace HappyPet4._0 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblUsuario;
-        
+
         /// <summary>
         /// Control txtUsuario.
         /// </summary>
@@ -29,7 +31,7 @@ namespace HappyPet4._0 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUsuario;
-        
+
         /// <summary>
         /// Control lblContraseña.
         /// </summary>
@@ -38,7 +40,7 @@ namespace HappyPet4._0 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblContraseña;
-        
+
         /// <summary>
         /// Control txtContraseña.
         /// </summary>
@@ -47,7 +49,7 @@ namespace HappyPet4._0 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtContraseña;
-        
+
         /// <summary>
         /// Control btnIngresar.
         /// </summary>
@@ -56,5 +58,14 @@ namespace HappyPet4._0 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnIngresar;
+
+        /// <summary>
+        /// Control txtError.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtError;
     }
 }
