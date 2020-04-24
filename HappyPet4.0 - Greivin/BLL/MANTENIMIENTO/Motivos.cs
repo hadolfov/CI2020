@@ -54,7 +54,7 @@ namespace BLL.MANTENIMIENTO
 
             
             obj_BD_DAL.dt_Parametros.Rows.Add("@@Descripcion", 1, objMotivos.Descripción);
-            obj_BD_DAL.dt_Parametros.Rows.Add("@@Estado", 2, objMotivos.Estado);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@Id_Estado", 2, objMotivos.Estado);
             
 
 
@@ -78,9 +78,9 @@ namespace BLL.MANTENIMIENTO
 
             obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
 
-
-            obj_BD_DAL.dt_Parametros.Rows.Add("@@Descripcion", 1, objMotivos.Descripción);
-            obj_BD_DAL.dt_Parametros.Rows.Add("@@Estado", 2, objMotivos.Estado);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@IDMOTIVO", 2, objMotivos.IdMotivo);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@DESCRIPCION", 1, objMotivos.Descripción);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@ID_ESTADO", 2, objMotivos.Estado);
 
 
 

@@ -186,6 +186,15 @@ namespace HappyPet4._0.Seguridad
         protected global::System.Web.UI.WebControls.TextBox txtNombreUsuario;
 
         /// <summary>
+        /// Control lblContrasenna.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblContrasenna;
+
+        /// <summary>
         /// Control txtContrasenna.
         /// </summary>
         /// <remarks>
@@ -193,6 +202,15 @@ namespace HappyPet4._0.Seguridad
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtContrasenna;
+
+        /// <summary>
+        /// Control lblConfirmarContrasenna.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblConfirmarContrasenna;
 
         /// <summary>
         /// Control txtConfirmarContrasenna.

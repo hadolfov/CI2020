@@ -90,7 +90,7 @@
                                
                                 <hr />
                                 <br />
-                                 <div class="col-lg-4">
+                                 <div class="col-lg-6">
                                      <div class="form-group">
                                          <label class="col-sm-2 control-label">Nombre: </label>
                                          
@@ -99,7 +99,7 @@
                                          </div>
                                      </div>
                                  </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-6">
                                      <div class="form-group">
                                          <label class="col-sm-2 control-label">Primer Apellido: </label>
                                          
@@ -108,7 +108,7 @@
                                          </div>
                                      </div>
                                  </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-6">
                                      <div class="form-group">
                                          <label class="col-sm-2 control-label">Segundo Apellido: </label>
                                          
@@ -132,13 +132,13 @@
                                          <label class="col-sm-2 control-label">Sucursal: </label>
                                          
                                          <div class="col-sm-10">
-                                             <asp:DropDownList ID="ddlSucursales" OnSelectedIndexChanged="ddlSucursales_SelectedIndexChanged" runat="server" CssClass="form-control" ></asp:DropDownList>
+                                             <asp:DropDownList ID="ddlSucursales" OnSelectedIndexChanged="ddlSucursales_SelectedIndexChanged" runat="server" CssClass="form-control" OnTextChanged="ddlSucursales_SelectedIndexChanged" AutoPostBack="true" ></asp:DropDownList>
                                              <!-- <input type="text" maxlength="50" class="form-control"/> -->
                                          </div>
                                      </div>
                                  </div>
                                 <div class="col-lg-12">&nbsp</div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-6">
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Email: </label>
                                         
@@ -147,26 +147,27 @@
                                          </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label">Teléfono 1: </label>
+                                        <label class="col-sm-3 control-label">Teléfono 1: </label>
                                         
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-9">
                                              <asp:TextBox ID="txtTelefono1" placeholder="Teléfono" runat="server" CssClass="form-control" MaxLength="20"></asp:TextBox>
                                          </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-12">&nbsp</div>
+                                <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label">Teléfono 2: </label>
+                                        <label class="col-sm-3 control-label">Teléfono 2: </label>
                                         
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-9">
                                              <asp:TextBox ID="txtTelefono2" placeholder="Teléfono" runat="server" CssClass="form-control" MaxLength="20"></asp:TextBox>
                                          </div>
                                     </div>
                                 </div>
-                                <hr />
-                                <br />
+                                <div class="col-lg-12">&nbsp</div>
+                                <div class="col-lg-12">&nbsp</div>
                                 <label class="col-sm-12 control-label">Usuario Seguridad</label>
                                 <div class="col-lg-12">&nbsp</div>
                                 <div class="col-lg-6">
@@ -189,8 +190,7 @@
                                  </div>
                                 <div class="col-lg-6">
                                      <div class="form-group">
-                                         <label class="col-sm-2 control-label">Contraseña: </label>
-                                         
+                                         <asp:Label runat ="server" class="col-sm-2" ID ="lblContrasenna" Text ="Contraseña:" />
                                          <div class="col-sm-10">
                                              <asp:TextBox ID="txtContrasenna" placeholder="Contraseña" runat="server" CssClass="form-control" MaxLength="20"></asp:TextBox>
                                          </div>
@@ -198,8 +198,7 @@
                                  </div>
                                 <div class="col-lg-6">
                                      <div class="form-group">
-                                         <label class="col-sm-2 control-label">Confirmar Contraseña: </label>
-                                         
+                                         <asp:Label runat ="server" class="col-sm-2" ID ="lblConfirmarContrasenna" Text ="Confirmar Contraseña:" />
                                          <div class="col-sm-10">
                                              <asp:TextBox ID="txtConfirmarContrasenna" placeholder="Confirmar Contraseña" runat="server" CssClass="form-control" MaxLength="20"></asp:TextBox>
                                          </div>

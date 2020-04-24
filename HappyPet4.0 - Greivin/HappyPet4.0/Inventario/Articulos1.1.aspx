@@ -147,6 +147,16 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Cantidad Disponible: </label>
+                                        
+                                        <div class="col-sm-10">
+                                            <asp:TextBox ID="txtCantDisponible" TextMode="Number" runat="server" CssClass="form-control" MaxLength="10000000"></asp:TextBox>
+                                            <!-- <input type="number" max="10000000" min="0"  class="form-control"/> -->
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-lg-12">&nbsp</div>
                                 <div class="col-lg-12">&nbsp</div>
                                 <div class="col-lg-12">&nbsp</div>
@@ -158,7 +168,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <asp:Button ID="btnGuardar" class="btn btn-success" runat="server" Text="Guardar" />
+                                        <asp:Button ID="btnGuardar" OnClick="btnGuardar_Click" class="btn btn-success" runat="server" Text="Guardar" />
                                         <!-- <button type="button" class="btn btn-success">Guardar</button> -->
                                     </div>
                                 </div>

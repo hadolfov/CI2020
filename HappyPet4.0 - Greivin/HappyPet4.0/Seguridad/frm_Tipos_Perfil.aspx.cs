@@ -71,21 +71,28 @@ namespace HappyPet4._0.Seguridad
         private void CargarPermisos()
         {
             Permisos_X_Usuarios permisosUsuario = (Permisos_X_Usuarios)Session["PermisosSeguridad"];
-            Modulo modulo = permisosUsuario.Modulos.First(x => x.IdModulo == (int)Constantes.Modulos.Seguridad);
-            if (modulo == null)
+            if (permisosUsuario.Modulos == null)
             {
-                Response.Redirect("LogIn.aspx");
+                Response.Redirect("WebForm1.aspx");
             }
             else
             {
-                SubModulo subModulo = modulo.SubModulos.First(x => x.IdSubModulo == (int)Constantes.SubModulosSeguridad.TiposPerfil);
-                if (subModulo == null)
+                Modulo modulo = permisosUsuario.Modulos.First(x => x.IdModulo == (int)Constantes.Modulos.Seguridad);
+                if (modulo == null)
                 {
-                    Response.Redirect("LogIn.aspx");
+                    Response.Redirect("WebForm1.aspx");
                 }
                 else
                 {
-                    Session["PermisoPagina"] = subModulo.Permiso;
+                    SubModulo subModulo = modulo.SubModulos.First(x => x.IdSubModulo == (int)Constantes.SubModulosSeguridad.TiposPerfil);
+                    if (subModulo == null)
+                    {
+                        Response.Redirect("WebForm1.aspx");
+                    }
+                    else
+                    {
+                        Session["PermisoPagina"] = subModulo.Permiso;
+                    }
                 }
             }
         }

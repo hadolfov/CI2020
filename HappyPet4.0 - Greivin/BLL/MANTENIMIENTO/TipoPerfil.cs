@@ -134,7 +134,7 @@ namespace BLL.MANTENIMIENTO
             obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
             obj_BD_DAL.dt_Parametros.Rows.Add("@@IDSUCURSAL", 2, idSucursal);
             obj_BD_DAL.sNombreTabla = "tbl_Sucursales";
-            obj_BD_DAL.sSentencia = "SCH_MANTENIMIENTO.sp_ConsultarTipoPerfil_Activos_Sucursal";
+            obj_BD_DAL.sSentencia = "SCH_SEGURIDAD.sp_ConsultarTipoPerfil_Activos_Sucursal";
             obj_BD_BLL.Ejec_DataAdapter(ref obj_BD_DAL);
             if (obj_BD_DAL.sMsjError != string.Empty)
             {
