@@ -81,6 +81,7 @@
     <Content Include="index.html" />
     <Content Include="index2.html" />
     <Content Include="Inventario\Motivos.aspx" />
+    <Content Include="Inventario\TiposMovimientos.aspx" />
     <Content Include="LogIn1.1.aspx" />
     <Content Include="Seguridad\frm_Permisos_Seguridad.aspx" />
     <Content Include="Seguridad\frm_Recuperar_Contraseña.aspx" />
@@ -2081,6 +2082,13 @@
     </Compile>
     <Compile Include="Inventario\Motivos.aspx.designer.cs">
       <DependentUpon>Motivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\TiposMovimientos.aspx.cs">
+      <DependentUpon>TiposMovimientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventario\TiposMovimientos.aspx.designer.cs">
+      <DependentUpon>TiposMovimientos.aspx</DependentUpon>
     </Compile>
     <Compile Include="LogIn1.1.aspx.cs">
       <DependentUpon>LogIn1.1.aspx</DependentUpon>

@@ -1,11 +1,12 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Motivos.aspx.cs" Inherits="HappyPet4._0.Inventario.Motivos" %>
+﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TiposMovimientos.aspx.cs" Inherits="HappyPet4._0.Inventario.TiposMovimientos" %>--%>
+<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="TiposMovimientos.aspx.cs" Inherits="HappyPet4._0.Inventario.TiposMovimientos" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 
     <div class="row">
         <div class="container well">
             <div class="col-lg-12">
-                <h3 class="page-header"><i class="fa fa-file-text-o">&nbsp</i>Motivos</h3>
+                <h3 class="page-header"><i class="fa fa-file-text-o">&nbsp</i>TiposMovimientos</h3>
             </div>
 
             <div class="col-lg-12">
@@ -17,13 +18,13 @@
                         <div class="col-sm-10">
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <asp:Button runat="server" ID="btnAgregar" Text="Agregar Motivo " CssClass="btn btn-success" OnClick="btnAgregar_Click" />
+                                    <asp:Button runat="server" ID="btnAgregar" Text="Agregar TipoMovimiento " CssClass="btn btn-success" OnClick="btnAgregar_Click" />
                                 </div>
                                 <div class="col-sm-3">
-                                    <asp:Button runat="server" ID="btnEditar" Text="Editar Motivo" CssClass="btn btn-warning" OnClick="btnEditar_Click" />
+                                    <asp:Button runat="server" ID="btnEditar" Text="Editar TipoMovimiento" CssClass="btn btn-warning" OnClick="btnEditar_Click" />
                                 </div>
                                 <div class="col-sm-3">
-                                    <asp:Button runat="server" ID="btnEliminar" Text="Eliminar Motivo" CssClass="btn btn-danger" OnClick="btnEliminar_Click" />
+                                    <asp:Button runat="server" ID="btnEliminar" Text="Eliminar TipoMovimiento" CssClass="btn btn-danger" OnClick="btnEliminar_Click" />
                                 </div>
 
                                 <div class="col-sm-12">
@@ -32,7 +33,7 @@
                             </div>
                         </div>
                         <div class="col-sm-12">
-                            <asp:GridView runat="server" Style="align-content: center" CssClass="box" Width="100%" ID="gvMotivos" OnRowCommand="gvMotivos_RowCommand" CellPadding="4" ForeColor="#333333" GridLines="None" AllowSorting="True">
+                            <asp:GridView runat="server" Style="align-content: center" CssClass="box" Width="100%" ID="gvTiposMovimientos" OnRowCommand="gvTiposMovimientos_RowCommand" CellPadding="4" ForeColor="#333333" GridLines="None" AllowSorting="True">
                                 <AlternatingRowStyle BackColor="White" BorderColor="#999999" BorderStyle="Solid" />
                                 <Columns>
                                     <asp:ButtonField ButtonType="Image" HeaderText="Acción" CommandName="Seleccionar" ImageUrl="~/Imagenes/share.png" />
@@ -56,7 +57,7 @@
     </div>
 
 
-    <div class="modal fade" id="ModalMotivos" role="dialog" aria-labelledby="ModalMotivosLabel" aria-hidden="true">
+    <div class="modal fade" id="ModalTiposMovimientos" role="dialog" aria-labelledby="ModalTiposMovimientosLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" style="width: 80%">
             <asp:UpdatePanel ID="upModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
                 <ContentTemplate>
@@ -72,10 +73,10 @@
 
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label">Id Motivo: </label>
+                                        <label class="col-sm-2 control-label">Id TipoMovimiento: </label>
                                         
                                         <div class="col-sm-10">
-                                            <asp:TextBox ID="txtIdMotivo" runat="server" CssClass="form-control" MaxLength="50" ReadOnly="True"></asp:TextBox>
+                                            <asp:TextBox ID="txtIdTipoMovimiento" runat="server" CssClass="form-control" MaxLength="50" ReadOnly="True"></asp:TextBox>
                                             <!--<input type="text" maxlength="50" class="form-control"/>  -->
                                         </div>
                                     </div>
@@ -94,10 +95,10 @@
                                 <br />
                                  <div class="col-lg-6">
                                      <div class="form-group">
-                                         <label class="col-sm-2 control-label">Descripcion: </label>
+                                         <label class="col-sm-2 control-label">Tipo Movimientos: </label>
                                          
                                          <div class="col-sm-10">
-                                             <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
+                                             <asp:TextBox ID="txtTipoMovimiento" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
                                              <!-- <input type="text" maxlength="50" class="form-control"/> -->
                                          </div>
                                      </div>

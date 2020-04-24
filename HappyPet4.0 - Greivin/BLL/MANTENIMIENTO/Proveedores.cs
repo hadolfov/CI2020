@@ -32,13 +32,14 @@ namespace BLL.MANTENIMIENTO
                     viewProveedor vProveedor = new viewProveedor();
                     vProveedor.IdTipoIdentificacion = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][0].ToString());
                     vProveedor.Identificacion = obj_BD_DAL.DS.Tables[0].Rows[i][1].ToString();
-                    vProveedor.Nombre = obj_BD_DAL.DS.Tables[0].Rows[i][2].ToString();
-                    vProveedor.Apellido1 = obj_BD_DAL.DS.Tables[0].Rows[i][3].ToString();
-                    vProveedor.Apellido2 = obj_BD_DAL.DS.Tables[0].Rows[i][4].ToString();
-                    vProveedor.Email = obj_BD_DAL.DS.Tables[0].Rows[i][5].ToString();
-                    vProveedor.Telefono1 = obj_BD_DAL.DS.Tables[0].Rows[i][6].ToString();
-                    vProveedor.Telefono2 = obj_BD_DAL.DS.Tables[0].Rows[i][7].ToString();
-                    vProveedor.Estado = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][8].ToString());
+                    vProveedor.Estado = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][2].ToString());
+                    vProveedor.Nombre = obj_BD_DAL.DS.Tables[0].Rows[i][3].ToString();
+                    vProveedor.Apellido1 = obj_BD_DAL.DS.Tables[0].Rows[i][4].ToString();
+                    vProveedor.Apellido2 = obj_BD_DAL.DS.Tables[0].Rows[i][5].ToString();
+                    vProveedor.Email = obj_BD_DAL.DS.Tables[0].Rows[i][6].ToString();
+                    vProveedor.Telefono1 = obj_BD_DAL.DS.Tables[0].Rows[i][7].ToString();
+                    vProveedor.Telefono2 = obj_BD_DAL.DS.Tables[0].Rows[i][8].ToString();
+                   
 
                     resultado.Add(vProveedor);
                 }
@@ -116,8 +117,8 @@ namespace BLL.MANTENIMIENTO
 
             obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
 
-            obj_BD_DAL.dt_Parametros.Rows.Add("@@IDTIPOPERFIL", 2, idProveedor);
-            obj_BD_DAL.sNombreTabla = "tbl_TiposPerfil";
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@IDPROVEEDOR", 2, idProveedor);
+            obj_BD_DAL.sNombreTabla = "tbl_proveedor";
             obj_BD_DAL.sSentencia = "SCH_INVENTARIO.SP_SELECT_Proveedor";
             obj_BD_BLL.Ejec_DataAdapter(ref obj_BD_DAL);
             if (obj_BD_DAL.sMsjError != string.Empty)
@@ -136,6 +137,7 @@ namespace BLL.MANTENIMIENTO
                 resultado.Telefono1 = obj_BD_DAL.DS.Tables[0].Rows[0][6].ToString();
                 resultado.Telefono2 = obj_BD_DAL.DS.Tables[0].Rows[0][7].ToString();
                 resultado.Estado = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[0][8].ToString());
+                resultado.IdProveedor = idProveedor;
 
                 error = string.Empty;
             }

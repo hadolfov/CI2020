@@ -10,7 +10,7 @@
 namespace HappyPet4._0.Inventario {
     
     
-    public partial class Motivos {
+    public partial class TiposMovimientos {
         
         /// <summary>
         /// Control btnAgregar.
@@ -40,13 +40,13 @@ namespace HappyPet4._0.Inventario {
         protected global::System.Web.UI.WebControls.Button btnEliminar;
         
         /// <summary>
-        /// Control gvMotivos.
+        /// Control gvTiposMovimientos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvMotivos;
+        protected global::System.Web.UI.WebControls.GridView gvTiposMovimientos;
         
         /// <summary>
         /// Control upModal.
@@ -67,13 +67,13 @@ namespace HappyPet4._0.Inventario {
         protected global::System.Web.UI.WebControls.Label lblModalTitle;
         
         /// <summary>
-        /// Control txtIdMotivo.
+        /// Control txtIdTipoMovimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdMotivo;
+        protected global::System.Web.UI.WebControls.TextBox txtIdTipoMovimiento;
         
         /// <summary>
         /// Control chkb_Activo.
@@ -94,13 +94,13 @@ namespace HappyPet4._0.Inventario {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control txtDescripcion.
+        /// Control txtTipoMovimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
+        protected global::System.Web.UI.WebControls.TextBox txtTipoMovimiento;
         
         /// <summary>
         /// Control btnLimpiar.

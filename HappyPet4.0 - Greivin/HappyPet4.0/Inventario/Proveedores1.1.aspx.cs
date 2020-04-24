@@ -72,6 +72,7 @@ namespace HappyPet4._0
             txtNombre.Text = "";
             txtNumTel2.Text = "";
             txtNumTelefono1.Text = "";
+            txtIndentificacion.Text = "";
 
             //ddlSucursales.SelectedValue = "0";
 
@@ -90,12 +91,15 @@ namespace HappyPet4._0
         {
             string error = "";
             blProveedores bLProveedoresl = new blProveedores();
-            Proveedor newProveedor = bLProveedoresl.consultar_Proveedor_Id(Convert.ToInt32(txtIdProveedor.Text), ref error);
+            int id = Convert.ToInt32(gvProveedor.SelectedRow.Cells[1].Text);
+            Proveedor newProveedor = bLProveedoresl.consultar_Proveedor_Id(id, ref error);
 
             if (error == "")
             {
-                txtIdProveedor.Text = newProveedor.Identificacion;
-                txtIndentificacion.Text = newProveedor.IdTipoIdentificacion.ToString();
+                id = newProveedor.IdProveedor;
+                ddlTipoIdientificacion.SelectedValue = newProveedor.IdTipoIdentificacion.ToString();
+                txtIdProveedor.Text = id.ToString();
+                txtIndentificacion.Text = newProveedor.Identificacion;
                 txtNombre.Text = newProveedor.Nombre;
                 txtApellido1.Text = newProveedor.Apellido1;
                 txtApellido2.Text = newProveedor.Apellido2;
@@ -145,7 +149,23 @@ namespace HappyPet4._0
                         btnEliminar.Visible = true;
                     }
 
-                    txtIndentificacion.Text = gvProveedor.SelectedRow.Cells[1].Text;
+                    ddlTipoIdientificacion.SelectedValue = gvProveedor.SelectedRow.Cells[1].ToString();
+                    txtIndentificacion.Text = gvProveedor.SelectedRow.Cells[2].Text;
+                    
+                    txtNombre.Text = gvProveedor.SelectedRow.Cells[3].Text;
+                    txtApellido1.Text = gvProveedor.SelectedRow.Cells[4].Text;
+                    txtApellido2.Text = gvProveedor.SelectedRow.Cells[5].Text;
+                    txtEmail.Text = gvProveedor.SelectedRow.Cells[6].Text;
+                    txtNumTelefono1.Text = gvProveedor.SelectedRow.Cells[7].Text;
+                    txtNumTel2.Text = gvProveedor.SelectedRow.Cells[8].Text;
+                    if (Convert.ToString(gvProveedor.SelectedRow.Cells[9].Text) == "1")
+                    {
+                        chkActivo.Checked = true;
+                    }
+                    else
+                    {
+                        chkActivo.Checked = false;
+                    }
                 }
 
 
@@ -228,10 +248,10 @@ namespace HappyPet4._0
 
         protected void btnEliminarConfirmacion_Click(object sender, EventArgs e)
         {
-            EliminarTipoPerfil();
+            EliminarProveedores();
         }
 
-        private void EliminarTipoPerfil()
+        private void EliminarProveedores()
         {
             string error = "";
             blProveedores BLproveedores = new blProveedores();
@@ -242,7 +262,7 @@ namespace HappyPet4._0
                 BLproveedores.Modificar_Proveedor(prove, ref error);
                 if (error == "")
                 {
-                    Response.Redirect("frm_Tipos_Perfil.aspx");
+                    Response.Redirect("Proveedores1.1.aspx");
                 }
                 else
                 {
@@ -266,71 +286,73 @@ namespace HappyPet4._0
         {
             GuardarTipoPerfil();
         }
+
+
+
+
+        //private void CargarCombos()
+        //{
+        //    string error = "";
+        //    ListItem i;
+
+        //    BLSucursales sucursales = new BLSucursales();
+        //    ddlSucursales.DataTextField = "DesSucursal";
+        //    ddlSucursales.DataValueField = "IdSucursal";
+        //    ddlSucursales.DataSource = sucursales.consultar_Sucursales_Activas(ref error);
+        //    ddlSucursales.DataBind();
+
+        //    i = new ListItem("Seleccione una Sucursal", "0");
+        //    ddlSucursales.Items.Insert(0, i);
+        //    //ddlSucursales.Items.Insert(0, "Seleccione una Sucursal");
+
+        //    BLEspecialidades especialidades = new BLEspecialidades();
+        //    ddlEspecialidades.DataTextField = "DesEspecialidad";
+        //    ddlEspecialidades.DataValueField = "IdEspecialidad";
+        //    ddlEspecialidades.DataSource = especialidades.consultar_Especialidades_Activas(ref error);
+        //    ddlEspecialidades.DataBind();
+
+        //    i = new ListItem("Seleccione una Especialidad", "0");
+        //    ddlEspecialidades.Items.Insert(0, i);
+        //    //ddlEspecialidades.Items.Insert(0, "Seleccione una Especialidad");
+        //}
+
+
+        //private void CargarPrueba()
+        //{
+        //    DataTable dt = new DataTable();
+        //    DataColumn dc0 = new DataColumn("Identificacion");
+        //    DataColumn dc1 = new DataColumn("Nombre Empresa/Persona");
+        //    DataColumn dc2 = new DataColumn("Primer Apellido");
+        //    DataColumn dc3 = new DataColumn("Segundo Apellido");
+        //    DataColumn dc4 = new DataColumn("Email");
+        //    DataColumn dc5 = new DataColumn("Numero Telefono 1");
+        //    DataColumn dc6 = new DataColumn("Numero Telefono 2");
+        //    DataColumn dc7 = new DataColumn("Estado");
+
+        //    dt.Columns.Add(dc0);
+        //    dt.Columns.Add(dc1);
+        //    dt.Columns.Add(dc2);
+        //    dt.Columns.Add(dc3);
+        //    dt.Columns.Add(dc4);
+        //    dt.Columns.Add(dc5);
+        //    dt.Columns.Add(dc6);
+        //    dt.Columns.Add(dc7);
+
+        //    DataRow dr = dt.NewRow();
+        //    dr["Identificacion"] = "3102415633";
+        //    dr["Nombre Empresa/Persona"] = "Greencore";
+        //    dr["Primer Apellido"] = "Solutions";
+        //    dr["Segundo Apellido"] = "SRL";
+        //    dr["Email"] = "xxx@greecore.co.cr";
+        //    dr["Numero Telefono 1"] = "111-111-111";
+        //    dr["Numero Telefono 2"] = "222-222-222";
+        //    dr["Estado"] = "Activo";
+        //    dt.Rows.Add(dr);
+
+        //    gvCitas.DataSource = dt;
+        //    gvCitas.DataBind();
+        //
     }
-
-
-    //private void CargarCombos()
-    //{
-    //    string error = "";
-    //    ListItem i;
-
-    //    BLSucursales sucursales = new BLSucursales();
-    //    ddlSucursales.DataTextField = "DesSucursal";
-    //    ddlSucursales.DataValueField = "IdSucursal";
-    //    ddlSucursales.DataSource = sucursales.consultar_Sucursales_Activas(ref error);
-    //    ddlSucursales.DataBind();
-
-    //    i = new ListItem("Seleccione una Sucursal", "0");
-    //    ddlSucursales.Items.Insert(0, i);
-    //    //ddlSucursales.Items.Insert(0, "Seleccione una Sucursal");
-
-    //    BLEspecialidades especialidades = new BLEspecialidades();
-    //    ddlEspecialidades.DataTextField = "DesEspecialidad";
-    //    ddlEspecialidades.DataValueField = "IdEspecialidad";
-    //    ddlEspecialidades.DataSource = especialidades.consultar_Especialidades_Activas(ref error);
-    //    ddlEspecialidades.DataBind();
-
-    //    i = new ListItem("Seleccione una Especialidad", "0");
-    //    ddlEspecialidades.Items.Insert(0, i);
-    //    //ddlEspecialidades.Items.Insert(0, "Seleccione una Especialidad");
-    //}
-
-
-    //private void CargarPrueba()
-    //{
-    //    DataTable dt = new DataTable();
-    //    DataColumn dc0 = new DataColumn("Identificacion");
-    //    DataColumn dc1 = new DataColumn("Nombre Empresa/Persona");
-    //    DataColumn dc2 = new DataColumn("Primer Apellido");
-    //    DataColumn dc3 = new DataColumn("Segundo Apellido");
-    //    DataColumn dc4 = new DataColumn("Email");
-    //    DataColumn dc5 = new DataColumn("Numero Telefono 1");
-    //    DataColumn dc6 = new DataColumn("Numero Telefono 2");
-    //    DataColumn dc7 = new DataColumn("Estado");
-
-    //    dt.Columns.Add(dc0);
-    //    dt.Columns.Add(dc1);
-    //    dt.Columns.Add(dc2);
-    //    dt.Columns.Add(dc3);
-    //    dt.Columns.Add(dc4);
-    //    dt.Columns.Add(dc5);
-    //    dt.Columns.Add(dc6);
-    //    dt.Columns.Add(dc7);
-
-    //    DataRow dr = dt.NewRow();
-    //    dr["Identificacion"] = "3102415633";
-    //    dr["Nombre Empresa/Persona"] = "Greencore";
-    //    dr["Primer Apellido"] = "Solutions";
-    //    dr["Segundo Apellido"] = "SRL";
-    //    dr["Email"] = "xxx@greecore.co.cr";
-    //    dr["Numero Telefono 1"] = "111-111-111";
-    //    dr["Numero Telefono 2"] = "222-222-222";
-    //    dr["Estado"] = "Activo";
-    //    dt.Rows.Add(dr);
-
-    //    gvCitas.DataSource = dt;
-    //    gvCitas.DataBind();
-    //}
 
 
 

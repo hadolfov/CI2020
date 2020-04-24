@@ -240,35 +240,64 @@ namespace HappyPet4._0.Inventario
                 GuardarArticulo();
             }
 
-            //protected void gvCitas_RowCommand(object sender, GridViewCommandEventArgs e)
-            //{
-            //    if (e.CommandName == "Seleccionar" && IsPostBack)
-            //    {
-            //        int index = Convert.ToInt32(e.CommandArgument);
-            //        if (gvCitas.SelectedIndex == index)
-            //        {
-            //            gvCitas.SelectedIndex = -1;
-            //            btnEditar.Visible = false;
-            //            btnEliminar.Visible = false;
-            //        }
-            //        else
-            //        {
-            //            //gvCitas.SelectedIndex = index;
-            //            //if (gvCitas.Rows[index].Cells[6].Text == "Confirmada")
-            //            //{
-            //            //    btnAtender.Visible = true;
-            //            //}
-            //            //else
-            //            //{
-            //            //    btnAtenderCita.Visible = false;
-            //            //}
-            //            btnEditar.Visible = true;
-            //            btnEliminar.Visible = true;
-            //        }
-            //        //TableCell contactName = selectedRow.Cells[1];
-            //        //string contact = contactName.Text;
-            //    }
-            //}
-
+        protected void btnEliminarConfirmacion_Click(object sender, EventArgs e)
+        {
+            EliminarMotivo();
         }
+
+        private void EliminarMotivo()
+        {
+            string error = "";
+            blMotivos bLArticulos = new blMotivos();
+            Motivo tipo = bLArticulos.consultar_Motivo_d(Convert.ToInt32(txtIdMotivo.Text), ref error);
+            if (error == "")
+            {
+                tipo.Estado = 3;
+                bLArticulos.Modificar_Articulo(tipo, ref error);
+                if (error == "")
+                {
+                    Response.Redirect("Motivos.aspx");
+                }
+                else
+                {
+                    MostrarMensaje(error);
+                }
+            }
+            else
+            {
+                MostrarMensaje(error);
+            }
+        }
+
+        //protected void gvCitas_RowCommand(object sender, GridViewCommandEventArgs e)
+        //{
+        //    if (e.CommandName == "Seleccionar" && IsPostBack)
+        //    {
+        //        int index = Convert.ToInt32(e.CommandArgument);
+        //        if (gvCitas.SelectedIndex == index)
+        //        {
+        //            gvCitas.SelectedIndex = -1;
+        //            btnEditar.Visible = false;
+        //            btnEliminar.Visible = false;
+        //        }
+        //        else
+        //        {
+        //            //gvCitas.SelectedIndex = index;
+        //            //if (gvCitas.Rows[index].Cells[6].Text == "Confirmada")
+        //            //{
+        //            //    btnAtender.Visible = true;
+        //            //}
+        //            //else
+        //            //{
+        //            //    btnAtenderCita.Visible = false;
+        //            //}
+        //            btnEditar.Visible = true;
+        //            btnEliminar.Visible = true;
+        //        }
+        //        //TableCell contactName = selectedRow.Cells[1];
+        //        //string contact = contactName.Text;
+        //    }
+        //}
+
+    }
     }

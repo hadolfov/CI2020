@@ -69,17 +69,10 @@
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <div class="form-control">
+                                <%--<div class="form-control">--%>
+                                    
                                     <div class="row ">
-
-                                        <div class="col-md-5">
-                                            <label id="lblIdentificacion" class="control-label">Identificación: </label>
-                                            <asp:TextBox ID="txtIndentificacion" runat="server"></asp:TextBox>
-                                            <asp:Label ID="lblIdProveedor" runat="server" Text="Id Proveedor: "></asp:Label>
-                                            <asp:TextBox ID="txtIdProveedor" runat="server"></asp:TextBox>
-                                        </div>
-
-                                        <div class="col-md-5">
+                                        <div class="col-md-4">
                                             <label id="lblTipoIdentificacion" class="control-label">Identificación: </label>
                                             <asp:DropDownList runat="server" ID="ddlTipoIdientificacion">
                                                 <asp:ListItem Text="Cédula Jurídica" Value="0" />
@@ -88,16 +81,27 @@
                                                 <asp:ListItem Text="NITE" Value="2" />
                                             </asp:DropDownList>
                                         </div>
-
-                                        <div class="col-lg-2 text-md-right">
-                                            <label id="lblActivo" class="control-label">Activo: </label>
-                                            <asp:CheckBox ID="chkActivo" runat="server" />
+                                        <div class="col-md-4">
+                                            <label id="lblIdentificacion" class="control-label">Identificación: </label>
+                                            <asp:TextBox ID="txtIndentificacion" runat="server"></asp:TextBox>
+                                            
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label id="lblIdProveedor"  class="control-label">Id Proveedor: </label>
+                                            <asp:TextBox ID="txtIdProveedor" ReadOnly="True" runat="server"></asp:TextBox>
                                         </div>
 
-                                    </div>
+                                        
+                                       
 
-                                    <hr />
+                                        
+
+                                    </div>
+                                <br />
                                     <br />
+                                    <br />
+                                   <%-- <hr />--%>
+                                    <%--<br />--%>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <label class="control-label">Nombre Empresa / Persona: </label>
@@ -136,10 +140,14 @@
                                     <div class="col-lg-12">&nbsp</div>
                                     
                                     <div class="modal-footer">
-                            <div class="col-sm-6">
+                                         <div class="col-sm-3">
+                                            <label id="lblActivo" class="control-label">Activo: </label>
+                                            <asp:CheckBox ID="chkActivo" runat="server" />
+                                        </div>
+                            <div class="col-sm-3">
                                 <asp:Button runat="server" ID="btnGuardar" Text="Guardar" OnClick="btnGuardar_Click" class="btn btn-success" data-dismiss="modal" aria-hidden="true" />
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-3">
                                 <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Cancelar</button>
                             </div>
                         </div>
@@ -168,7 +176,7 @@
                             <asp:Label ID="lblEliminarbody" runat="server" Text=""></asp:Label>
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Eliminar</button>
+                            <asp:Button ID="btnEliminarConfirmacion" OnClick="btnEliminarConfirmacion_Click" class="btn btn-danger" runat="server" Text="Eliminar" />
                             <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Salir</button>
                         </div>
                     </div>

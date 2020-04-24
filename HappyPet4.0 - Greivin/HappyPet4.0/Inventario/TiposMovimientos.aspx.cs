@@ -4,17 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-
 using BLL.MANTENIMIENTO;
 using DL.SCH_INVENTARIO;
+using DAL.SCH_INVENTARIO;
 using DAL.SCH_NOMINA;
 
 
-namespace HappyPet4._0
+namespace HappyPet4._0.Inventario
 {
-    public partial class Articulos1__1 : System.Web.UI.Page
+    public partial class TiposMovimientos : System.Web.UI.Page
     {
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -32,8 +33,8 @@ namespace HappyPet4._0
                 CargarGrid();
                 btnEditar.Visible = false;
                 btnEliminar.Visible = false;
-                gvCitas.SelectedIndex = -1;
-                
+                gvTiposMovimientos.SelectedIndex = -1;
+
             }
         }
 
@@ -73,9 +74,9 @@ namespace HappyPet4._0
         private void CargarGrid()
         {
             string error = "";
-            BLArticulos art = new BLArticulos();
-            gvCitas.DataSource = art.consultar_articulos(ref error);
-            gvCitas.DataBind();
+            blTiposMovimientos mot = new blTiposMovimientos();
+            gvTiposMovimientos.DataSource = mot.consultar_TiposMovimientos(ref error);
+            gvTiposMovimientos.DataBind();
         }
         private void CargarPermisos()
         {
@@ -98,21 +99,21 @@ namespace HappyPet4._0
                 }
             }
         }
-        protected void gvCitas_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void gvTiposMovimientos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Seleccionar" && IsPostBack)
             {
                 int index = Convert.ToInt32(e.CommandArgument);
-                if (gvCitas.SelectedIndex == index)
+                if (gvTiposMovimientos.SelectedIndex == index)
                 {
-                    gvCitas.SelectedIndex = -1;
+                    gvTiposMovimientos.SelectedIndex = -1;
                     btnEditar.Visible = false;
                     btnEliminar.Visible = false;
-                    txtProducto.Text = "";
+                    txtTipoMovimiento.Text = "";
                 }
                 else
                 {
-                    gvCitas.SelectedIndex = index;
+                    gvTiposMovimientos.SelectedIndex = index;
                     Permiso permiso = (Permiso)Session["PermisoPagina"];
                     if (permiso.Modificar)
                     {
@@ -122,22 +123,10 @@ namespace HappyPet4._0
                     {
                         btnEliminar.Visible = true;
                     }
-                    txtCodigo.Text = gvCitas.SelectedRow.Cells[1].Text;
-                    txtProducto.Text = gvCitas.SelectedRow.Cells[2].Text;
-                    txtDescripcion.Text = gvCitas.SelectedRow.Cells[3].Text;
-                    if (gvCitas.SelectedRow.Cells[4].Text=="true")
-                    {
-                        chkb_Servicio.Checked = true;
-                    }
-                    else
-                    {
-                        chkb_Servicio.Checked = false;
-                    } 
-                    txtPecioArt.Text = gvCitas.SelectedRow.Cells[5].Text;
-                    txtCantDisponible.Text = gvCitas.SelectedRow.Cells[6].Text;
-                    txtCantMaximo.Text = gvCitas.SelectedRow.Cells[7].Text;
-                    txtCantMinimo.Text = gvCitas.SelectedRow.Cells[8].Text;
-                    if (Convert.ToString(gvCitas.SelectedRow.Cells[9].Text) == "1")
+
+                    txtIdTipoMovimiento.Text = gvTiposMovimientos.SelectedRow.Cells[1].Text;
+                    txtTipoMovimiento.Text = gvTiposMovimientos.SelectedRow.Cells[2].Text;
+                    if (Convert.ToString(gvTiposMovimientos.SelectedRow.Cells[3].Text) == "1")
                     {
                         chkb_Activo.Checked = true;
                     }
@@ -145,8 +134,6 @@ namespace HappyPet4._0
                     {
                         chkb_Activo.Checked = false;
                     }
-                    
-                    
                 }
 
 
@@ -155,40 +142,35 @@ namespace HappyPet4._0
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            txtCodigo.Text = "";
+            txtTipoMovimiento.Text = "";
             chkb_Activo.Checked = false;
-            chkb_Servicio.Checked = false;
-            txtProducto.Text = "";
-            txtDescripcion.Text = "";
-            txtCantMinimo.Text = "";
-            txtCantMaximo.Text = "";
-            txtPecioArt.Text = "";
-            txtCantDisponible.Text = "";
 
+            txtIdTipoMovimiento.Text = "";
+            txtTipoMovimiento.Text = "";
 
-            lblModalTitle.Text = "Articulos";
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalArticulos", "$('#ModalArticulos').modal();", true);
+            lblModalTitle.Text = "TiposMovimientos";
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalTiposMovimientos", "$('#ModalTiposMovimientos').modal();", true);
             upModal.Update();
         }
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-            lblModalTitle.Text = "Editar Articulos";
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalArticulos", "$('#ModalArticulos').modal();", true);
+            lblModalTitle.Text = "Editar TiposMovimientos";
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalTiposMovimientos", "$('#ModalTiposMovimientos').modal();", true);
             upModal.Update();
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            lblEliminarTitle.Text = "Eliminar Articulo";
-            lblEliminarbody.Text = "Desea Eliminar el Articulo?";
+            lblEliminarTitle.Text = "Eliminar Motivo";
+            lblEliminarbody.Text = "Desea Eliminar el Motivo?";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalEliminar", "$('#ModalEliminar').modal();", true);
             upModal.Update();
         }
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            lblConfirmarTitle.Text = "Guardar Tipo de Perfil";
-            lblConfirmarbody.Text = "Desea Guardar el Tipo de Perfil " + txtProducto.Text + "?";
+            lblConfirmarTitle.Text = "Guardar Motivo";
+            lblConfirmarbody.Text = "Desea Guardar el motivo " + txtIdTipoMovimiento.Text + "?";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalConfirmar", "$('#ModalConfirmar').modal();", true);
             UpdatePanelConfirmar.Update();
         }
@@ -198,31 +180,28 @@ namespace HappyPet4._0
             string error = "";
             if (ValidarCampos())
             {
-                Articulo objArticulo = new Articulo();
-                BLArticulos bLArticulos = new BLArticulos();
-                objArticulo.NombreArticulo = txtProducto.Text;
-                objArticulo.Descripcion = txtDescripcion.Text;
-                objArticulo.Precio = Convert.ToDouble(txtPecioArt.Text);
-                objArticulo.Servicio = chkb_Servicio.Checked ? true : false;
+                TipoMovimiento objArticulo = new TipoMovimiento();
+                blTiposMovimientos OobjMotivo = new blTiposMovimientos();
+                objArticulo.NombreTipo = txtTipoMovimiento.Text;
                 objArticulo.Estado = chkb_Activo.Checked ? 1 : 2;
-                objArticulo.CantidadMin = Convert.ToInt32(txtCantMinimo.Text);
-                objArticulo.CantidadMax = Convert.ToInt32(txtCantMaximo.Text);
-                objArticulo.CantidadStock = Convert.ToInt32(txtCantDisponible.Text);
-                
-                
-                if (txtCodigo.Text == "")
+
+
+
+                if (txtIdTipoMovimiento.Text == "")
                 {
-                  bLArticulos.Insertar_Articulo (objArticulo, ref error);
+                    OobjMotivo.Insertar_TipoMovimiento(objArticulo, ref error);
                 }
                 else
                 {
-                    objArticulo.IdArticulo = Convert.ToInt32(txtCodigo.Text);
-                    bLArticulos.Modificar_Articulo(objArticulo, ref error);
+                    objArticulo.IdTipo = Convert.ToInt32(txtIdTipoMovimiento.Text);
+                    objArticulo.Estado = chkb_Activo.Checked ? 1 : 2;
+                    objArticulo.NombreTipo = txtTipoMovimiento.Text;
+                    OobjMotivo.Modificar_TipoMov(objArticulo, ref error);
                 }
 
                 if (error == "")
                 {
-                    Response.Redirect("Articulos1.1.aspx");
+                    Response.Redirect("TiposMovimientos.aspx");
 
                 }
                 else
@@ -233,7 +212,7 @@ namespace HappyPet4._0
             }
             else
             {
-                MostrarMensaje("Debe completar todos los campos para guardar el Articulo");
+                MostrarMensaje("Debe completar todos los campos para guardar el Tipo de Perfil");
             }
         }
         protected void MostrarMensaje(string msj)
@@ -241,44 +220,17 @@ namespace HappyPet4._0
             string script = "alert('" + msj + "');";
 
             ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);
-        }   
+        }
         private bool ValidarCampos()
         {
             bool valido = true;
-            if (!String.IsNullOrEmpty(txtProducto.Text)
-                && (!String.IsNullOrEmpty(txtDescripcion.Text))
-                && (!String.IsNullOrEmpty(txtPecioArt.Text))
-                && (!String.IsNullOrEmpty(txtCantMaximo.Text))
-                && (!String.IsNullOrEmpty(txtCantMinimo.Text))
-                && (!String.IsNullOrEmpty(txtCantDisponible.Text))
-               )
-                
-            {
-                valido = true;
-                valido = ValidarCantidad();
-            }
-            else
-            {
-                valido = false;
-            }
-            return valido;
-        }
-        private bool ValidarCantidad()
-        {
-            bool valido = true;
-            if (Convert.ToInt32(txtCantMinimo.Text)>0
-                && (Convert.ToInt32(txtCantDisponible.Text) > 0
-                && (Convert.ToInt32(txtPecioArt.Text) > 0
-                && (Convert.ToInt32(txtCantDisponible.Text) > Convert.ToInt32(txtCantMinimo.Text))
-                && (Convert.ToInt32(txtCantDisponible.Text) < Convert.ToInt32(txtCantMaximo.Text))
-                && (Convert.ToInt32(txtCantMinimo.Text) < (Convert.ToInt32(txtCantMaximo.Text))))))
+            if (!String.IsNullOrEmpty(txtTipoMovimiento.Text))
 
             {
                 valido = true;
             }
             else
             {
-                MostrarMensaje("Valores no permitidos en precio o cantidades de Articulos");
                 valido = false;
             }
             return valido;
@@ -289,21 +241,21 @@ namespace HappyPet4._0
         }
         protected void btnEliminarConfirmacion_Click(object sender, EventArgs e)
         {
-            EliminarArticulo();
+            EliminarTipoPerfil();
         }
 
-        private void EliminarArticulo()
+        private void EliminarTipoPerfil()
         {
             string error = "";
-            BLArticulos bLArticulos = new BLArticulos();
-            Articulo tipo = bLArticulos.consultar_Articulos_Id(Convert.ToInt32(txtCodigo.Text), ref error);
+            blTiposMovimientos bLTipoPerfil = new blTiposMovimientos();
+            TipoMovimiento tipo = bLTipoPerfil.consultar_Tipo_Movimiento_id(Convert.ToInt32(txtIdTipoMovimiento.Text), ref error);
             if (error == "")
             {
                 tipo.Estado = 3;
-                bLArticulos.Modificar_Articulo(tipo, ref error);
+                bLTipoPerfil.Modificar_TipoMov(tipo, ref error);
                 if (error == "")
                 {
-                    Response.Redirect("Articulos1.1.aspx");
+                    Response.Redirect("TiposMovimientos.aspx");
                 }
                 else
                 {

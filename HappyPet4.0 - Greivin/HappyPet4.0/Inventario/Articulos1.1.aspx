@@ -198,7 +198,7 @@
                             <asp:Label ID="lblEliminarbody" runat="server" Text=""></asp:Label>
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Eliminar</button>
+                            <asp:Button ID="btnEliminarConfirmacion" OnClick="btnEliminarConfirmacion_Click" class="btn btn-danger" runat="server" Text="Eliminar" />
                             <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Salir</button>
                         </div>
                     </div>

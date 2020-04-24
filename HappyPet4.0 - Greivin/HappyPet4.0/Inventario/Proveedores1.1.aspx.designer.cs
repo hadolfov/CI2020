@@ -67,33 +67,6 @@ namespace HappyPet4._0 {
         protected global::System.Web.UI.WebControls.Label lblModalTitle;
         
         /// <summary>
-        /// Control txtIndentificacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIndentificacion;
-        
-        /// <summary>
-        /// Control lblIdProveedor.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdProveedor;
-        
-        /// <summary>
-        /// Control txtIdProveedor.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdProveedor;
-        
-        /// <summary>
         /// Control ddlTipoIdientificacion.
         /// </summary>
         /// <remarks>
@@ -103,13 +76,22 @@ namespace HappyPet4._0 {
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoIdientificacion;
         
         /// <summary>
-        /// Control chkActivo.
+        /// Control txtIndentificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkActivo;
+        protected global::System.Web.UI.WebControls.TextBox txtIndentificacion;
+        
+        /// <summary>
+        /// Control txtIdProveedor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtIdProveedor;
         
         /// <summary>
         /// Control txtNombre.
@@ -166,6 +148,15 @@ namespace HappyPet4._0 {
         protected global::System.Web.UI.WebControls.TextBox txtNumTel2;
         
         /// <summary>
+        /// Control chkActivo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkActivo;
+        
+        /// <summary>
         /// Control btnGuardar.
         /// </summary>
         /// <remarks>
@@ -200,6 +191,15 @@ namespace HappyPet4._0 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEliminarbody;
+        
+        /// <summary>
+        /// Control btnEliminarConfirmacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEliminarConfirmacion;
         
         /// <summary>
         /// Control UpdatePanelConfirmar.
