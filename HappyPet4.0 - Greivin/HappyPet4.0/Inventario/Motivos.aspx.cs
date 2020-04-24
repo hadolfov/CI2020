@@ -123,9 +123,18 @@ namespace HappyPet4._0.Inventario
                         {
                             btnEliminar.Visible = true;
                         }
-
-                        txtDescripcion.Text = gvMotivos.SelectedRow.Cells[1].Text;
+                    
+                    txtIdMotivo.Text = gvMotivos.SelectedRow.Cells[1].Text;
+                        txtDescripcion.Text = gvMotivos.SelectedRow.Cells[2].Text;
+                    if (Convert.ToString(gvMotivos.SelectedRow.Cells[3].Text)=="1")
+                    {
+                        chkb_Activo.Checked = true;
                     }
+                    else
+                    {
+                        chkb_Activo.Checked = false;
+                    }
+                }
 
 
                 }
@@ -173,7 +182,6 @@ namespace HappyPet4._0.Inventario
                 {
                     Motivo objArticulo = new Motivo();
                     blMotivos OobjMotivo = new blMotivos();
-                    objArticulo.IdMotivo = Convert.ToInt32(txtIdMotivo.Text);
                     objArticulo.Descripción = txtDescripcion.Text;
                     objArticulo.Estado = chkb_Activo.Checked ? 1 : 2;
                     
@@ -185,13 +193,15 @@ namespace HappyPet4._0.Inventario
                     }
                     else
                     {
-                        objArticulo.Descripción = txtDescripcion.Text;
+                    objArticulo.IdMotivo = Convert.ToInt32(txtIdMotivo.Text);
+                        objArticulo.Estado = chkb_Activo.Checked ? 1 : 2;
+                    objArticulo.Descripción = txtDescripcion.Text;
                         OobjMotivo.Modificar_Articulo(objArticulo, ref error);
                     }
 
                     if (error == "")
                     {
-                        Response.Redirect("Articulos1.1.aspx");
+                        Response.Redirect("Motivos.aspx");
 
                     }
                     else
@@ -214,9 +224,7 @@ namespace HappyPet4._0.Inventario
             private bool ValidarCampos()
             {
                 bool valido = true;
-                if (!String.IsNullOrEmpty(txtDescripcion.Text)
-                    && (!String.IsNullOrEmpty(txtIdMotivo.Text))
-                    && (chkb_Activo.Checked = false))
+                if (!String.IsNullOrEmpty(txtDescripcion.Text))
 
                 {
                     valido = true;

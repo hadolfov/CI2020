@@ -123,7 +123,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <asp:Button ID="btnGuardar" class="btn btn-success" runat="server" Text="Guardar" />
+                                        <asp:Button ID="btnGuardar" OnClick="btnGuardar_Click" class="btn btn-success" runat="server" Text="Guardar" />
                                         <!-- <button type="button" class="btn btn-success">Guardar</button> -->
                                     </div>
                                 </div>

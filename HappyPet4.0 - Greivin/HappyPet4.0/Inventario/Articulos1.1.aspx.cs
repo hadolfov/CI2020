@@ -122,8 +122,31 @@ namespace HappyPet4._0
                     {
                         btnEliminar.Visible = true;
                     }
-
-                    txtProducto.Text = gvCitas.SelectedRow.Cells[1].Text;
+                    txtCodigo.Text = gvCitas.SelectedRow.Cells[1].Text;
+                    txtProducto.Text = gvCitas.SelectedRow.Cells[2].Text;
+                    txtDescripcion.Text = gvCitas.SelectedRow.Cells[3].Text;
+                    if (gvCitas.SelectedRow.Cells[4].Text=="true")
+                    {
+                        chkb_Servicio.Checked = true;
+                    }
+                    else
+                    {
+                        chkb_Servicio.Checked = false;
+                    } 
+                    txtPecioArt.Text = gvCitas.SelectedRow.Cells[5].Text;
+                    txtCantDisponible.Text = gvCitas.SelectedRow.Cells[6].Text;
+                    txtCantMaximo.Text = gvCitas.SelectedRow.Cells[7].Text;
+                    txtCantMinimo.Text = gvCitas.SelectedRow.Cells[8].Text;
+                    if (Convert.ToString(gvCitas.SelectedRow.Cells[9].Text) == "1")
+                    {
+                        chkb_Activo.Checked = true;
+                    }
+                    else
+                    {
+                        chkb_Activo.Checked = false;
+                    }
+                    
+                    
                 }
 
 
@@ -140,6 +163,7 @@ namespace HappyPet4._0
             txtCantMinimo.Text = "";
             txtCantMaximo.Text = "";
             txtPecioArt.Text = "";
+            txtCantDisponible.Text = "";
 
 
             lblModalTitle.Text = "Articulos";
@@ -177,20 +201,22 @@ namespace HappyPet4._0
                 Articulo objArticulo = new Articulo();
                 BLArticulos bLArticulos = new BLArticulos();
                 objArticulo.NombreArticulo = txtProducto.Text;
+                objArticulo.Descripcion = txtDescripcion.Text;
                 objArticulo.Precio = Convert.ToDouble(txtPecioArt.Text);
                 objArticulo.Servicio = chkb_Servicio.Checked ? true : false;
                 objArticulo.Estado = chkb_Activo.Checked ? 1 : 2;
                 objArticulo.CantidadMin = Convert.ToInt32(txtCantMinimo.Text);
                 objArticulo.CantidadMax = Convert.ToInt32(txtCantMaximo.Text);
+                objArticulo.CantidadStock = Convert.ToInt32(txtCantDisponible.Text);
                 
                 
-                if (txtProducto.Text == "")
+                if (txtCodigo.Text == "")
                 {
                   bLArticulos.Insertar_Articulo (objArticulo, ref error);
                 }
                 else
                 {
-                    objArticulo.NombreArticulo = txtProducto.Text;
+                    objArticulo.IdArticulo = Convert.ToInt32(txtCodigo.Text);
                     bLArticulos.Modificar_Articulo(objArticulo, ref error);
                 }
 
@@ -207,7 +233,7 @@ namespace HappyPet4._0
             }
             else
             {
-                MostrarMensaje("Debe completar todos los campos para guardar el Tipo de Perfil");
+                MostrarMensaje("Debe completar todos los campos para guardar el Articulo");
             }
         }
         protected void MostrarMensaje(string msj)
@@ -222,16 +248,37 @@ namespace HappyPet4._0
             if (!String.IsNullOrEmpty(txtProducto.Text)
                 && (!String.IsNullOrEmpty(txtDescripcion.Text))
                 && (!String.IsNullOrEmpty(txtPecioArt.Text))
-                && (!String.IsNullOrEmpty(txtDescripcion.Text))
                 && (!String.IsNullOrEmpty(txtCantMaximo.Text))
                 && (!String.IsNullOrEmpty(txtCantMinimo.Text))
-                && (chkb_Activo.Checked = false))
+                && (!String.IsNullOrEmpty(txtCantDisponible.Text))
+               )
                 
+            {
+                valido = true;
+                valido = ValidarCantidad();
+            }
+            else
+            {
+                valido = false;
+            }
+            return valido;
+        }
+        private bool ValidarCantidad()
+        {
+            bool valido = true;
+            if (Convert.ToInt32(txtCantMinimo.Text)>0
+                && (Convert.ToInt32(txtCantDisponible.Text) > 0
+                && (Convert.ToInt32(txtPecioArt.Text) > 0
+                && (Convert.ToInt32(txtCantDisponible.Text) > Convert.ToInt32(txtCantMinimo.Text))
+                && (Convert.ToInt32(txtCantDisponible.Text) < Convert.ToInt32(txtCantMaximo.Text))
+                && (Convert.ToInt32(txtCantMinimo.Text) < (Convert.ToInt32(txtCantMaximo.Text))))))
+
             {
                 valido = true;
             }
             else
             {
+                MostrarMensaje("Valores no permitidos en precio o cantidades de Articulos");
                 valido = false;
             }
             return valido;

@@ -157,6 +157,15 @@ namespace HappyPet4._0 {
         protected global::System.Web.UI.WebControls.TextBox txtPecioArt;
         
         /// <summary>
+        /// Control txtCantDisponible.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCantDisponible;
+        
+        /// <summary>
         /// Control btnLimpiar.
         /// </summary>
         /// <remarks>

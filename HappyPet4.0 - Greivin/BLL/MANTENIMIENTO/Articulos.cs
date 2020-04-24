@@ -40,6 +40,7 @@ namespace BLL.MANTENIMIENTO
                     lArticulos.Cantidadmax = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][6].ToString());
                     lArticulos.Cantidadmin = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][7].ToString());
                     lArticulos.Idestado = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[i][8].ToString());
+                    
 
                     resultado.Add(lArticulos);
                 }
@@ -64,6 +65,7 @@ namespace BLL.MANTENIMIENTO
             obj_BD_DAL.dt_Parametros.Rows.Add("@@CANTIDAD_MAX", 2, articulos.CantidadMax);
             obj_BD_DAL.dt_Parametros.Rows.Add("@@CANTIDAD_MIN", 2, articulos.CantidadMin);
             obj_BD_DAL.dt_Parametros.Rows.Add("@@ID_ESTADO", 2, articulos.Estado);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@CANTIDAD_STOCK", 2, articulos.CantidadStock);
 
 
             obj_BD_DAL.sNombreTabla = "tbl_Articulos";
@@ -85,7 +87,7 @@ namespace BLL.MANTENIMIENTO
             cls_BD_DAL obj_BD_DAL = new cls_BD_DAL();
 
             obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
-
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@IDARTICULO", 1, articulos.IdArticulo);
             obj_BD_DAL.dt_Parametros.Rows.Add("@@NOMBRE_ARTICULO", 1, articulos.NombreArticulo);
             obj_BD_DAL.dt_Parametros.Rows.Add("@@DESCRIPCION", 1, articulos.Descripcion);
             obj_BD_DAL.dt_Parametros.Rows.Add("@@SERVICIO", 3, articulos.Servicio);
@@ -93,8 +95,9 @@ namespace BLL.MANTENIMIENTO
             obj_BD_DAL.dt_Parametros.Rows.Add("@@CANTIDAD_MAX", 2, articulos.CantidadMax);
             obj_BD_DAL.dt_Parametros.Rows.Add("@@CANTIDAD_MIN", 2, articulos.CantidadMin);
             obj_BD_DAL.dt_Parametros.Rows.Add("@@ID_ESTADO", 2, articulos.Estado);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@CANTIDAD_STOCK", 2, articulos.CantidadStock);
             obj_BD_DAL.sNombreTabla = "tbl_Articulos";
-            obj_BD_DAL.sSentencia = "SCH_INVENTARIO.SP_Modificar_Articulo";
+            obj_BD_DAL.sSentencia = "SCH_INVENTARIO.SP_MODIFICA_Articulo";
             obj_BD_BLL.Ejec_NonQuery(ref obj_BD_DAL);
             if (obj_BD_DAL.sMsjError != string.Empty)
             {
