@@ -112,7 +112,11 @@
                                 <li><a href="../../Ventas/frm_Citas.aspx"><i class="fa fa-circle-o"></i>Citas</a></li>
                                 <li><a href="../../Ventas/frm_VentaProducto.aspx"><i class="fa fa-circle-o"></i>Venta de Productos</a></li>
                                 <li><a href="../../Ventas/frm_VentaProducto.aspx"><i class="fa fa-circle-o"></i>Registro Cliente</a></li>
-                                <li><a href="../../Ventas/Empresas1.1.aspx"><i class="fa fa-circle-o"></i>Empresa</a></li>
+                                <li><a href="../../Ventas/Empresa.aspx"><i class="fa fa-circle-o"></i>Empresa</a></li>
+                                <li><a href="../../Ventas/Sucursal.aspx"><i class="fa fa-circle-o"></i>Sucursales</a></li>
+                                <li><a href="../../Ventas/Especialidad.aspx"><i class="fa fa-circle-o"></i>Especialidad</a></li>
+                                <li><a href="../../Ventas/Raza.aspx"><i class="fa fa-circle-o"></i>Razas</a></li>
+                                <li><a href="../../Ventas/Especie.aspx"><i class="fa fa-circle-o"></i>Especie</a></li>
                             </ul>
                         </li>
                         <li class="treeview">

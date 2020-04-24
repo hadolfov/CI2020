@@ -52,7 +52,7 @@
     <Compile Include="SCH_INVENTARIO\TipoMovimiento.cs" />
     <Compile Include="SCH_MANTENIMIENTO\Caja.cs" />
     <Compile Include="SCH_MANTENIMIENTO\DiaSemana.cs" />
-    <Compile Include="SCH_MANTENIMIENTO\Empresa.cs" />
+    <Compile Include="SCH_MANTENIMIENTO\Empresas.cs" />
     <Compile Include="SCH_MANTENIMIENTO\Especialidad.cs" />
     <Compile Include="SCH_MANTENIMIENTO\Especialidad_X_Sucursal.cs" />
     <Compile Include="SCH_MANTENIMIENTO\Estado.cs" />

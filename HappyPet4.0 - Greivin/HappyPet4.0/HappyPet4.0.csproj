@@ -70,12 +70,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\BLL.dll" />
+    <Content Include="bin\BLL.pdb" />
+    <Content Include="bin\DAL.dll" />
+    <Content Include="bin\DAL.pdb" />
+    <Content Include="dist\img\avatarlogin.jpg" />
     <Content Include="Imagenes\cerrar-sesion.png" />
+    <Content Include="index.html" />
+    <Content Include="index2.html" />
+    <Content Include="LogIn1.1.aspx" />
     <Content Include="Seguridad\frm_Permisos_Seguridad.aspx" />
     <Content Include="Seguridad\frm_Recuperar_Contraseña.aspx" />
     <Content Include="Seguridad\frm_Tipos_Perfil.aspx" />
     <Content Include="Seguridad\frm_Usuarios.aspx" />
-    <Content Include="Ventas\Empresas1.1.aspx" />
+    <Content Include="Ventas\Empresa.aspx" />
     <Content Include="Inventario\Articulos1.1.aspx" />
     <Content Include="bin\HappyPet4.0.dll" />
     <Content Include="bin\HappyPet4.0.pdb" />
@@ -145,7 +153,7 @@
     <Content Include="dist\img\avatar2.png" />
     <Content Include="dist\img\avatar3.png" />
     <Content Include="dist\img\avatar5.png" />
-    <Content Include="dist\img\avatarlogin.png" />
+    <Content Include="dist\img\avatarloginold.png" />
     <Content Include="dist\img\boxed-bg.jpg" />
     <Content Include="dist\img\boxed-bg.png" />
     <Content Include="dist\img\credit\american-express.png" />
@@ -2050,19 +2058,28 @@
     <Content Include="Inventario\Proveedores1.1.aspx" />
     <Content Include="Nomina\TipoMarca1.1.aspx" />
     <Content Include="Nomina\TipoPermiso1.1.aspx" />
+    <Content Include="Ventas\Especialidad.aspx" />
+    <Content Include="Ventas\Especie.aspx" />
     <Content Include="Ventas\frm_AtenderCita.aspx" />
     <Content Include="Ventas\frm_Citas.aspx" />
     <Content Include="Ventas\frm_Cliente.aspx" />
-    <Content Include="Ventas\frm_Especie.aspx" />
     <Content Include="Ventas\frm_Mascota.aspx" />
-    <Content Include="Ventas\frm_Raza.aspx" />
     <Content Include="Ventas\frm_VentaProducto.aspx" />
+    <Content Include="Ventas\Raza.aspx" />
+    <Content Include="Ventas\Sucursal.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogIn1.1.aspx.cs">
+      <DependentUpon>LogIn1.1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogIn1.1.aspx.designer.cs">
+      <DependentUpon>LogIn1.1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\frm_Permisos_Seguridad.aspx.cs">
       <DependentUpon>frm_Permisos_Seguridad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2091,12 +2108,12 @@
     <Compile Include="Seguridad\frm_Usuarios.aspx.designer.cs">
       <DependentUpon>frm_Usuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Ventas\Empresas1.1.aspx.cs">
-      <DependentUpon>Empresas1.1.aspx</DependentUpon>
+    <Compile Include="Ventas\Empresa.aspx.cs">
+      <DependentUpon>Empresa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Ventas\Empresas1.1.aspx.designer.cs">
-      <DependentUpon>Empresas1.1.aspx</DependentUpon>
+    <Compile Include="Ventas\Empresa.aspx.designer.cs">
+      <DependentUpon>Empresa.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inventario\Articulos1.1.aspx.cs">
       <DependentUpon>Articulos1.1.aspx</DependentUpon>
@@ -2191,6 +2208,20 @@
     <Compile Include="Nomina\TipoPermiso1.1.aspx.designer.cs">
       <DependentUpon>TipoPermiso1.1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Ventas\Especialidad.aspx.cs">
+      <DependentUpon>Especialidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ventas\Especialidad.aspx.designer.cs">
+      <DependentUpon>Especialidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Especie.aspx.cs">
+      <DependentUpon>Especie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ventas\Especie.aspx.designer.cs">
+      <DependentUpon>Especie.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Ventas\frm_AtenderCita.aspx.cs">
       <DependentUpon>frm_AtenderCita.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2212,13 +2243,6 @@
     <Compile Include="Ventas\frm_Cliente.aspx.designer.cs">
       <DependentUpon>frm_Cliente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Ventas\frm_Especie.aspx.cs">
-      <DependentUpon>frm_Especie.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Ventas\frm_Especie.aspx.designer.cs">
-      <DependentUpon>frm_Especie.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Ventas\frm_Mascota.aspx.cs">
       <DependentUpon>frm_Mascota.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2226,19 +2250,26 @@
     <Compile Include="Ventas\frm_Mascota.aspx.designer.cs">
       <DependentUpon>frm_Mascota.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Ventas\frm_Raza.aspx.cs">
-      <DependentUpon>frm_Raza.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Ventas\frm_Raza.aspx.designer.cs">
-      <DependentUpon>frm_Raza.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Ventas\frm_VentaProducto.aspx.cs">
       <DependentUpon>frm_VentaProducto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Ventas\frm_VentaProducto.aspx.designer.cs">
       <DependentUpon>frm_VentaProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Raza.aspx.cs">
+      <DependentUpon>Raza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ventas\Raza.aspx.designer.cs">
+      <DependentUpon>Raza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Sucursal.aspx.cs">
+      <DependentUpon>Sucursal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ventas\Sucursal.aspx.designer.cs">
+      <DependentUpon>Sucursal.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -3358,6 +3389,9 @@
     <Content Include="node_modules\zlib-browserify\package.json" />
     <Content Include="node_modules\zlib-browserify\readme.md" />
     <Content Include="bin\HappyPet4.0.dll.config" />
+    <Content Include="package-lock.json" />
+    <Content Include="obj\Release\HappyPet4.0.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Release\HappyPet4.0.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="plugins\ckeditor\CHANGES.md" />

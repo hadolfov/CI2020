@@ -5,7 +5,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        <asp:Image runat="server" ImageUrl="dist/img/avatarlogin.png" Width="10%" Height="10%" />
+        <asp:Image runat="server" ImageUrl="dist/img/avatarlogin.jpg" Width="100%" Height="100%" />
     </div>
 
 </asp:Content>
