@@ -9,9 +9,10 @@ using BLL.MANTENIMIENTO;
 using DL.SCH_NOMINA;
 using System.Data;
 
+
 namespace HappyPet4._0
 {
-    public partial class TipoPermiso1__1 : System.Web.UI.Page
+    public partial class TipoIdentificacion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,7 +30,7 @@ namespace HappyPet4._0
             //CargarCombos(); /*Cargar Combo no se utiliza para esta ventana*/
             btnEditar.Visible = false;
             btnEliminar.Visible = false;
-            gvPermiso.SelectedIndex = -1;
+            gvTpIdentificacion.SelectedIndex = -1;
         }
 
         //private void CargarPrueba()
@@ -80,41 +81,44 @@ namespace HappyPet4._0
         private void CargarGrid()
         {
             string error = "";
-            BLTipoMarca tipoPerfil = new BLTipoMarca();
-            gvPermiso.DataSource = tipoPerfil.consultar_TipoMarca(ref error);
-            gvPermiso.DataBind();
+            BLTipoIdentificacion tipoIdentificacion = new BLTipoIdentificacion();
+            gvTpIdentificacion.DataSource = tipoIdentificacion.consultar_TipoIdentificacion
+(ref error);
+            gvTpIdentificacion.DataBind();
         }
-
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            txtCodigo.Text = "";
-            txtProducto.Text = "";
+            txtidTpIdentificacion.Text = "";
+            txtTpIdentificacion.Text = "";
             chkEstado.Checked = true;
 
-            lblModalTitle.Text = "Permisos";
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalPermisos", "$('#ModalPermisos').modal();", true);
+            lblModalTitle.Text = "Tipo Identificacion";
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalTpIdentificacion", "$('#ModalTpIdentificacion').modal();", true);
             upModal.Update();
         }
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-            EditarTipoPermiso();
+            EditarTipoIdentificacion();
         }
 
-        private void EditarTipoPermiso()
+        private void EditarTipoIdentificacion()
         {
             string error = "";
-            BLTipoPermiso bLTipoPermiso = new BLTipoPermiso();
-            TiposPermiso tipo = bLTipoPermiso.consultar_TipoPermiso_Id(Convert.ToInt32(txtCodigo.Text), ref error);
+            BLTipoIdentificacion bLTipoIdentificacion = new BLTipoIdentificacion();
+            TiposIdentificacion tipo = bLTipoIdentificacion.consultar_TipoIdentificacion_Id(Convert.ToInt32(txtidTpIdentificacion.Text), ref error);
+
+            //TipoIdentificacion tipo = bLTipoIdentificacion.consultar_TipoIdentificacion_Id(Convert.ToInt32(txtidTpIdentificacion.Text), ref error);
 
             if (error == "")
             {
-                txtProducto.Text = tipo.TipoPermiso;
+                txtTpIdentificacion.Text = tipo.DesTipoIdentificacion;
+                txtCodIdentificacion.Text = tipo.CodigoTipoIdentificacion;
                 chkEstado.Checked = tipo.Estado == 1;
 
-                lblModalTitle.Text = "Editar Permiso";
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalPermiso", "$('#ModalPermsio').modal();", true);
+                lblModalTitle.Text = "Editar Tipo Identificacion";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalIdentificacion", "$('#ModalTipoIdentificacion').modal();", true);
                 upModal.Update();
             }
             else
@@ -132,8 +136,8 @@ namespace HappyPet4._0
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            lblEliminarTitle.Text = "Eliminar Tipo de Permiso";
-            lblEliminarbody.Text = "Desea Eliminar el siguiente Permiso" + txtProducto + "?";
+            lblEliminarTitle.Text = "Eliminar Tipo de Identificacion";
+            lblEliminarbody.Text = "Desea Eliminar el Tipo de Indentificacion " + txtTpIdentificacion.Text + "?";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalEliminar", "$('#ModalEliminar').modal();", true);
             upModal.Update();
         }
@@ -143,15 +147,16 @@ namespace HappyPet4._0
             if (e.CommandName == "Seleccionar" && IsPostBack)
             {
                 int index = Convert.ToInt32(e.CommandArgument);
-                if (gvPermiso.SelectedIndex == index)
+                if (gvTpIdentificacion.SelectedIndex == index)
                 {
-                    gvPermiso.SelectedIndex = -1;
+                    gvTpIdentificacion.SelectedIndex = -1;
                     btnEditar.Visible = false;
                     btnEliminar.Visible = false;
+                    txtidTpIdentificacion.Text = "";
                 }
                 else
                 {
-                    gvPermiso.SelectedIndex = index;
+                    gvTpIdentificacion.SelectedIndex = index;
                     Permiso permiso = (Permiso)Session["PermisoPagina"];
                     if (permiso.Modificar)
                     {
@@ -161,7 +166,7 @@ namespace HappyPet4._0
                     {
                         btnEliminar.Visible = true;
                     }
-                    txtCodigo.Text = gvPermiso.SelectedRow.Cells[1].Text;
+                    txtidTpIdentificacion.Text = gvTpIdentificacion.SelectedRow.Cells[1].Text;
                 }
                 //TableCell contactName = selectedRow.Cells[1];
                 //string contact = contactName.Text;
@@ -170,37 +175,37 @@ namespace HappyPet4._0
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            lblConfirmarTitle.Text = "Guardar Tipo de Permiso";
-            lblConfirmarbody.Text = "Desea Guardar el Tipo de Permiso " + txtProducto.Text + "?";
+            lblConfirmarTitle.Text = "Guardar Tipo de Identificacion";
+            lblConfirmarbody.Text = "Desea Guardar el Tipo de Marca " + txtTpIdentificacion.Text + "?";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalConfirmar", "$('#ModalConfirmar').modal();", true);
             UpdatePanelConfirmar.Update();
         }
 
-        private void GuardarTipoPermiso()
+        private void GuardarTipoIdentificacion()
         {
             string error = "";
             if (ValidarCampos())
             {
-                BLTipoPermiso BLtipoPermiso = new BLTipoPermiso();
-                TiposPermiso tiposPermiso = new TiposPermiso();
+                BLTipoIdentificacion BLtipoIdentificacion = new BLTipoIdentificacion();
+                TiposIdentificacion tiposIdentificacion = new TiposIdentificacion();
 
-                 tiposPermiso.Estado= chkEstado.Checked ? 1 : 2;
-                tiposPermiso.TipoPermiso = txtProducto.Text;
+               tiposIdentificacion.Estado = chkEstado.Checked ? 1 : 2;
+               tiposIdentificacion.DesTipoIdentificacion = txtTpIdentificacion.Text;
 
 
-                if (txtCodigo.Text == "")
+                if (txtidTpIdentificacion.Text == "")
                 {
-                    BLtipoPermiso.Insertar_TipoPermiso(tiposPermiso, ref error);
+                    BLtipoIdentificacion.Insertar_TipoIdentificacion(tiposIdentificacion, ref error);
                 }
                 else
                 {
-                    tiposPermiso.IdTipoPermiso = Convert.ToInt32(txtCodigo.Text);
-                    BLtipoPermiso.Modificar_TipoPermiso(tiposPermiso, ref error);
+                    tiposIdentificacion.IdTipoIdentificacion = Convert.ToInt32(txtidTpIdentificacion.Text);
+                    BLtipoIdentificacion.Modificar_TipoIdentificacion(tiposIdentificacion, ref error);
                 }
 
                 if (error == "")
                 {
-                    Response.Redirect("TipoPermiso1.1.aspx");
+                    Response.Redirect("TipoIdentificaicon.aspx");
 
                 }
                 else
@@ -211,15 +216,14 @@ namespace HappyPet4._0
             }
             else
             {
-                MostrarMensaje("Debe completar todos los campos para guardar el Tipo de Permiso");
+                MostrarMensaje("Debe completar todos los campos para guardar el Tipo de Identificacion");
             }
         }
-
 
         private bool ValidarCampos()
         {
             bool valido = true;
-            if (!String.IsNullOrEmpty(txtProducto.Text))
+            if (!String.IsNullOrEmpty(txtTpIdentificacion.Text))
 
             {
                 valido = true;
@@ -231,19 +235,18 @@ namespace HappyPet4._0
             return valido;
         }
 
-
-        private void EliminarTipoPermiso()
+        private void EliminarTipoIdentificacion()
         {
             string error = "";
-            BLTipoPermiso bLTipoPermiso = new BLTipoPermiso();
-            TiposPermiso tipo = bLTipoPermiso.consultar_TipoPermiso_Id(Convert.ToInt32(txtCodigo.Text), ref error);
+            BLTipoIdentificacion bLTipoIdentificacion = new BLTipoIdentificacion();
+            TiposIdentificacion tipo = bLTipoIdentificacion.consultar_TipoIdentificacion_Id(Convert.ToInt32(txtidTpIdentificacion.Text), ref error);
             if (error == "")
             {
                 tipo.Estado = 3;
-                bLTipoPermiso.Modificar_TipoPermiso(tipo, ref error);
+                bLTipoIdentificacion.Modificar_TipoIdentificacion(tipo, ref error);
                 if (error == "")
                 {
-                    Response.Redirect("TipoPermiso1.1.aspx");
+                    Response.Redirect("TipoIdentificacion.aspx");
                 }
                 else
                 {
@@ -258,11 +261,7 @@ namespace HappyPet4._0
 
         protected void btnGuardarConfirmacion_Click(object sender, EventArgs e)
         {
-            GuardarTipoPermiso();
+            GuardarTipoIdentificacion();
         }
-
-       
-
-
     }
 }

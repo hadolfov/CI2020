@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace HappyPet4._0 {
+namespace HappyPet4._0.Inventario {
     
     
-    public partial class TipoPermiso1__1 {
+    public partial class Motivos {
         
         /// <summary>
         /// Control btnAgregar.
@@ -40,13 +40,13 @@ namespace HappyPet4._0 {
         protected global::System.Web.UI.WebControls.Button btnEliminar;
         
         /// <summary>
-        /// Control gvPermiso.
+        /// Control gvMotivos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPermiso;
+        protected global::System.Web.UI.WebControls.GridView gvMotivos;
         
         /// <summary>
         /// Control upModal.
@@ -67,13 +67,22 @@ namespace HappyPet4._0 {
         protected global::System.Web.UI.WebControls.Label lblModalTitle;
         
         /// <summary>
-        /// Control chkEstado.
+        /// Control txtIdMotivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkEstado;
+        protected global::System.Web.UI.WebControls.TextBox txtIdMotivo;
+        
+        /// <summary>
+        /// Control chkb_Activo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkb_Activo;
         
         /// <summary>
         /// Control Label1.
@@ -85,22 +94,13 @@ namespace HappyPet4._0 {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control txtCodigo.
+        /// Control txtDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigo;
-        
-        /// <summary>
-        /// Control txtProducto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProducto;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
         
         /// <summary>
         /// Control btnLimpiar.

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DL.SCH_SEGURIDAD;
-using DAL.SCH_SEGURIDAD;
+using DAL.SCH_NOMINA;
 using DL.SCH_NOMINA;
 using BLL.MANTENIMIENTO;
 

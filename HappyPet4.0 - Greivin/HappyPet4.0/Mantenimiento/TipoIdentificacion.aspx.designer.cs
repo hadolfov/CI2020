@@ -10,7 +10,7 @@
 namespace HappyPet4._0 {
     
     
-    public partial class TipoPermiso1__1 {
+    public partial class TipoIdentificacion {
         
         /// <summary>
         /// Control btnAgregar.
@@ -40,13 +40,13 @@ namespace HappyPet4._0 {
         protected global::System.Web.UI.WebControls.Button btnEliminar;
         
         /// <summary>
-        /// Control gvPermiso.
+        /// Control gvTpIdentificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPermiso;
+        protected global::System.Web.UI.WebControls.GridView gvTpIdentificacion;
         
         /// <summary>
         /// Control upModal.
@@ -67,6 +67,15 @@ namespace HappyPet4._0 {
         protected global::System.Web.UI.WebControls.Label lblModalTitle;
         
         /// <summary>
+        /// Control txtidTpIdentificacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtidTpIdentificacion;
+        
+        /// <summary>
         /// Control chkEstado.
         /// </summary>
         /// <remarks>
@@ -85,22 +94,22 @@ namespace HappyPet4._0 {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control txtCodigo.
+        /// Control txtTpIdentificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigo;
+        protected global::System.Web.UI.WebControls.TextBox txtTpIdentificacion;
         
         /// <summary>
-        /// Control txtProducto.
+        /// Control txtCodIdentificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProducto;
+        protected global::System.Web.UI.WebControls.TextBox txtCodIdentificacion;
         
         /// <summary>
         /// Control btnLimpiar.

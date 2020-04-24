@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DL.SCH_MANTENIMIENTO
+namespace DL.SCH_NOMINA
 {
     public class Sucursales
     {

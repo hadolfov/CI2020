@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="TipoMarca1.1.aspx.cs" Inherits="HappyPet4._0.TipoMarca1__1" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Motivos.aspx.cs" Inherits="HappyPet4._0.Inventario.Motivos" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 
     <div class="row">
         <div class="container well">
             <div class="col-lg-12">
-                <h3 class="page-header"><i class="fa fa-file-text-o">&nbsp</i>Marcas</h3>
+                <h3 class="page-header"><i class="fa fa-file-text-o">&nbsp</i>Motivos</h3>
             </div>
 
             <div class="col-lg-12">
@@ -17,13 +17,13 @@
                         <div class="col-sm-10">
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <asp:Button runat="server" ID="btnAgregar" Text="Agregar Marca" CssClass="btn btn-success" OnClick="btnAgregar_Click" />
+                                    <asp:Button runat="server" ID="btnAgregar" Text="Agregar Motivo " CssClass="btn btn-success" OnClick="btnAgregar_Click" />
                                 </div>
                                 <div class="col-sm-3">
-                                    <asp:Button runat="server" ID="btnEditar" Text="Editar Marca" CssClass="btn btn-warning" OnClick="btnEditar_Click" />
+                                    <asp:Button runat="server" ID="btnEditar" Text="Editar Motivo" CssClass="btn btn-warning" OnClick="btnEditar_Click" />
                                 </div>
                                 <div class="col-sm-3">
-                                    <asp:Button runat="server" ID="btnEliminar" Text="Eliminar Marca" CssClass="btn btn-danger" OnClick="btnEliminar_Click" />
+                                    <asp:Button runat="server" ID="btnEliminar" Text="Eliminar Motivo" CssClass="btn btn-danger" OnClick="btnEliminar_Click" />
                                 </div>
 
                                 <div class="col-sm-12">
@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <div class="col-sm-12">
-                            <asp:GridView runat="server" Style="align-content: center" CssClass="box" Width="100%" ID="gvTipoMarca" OnRowCommand="gvTipoMarca_RowCommand" CellPadding="4" ForeColor="#333333" GridLines="None" AllowSorting="True">
+                            <asp:GridView runat="server" Style="align-content: center" CssClass="box" Width="100%" ID="gvMotivos" OnRowCommand="gvMotivos_RowCommand" CellPadding="4" ForeColor="#333333" GridLines="None" AllowSorting="True">
                                 <AlternatingRowStyle BackColor="White" BorderColor="#999999" BorderStyle="Solid" />
                                 <Columns>
                                     <asp:ButtonField ButtonType="Image" HeaderText="Acción" CommandName="Seleccionar" ImageUrl="~/Imagenes/share.png" />
@@ -56,11 +56,11 @@
     </div>
 
 
-    <div class="modal fade" id="ModalMarcas" role="dialog" aria-labelledby="ModalMarcasLabel" aria-hidden="true">
+    <div class="modal fade" id="ModalMotivos" role="dialog" aria-labelledby="ModalMotivosLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" style="width: 80%">
             <asp:UpdatePanel ID="upModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
                 <ContentTemplate>
-                    <div class="modal-content" >
+                    <div class="modal-content " >
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             <h4 class="modal-title">
@@ -70,45 +70,54 @@
                             <div class="row">
 
 
-                               <div class="col-lg-6">
-
-                                     <div class="col-lg-12">
+                                <div class="col-lg-6">
                                     <div class="form-group">
-                                        <asp:CheckBox ID="chkEstado" runat="server" />
-                                        <asp:Label ID="chkEstado1" runat="server" Text="Activo"></asp:Label>
-                                        <!--<input type="text" maxlength="50" class="form-control"/>  -->
-                                    </div>
-                                </div>
-                                    <br />
-                                    <hr />
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">Id Marca: </label>
+                                        <label class="col-sm-2 control-label">Id Motivo: </label>
+                                        
                                         <div class="col-sm-10">
-                                            <asp:TextBox ID="txtCodigo" runat="server" CssClass="form-control" MaxLength="50" ReadOnly="False"></asp:TextBox>
+                                            <asp:TextBox ID="txtIdMotivo" runat="server" CssClass="form-control" MaxLength="50" ReadOnly="True"></asp:TextBox>
                                             <!--<input type="text" maxlength="50" class="form-control"/>  -->
                                         </div>
                                     </div>
                                 </div>
-
-                                 
+                                
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <asp:CheckBox ID="chkb_Activo" runat="server" />
+                                        <asp:Label ID="Label1" runat="server" Text="Activo"></asp:Label>
+                                        
+                                        <!--<input type="text" maxlength="50" class="form-control"/>  -->
+                                    </div>
+                                </div>
+                               
                                 <hr />
                                 <br />
                                  <div class="col-lg-6">
                                      <div class="form-group">
-                                         <label class="col-sm-2 control-label">Nombre de la Marca: </label>
+                                         <label class="col-sm-2 control-label">Descripcion: </label>
+                                         
                                          <div class="col-sm-10">
-                                             <asp:TextBox ID="txtProducto" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
+                                             <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
                                              <!-- <input type="text" maxlength="50" class="form-control"/> -->
                                          </div>
                                      </div>
                                  </div>
 
+                                 
+
+                                <div class="col-lg-12">&nbsp</div>
+                                
+                                
+                                <div class="col-lg-12">&nbsp</div>
+                                <div class="col-lg-6">
+                                    
+                                </div>
                                 <div class="col-lg-12">&nbsp</div>
                                 <div class="col-lg-12">&nbsp</div>
                                 <div class="col-lg-12">&nbsp</div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <asp:Button ID="btnCancelar"  data-dismiss="modal" class="btn btn-danger" runat="server" Text="Cancelar" />
+                                        <asp:Button ID="btnLimpiar" class="btn btn-warning" runat="server" Text="Limpiar" />
                                         <!--<button type="button" class="btn btn-warning">Limpiar</button>-->
                                     </div>
                                 </div>
@@ -144,7 +153,7 @@
                             <asp:Label ID="lblEliminarbody" runat="server" Text=""></asp:Label>
                         </div>
                         <div class="modal-footer">
-                            <asp:Button ID="btnEliminarConfirmacion" OnClick="btnEliminarConfirmacion_Click" class="btn btn-danger" runat="server" Text="Eliminar" />
+                            <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Eliminar</button>
                             <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Salir</button>
                         </div>
                     </div>
@@ -152,7 +161,6 @@
             </asp:UpdatePanel>
         </div>
     </div>
-
     <div class="modal fade" id="ModalConfirmar" role="dialog" aria-labelledby="ModalConfirmarLabel" aria-hidden="true">
         <div class="modal-dialog">
             <asp:UpdatePanel ID="UpdatePanelConfirmar" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
@@ -175,4 +183,8 @@
             </asp:UpdatePanel>
         </div>
     </div>
+
+
 </asp:Content>
+
+

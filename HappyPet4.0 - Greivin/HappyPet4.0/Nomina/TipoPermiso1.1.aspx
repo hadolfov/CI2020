@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <div class="col-sm-12">
-                            <asp:GridView runat="server" Style="align-content: center" CssClass="box" Width="100%" ID="gvCitas" OnRowCommand="gvCitas_RowCommand" CellPadding="4" ForeColor="#333333" GridLines="None" AllowSorting="True">
+                            <asp:GridView runat="server" Style="align-content: center" CssClass="box" Width="100%" ID="gvPermiso" OnRowCommand="gvPermiso_RowCommand" CellPadding="4" ForeColor="#333333" GridLines="None" AllowSorting="True">
                                 <AlternatingRowStyle BackColor="White" BorderColor="#999999" BorderStyle="Solid" />
                                 <Columns>
                                 <asp:ButtonField ButtonType="Image" HeaderText="Acción" CommandName="Seleccionar" ImageUrl="~/Imagenes/share.png" />
@@ -72,7 +72,7 @@
 
                                      <div class="col-lg-12">
                                     <div class="form-group">
-                                        <asp:CheckBox ID="CheckBox1" runat="server" />
+                                        <asp:CheckBox ID="chkEstado" runat="server" />
                                         <asp:Label ID="Label1" runat="server" Text="Activo"></asp:Label>
                                         <!--<input type="text" maxlength="50" class="form-control"/>  -->
                                     </div>
@@ -150,6 +150,29 @@
         </div>
     </div>
 
+
+     <div class="modal fade" id="ModalConfirmar" role="dialog" aria-labelledby="ModalConfirmarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <asp:UpdatePanel ID="UpdatePanelConfirmar" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">
+                                <asp:Label ID="lblConfirmarTitle" runat="server" Text=""></asp:Label></h4>
+                        </div>
+                        <div class="modal-body">
+                            <asp:Label ID="lblConfirmarbody" runat="server" Text=""></asp:Label>
+                        </div>
+                        <div class="modal-footer">
+                            <asp:Button ID="btnGuardarConfirmacion" OnClick="btnGuardarConfirmacion_Click" class="btn btn-success" runat="server" Text="Guardar" />
+                            <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Salir</button>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
 
 </asp:Content>
 

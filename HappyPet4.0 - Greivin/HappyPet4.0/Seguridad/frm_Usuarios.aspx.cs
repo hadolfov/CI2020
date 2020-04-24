@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using DAL.SCH_SEGURIDAD;
+using DAL.SCH_NOMINA;
 using BLL.MANTENIMIENTO;
 using DL.SCH_SEGURIDAD;
 using DL.SCH_NOMINA;
