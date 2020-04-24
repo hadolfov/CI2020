@@ -70,6 +70,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\BLL.dll" />
+    <Content Include="bin\BLL.pdb" />
+    <Content Include="bin\DAL.dll" />
+    <Content Include="bin\DAL.pdb" />
+    <Content Include="dist\img\liso.jpg" />
+    <Content Include="dist\img\Veterinaria1.png" />
+    <Content Include="dist\img\veterinaria2.jpg" />
     <Content Include="Imagenes\cerrar-sesion.png" />
     <Content Include="index.html" />
     <Content Include="index2.html" />

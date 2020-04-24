@@ -142,7 +142,7 @@ namespace HappyPet4._0
             upModal.Update();
         }
 
-        protected void gvCitas_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void gvTpIdentificacion_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Seleccionar" && IsPostBack)
             {

@@ -19,7 +19,7 @@ namespace BLL.MANTENIMIENTO
 
             obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
             obj_BD_DAL.sNombreTabla = "tbl_TiposIdentificacion";
-            obj_BD_DAL.sSentencia = "SCH_MANTENIMIENTO.sp_TipoIdentificacion";
+            obj_BD_DAL.sSentencia = "SCH_MANTENIMIENTO.sp_ListarTipoIdentificacion";
             obj_BD_BLL.Ejec_DataAdapter(ref obj_BD_DAL);
             if (obj_BD_DAL.sMsjError != string.Empty)
             {

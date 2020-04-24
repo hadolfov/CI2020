@@ -15,21 +15,24 @@ namespace HappyPet4._0
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarPermisos();
-            Permiso permiso = (Permiso)Session["PermisoPagina"];
-            if (permiso.Insertar)
+            if (!IsPostBack)
             {
-                btnAgregar.Visible = true;
+                CargarPermisos();
+                Permiso permiso = (Permiso)Session["PermisoPagina"];
+                if (permiso.Insertar)
+                {
+                    btnAgregar.Visible = true;
+                }
+                else
+                {
+                    btnAgregar.Visible = false;
+                }
+                CargarGrid();
+                //CargarCombos(); /*Cargar Combo no se utiliza para esta ventana*/
+                btnEditar.Visible = false;
+                btnEliminar.Visible = false;
+                gvPermiso.SelectedIndex = -1;
             }
-            else
-            {
-                btnAgregar.Visible = false;
-            }
-            CargarGrid();
-            //CargarCombos(); /*Cargar Combo no se utiliza para esta ventana*/
-            btnEditar.Visible = false;
-            btnEliminar.Visible = false;
-            gvPermiso.SelectedIndex = -1;
         }
 
         //private void CargarPrueba()
@@ -58,14 +61,14 @@ namespace HappyPet4._0
         private void CargarPermisos()
         {
             Permisos_X_Usuarios permisosUsuario = (Permisos_X_Usuarios)Session["PermisosSeguridad"];
-            Modulo modulo = permisosUsuario.Modulos.First(x => x.IdModulo == (int)Constantes.Modulos.Seguridad);
+            Modulo modulo = permisosUsuario.Modulos.First(x => x.IdModulo == (int)Constantes.Modulos.Nómina);
             if (modulo == null)
             {
                 Response.Redirect("LogIn.aspx");
             }
             else
             {
-                SubModulo subModulo = modulo.SubModulos.First(x => x.IdSubModulo == (int)Constantes.SubModulosSeguridad.TiposPerfil);
+                SubModulo subModulo = modulo.SubModulos.First(x => x.IdSubModulo == (int)Constantes.SubModulosNomina.TiposPermisos);
                 if (subModulo == null)
                 {
                     Response.Redirect("LogIn.aspx");
@@ -80,8 +83,8 @@ namespace HappyPet4._0
         private void CargarGrid()
         {
             string error = "";
-            BLTipoMarca tipoPerfil = new BLTipoMarca();
-            gvPermiso.DataSource = tipoPerfil.consultar_TipoMarca(ref error);
+            BLTipoPermiso tipoPermiso = new BLTipoPermiso();
+            gvPermiso.DataSource = tipoPermiso.consultar_TipoPermiso(ref error);
             gvPermiso.DataBind();
         }
 
@@ -138,7 +141,7 @@ namespace HappyPet4._0
             upModal.Update();
         }
 
-        protected void gvCitas_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void gvPermiso_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Seleccionar" && IsPostBack)
             {
@@ -148,6 +151,7 @@ namespace HappyPet4._0
                     gvPermiso.SelectedIndex = -1;
                     btnEditar.Visible = false;
                     btnEliminar.Visible = false;
+                    txtCodigo.Text = ""; 
                 }
                 else
                 {
@@ -184,7 +188,8 @@ namespace HappyPet4._0
                 BLTipoPermiso BLtipoPermiso = new BLTipoPermiso();
                 TiposPermiso tiposPermiso = new TiposPermiso();
 
-                 tiposPermiso.Estado= chkEstado.Checked ? 1 : 2;
+                tiposPermiso.IdTipoPermiso = Convert.ToInt32(txtCodigo.Text);
+                tiposPermiso.Estado= chkEstado.Checked ? 1 : 2;
                 tiposPermiso.TipoPermiso = txtProducto.Text;
 
 
@@ -261,7 +266,10 @@ namespace HappyPet4._0
             GuardarTipoPermiso();
         }
 
-       
+        protected void btnEliminarConfirmacion_Click(object sender, EventArgs e)
+        {
+            EliminarTipoPermiso();
+        }
 
 
     }

@@ -82,7 +82,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Id Permiso: </label>
                                         <div class="col-sm-10">
-                                            <asp:TextBox ID="txtCodigo" runat="server" CssClass="form-control" MaxLength="50" ReadOnly="True"></asp:TextBox>
+                                            <asp:TextBox ID="txtCodigo" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
                                             <!--<input type="text" maxlength="50" class="form-control"/>  -->
                                         </div>
                                     </div>
@@ -104,18 +104,17 @@
                                 <div class="col-lg-12">&nbsp</div>
                                 <div class="col-lg-12">&nbsp</div>
                                 <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <asp:Button ID="btnLimpiar" class="btn btn-warning" runat="server" Text="Limpiar" />
-                                        <!--<button type="button" class="btn btn-warning">Limpiar</button>-->
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <asp:Button ID="btnGuardar" class="btn btn-success" runat="server" Text="Guardar" />
-                                        <!-- <button type="button" class="btn btn-success">Guardar</button> -->
-                                    </div>
-                                </div>
-
+                                  <div class="form-group">
+                                                <asp:Button ID="btnCancelar"  data-dismiss="modal" class="btn btn-danger" runat="server" Text="Cancelar" />
+                                                <!--<button type="button" class="btn btn-warning">Limpiar</button>-->
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <asp:Button ID="btnGuardar" OnClick="btnGuardar_Click" class="btn btn-success" runat="server" Text="Guardar" />
+                                                <!-- <button type="button" class="btn btn-success">Guardar</button> -->
+                                            </div>
+                                        </div>
 
                             </div>
                         </div>

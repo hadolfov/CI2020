@@ -77,7 +77,7 @@ namespace BLL.MANTENIMIENTO
 
             obj_BD_DAL.dt_Parametros.Rows.Add("@IdTipoMarca", 2, tiposMarca.IdTipoMarca);
             obj_BD_DAL.dt_Parametros.Rows.Add("@TipoMarca", 1, tiposMarca.TipoMarca);
-            obj_BD_DAL.dt_Parametros.Rows.Add("@IdEstado ", 2, tiposMarca.Estado);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@Estado ", 2, tiposMarca.Estado);
             obj_BD_DAL.sNombreTabla = "tbl_TiposMarca";
             obj_BD_DAL.sSentencia = "SCH_NOMINA.sp_ModificarTipoMarca";
             obj_BD_BLL.Ejec_NonQuery(ref obj_BD_DAL);
@@ -99,9 +99,9 @@ namespace BLL.MANTENIMIENTO
 
             obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
 
-            obj_BD_DAL.dt_Parametros.Rows.Add("@IdTipoMarca", 2, idTipoMarca);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@IdTipoMarca", 2, idTipoMarca);
             obj_BD_DAL.sNombreTabla = "tbl_TiposMarca";
-            obj_BD_DAL.sSentencia = "SCH_NOMINA.sp_ConsultarTipoMarca";
+            obj_BD_DAL.sSentencia = "SCH_NOMINA.sp_SelectTipoMarca";
             obj_BD_BLL.Ejec_DataAdapter(ref obj_BD_DAL);
             if (obj_BD_DAL.sMsjError != string.Empty)
             {
@@ -112,7 +112,7 @@ namespace BLL.MANTENIMIENTO
                 resultado = new TiposMarca();
                 resultado.IdTipoMarca = idTipoMarca;
                 resultado.TipoMarca = obj_BD_DAL.DS.Tables[0].Rows[0][0].ToString();
-                resultado.Estado = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[0][1]);
+                resultado.Estado = Convert.ToInt32(obj_BD_DAL.DS.Tables[0].Rows[0][1].ToString());
 
                 error = string.Empty;
             }

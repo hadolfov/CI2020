@@ -11,15 +11,16 @@ namespace BLL.MANTENIMIENTO
 {
     public class BLTipoPermiso
     {
-        public List<viewTiposPermiso> consultar_TipoMarca(ref string MsjError)
+        public List<viewTiposPermiso> consultar_TipoPermiso(ref string MsjError)
         {
             List<viewTiposPermiso> resultado = new List<viewTiposPermiso>();
             cls_BD_BLL obj_BD_BLL = new cls_BD_BLL();
             cls_BD_DAL obj_BD_DAL = new cls_BD_DAL();
 
             obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
+
             obj_BD_DAL.sNombreTabla = "tbl_TiposPermiso";
-            obj_BD_DAL.sSentencia = "SCH_NOMINA.sp_ConsultarTipoPermiso";
+            obj_BD_DAL.sSentencia = "SCH_NOMINA.sp_ListarTipoPermiso";
             obj_BD_BLL.Ejec_DataAdapter(ref obj_BD_DAL);
             if (obj_BD_DAL.sMsjError != string.Empty)
             {
@@ -98,9 +99,9 @@ namespace BLL.MANTENIMIENTO
 
             obj_BD_BLL.CrearDTParametros(ref obj_BD_DAL);
 
-            obj_BD_DAL.dt_Parametros.Rows.Add("@IdTipoPermiso", 2, idTipoPermiso);
+            obj_BD_DAL.dt_Parametros.Rows.Add("@@IdTipoPermiso", 2, idTipoPermiso);
             obj_BD_DAL.sNombreTabla = "tbl_TiposPermiso";
-            obj_BD_DAL.sSentencia = "SCH_NOMINA.sp_ConsultarTipoPermiso";
+            obj_BD_DAL.sSentencia = "SCH_NOMINA.sp_SelectTipoPermiso";
             obj_BD_BLL.Ejec_DataAdapter(ref obj_BD_DAL);
             if (obj_BD_DAL.sMsjError != string.Empty)
             {

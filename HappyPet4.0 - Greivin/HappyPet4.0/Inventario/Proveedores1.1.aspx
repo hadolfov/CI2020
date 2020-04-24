@@ -72,7 +72,7 @@
                                 <div class="form-control">
                                     <div class="row ">
 
-                                        <div class="col-lg-5">
+                                        <div class="col-md-5">
                                             <label id="lblIdentificacion" class="control-label">Identificación: </label>
                                             <asp:TextBox ID="txtIndentificacion" runat="server"></asp:TextBox>
                                             <asp:Label ID="lblIdProveedor" runat="server" Text="Id Proveedor: "></asp:Label>
